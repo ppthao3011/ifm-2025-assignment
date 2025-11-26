@@ -1299,7 +1299,6 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
 
 
     # Price and Cumulative Return Graphs
-    st.markdown("### 📈 Stock Prices (Individual)")
     
     # Define colors for all stocks
     colors_line = {'ACB': '#1f77b4', 'HPG': '#00D9FF', 'VNM': '#FF9800', 'DBD': '#9C27B0'}
@@ -1338,7 +1337,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
         fig_price.update_layout(
             title='Stock Prices - Daily Closing Price',
             xaxis_title='Date',
-            yaxis_title='Price (VND)',
+            yaxis_title='Giá (nghìn VND)',
             height=400,
             template='plotly',
             plot_bgcolor='#f5f5f5',
@@ -1489,7 +1488,6 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
         # Cumulative Returns box below the chart
         st.markdown("""
         <div style="background-color: #F0F8FF; padding: 20px; border-radius: 10px; border-left: 5px solid #1976D2;">
-            <h5 style="color: #1976D2; margin-top: 0; margin-bottom: 15px;">📈 Cumulative Returns</h5>
             <div style="color: #555; font-size: 16px; line-height: 1.8; text-align: justify;">
             <li><strong>ACB:</strong> Đây là "ngôi sao sáng nhất" trong danh mục. Sau giai đoạn đi ngang năm 2022, ACB <strong>bứt phá mạnh mẽ và duy trì đà tăng trưởng bền vững</strong>. Đến giữa năm 2025, lợi nhuận tích lũy của ACB đạt gần <strong>100%</strong>, tức là nhân đôi tài khoản.<br></li>
             <li><strong>DBD:</strong> Thể hiện đúng tính chất "đầu cơ" cao. DBD từng vượt ACB để dẫn đầu vào cuối năm 2024, trùng khớp với giai đoạn "bong bóng". Tuy nhiên, biên độ dao động lớn, sau cú sụt giảm mạnh đầu 2025, DBD kết thúc với lợi nhuận khoảng <strong>60%</strong>, đứng thứ 2.<br></li>
@@ -1560,22 +1558,14 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
     # ============================================================================
     # SECTION 2: PORTFOLIO VS MARKET
     # ============================================================================
-    st.markdown(" #### PORTFOLIO VS MARKET")
-    st.markdown(
-        "*Comparative analysis: Portfolio performance relative to market VNIndexs*"
+    st.markdown("### VI. PORTFOLIO vs MARKET",
+         unsafe_allow_html=True
     )
-
-    # Market Timing Insights Box
     st.markdown("""
-    <div style="background-color: #F3E5F5; padding: 15px; border-radius: 10px; 
-                border-left: 5px solid #9C27B0; margin-bottom: 20px;">
-        <h4 style="color: #7B1FA2; margin-top: 0;">📊 Market Timing Insights</h4>
-        <p style="color: #555; font-size: 18px; line-height: 1.6; margin: 0;">
-        Hiệu quả danh mục nhìn chung tăng trưởng tích cực trong trung và dài hạn, dù biến động trong ngắn hạn. Ở chu kỳ 1 ngày và 1 tháng, danh mục vượt thị trường nhẹ, cho thấy khả năng nắm bắt cơ hội ngắn hạn. Tuy nhiên trong 1 tuần và đặc biệt 3 tháng – 1 năm, danh mục kém hơn VNINDEX, phản ánh áp lực điều chỉnh ngắn-trung hạn của chiến lược. Dù vậy, ở chu kỳ 3 năm, danh mục đạt 46.02%, cao hơn thị trường 36.60%, cho thấy hiệu quả tích lũy dài hạn tốt và mang lại giá trị vượt trội khi đầu tư bền bỉ theo thời gian.
-        Ngoài ra, danh mục ghi nhận ngày tăng mạnh nhất +6.95% và ngày giảm sâu nhất -6.90%, phản ánh mức biến động hai chiều rõ rệt nhưng cũng thể hiện khả năng tạo alpha trong những giai đoạn thuận lợi của thị trường.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+    Đến lúc Mười tự hỏi: “Liệu mình có nên đầu tư vào danh mục này hay không?” – cậu quyết định phải có một tiêu chuẩn so sánh. Với một newbie, nhìn vào từng cổ phiếu riêng lẻ thì… mờ mịt quá. Thế là Mười chọn benchmark của thị trường – VNINDEX, đại diện cho toàn bộ chứng khoán trên sàn HSX.\\
+Cậu so sánh lợi suất kỳ vọng của portfolio với lợi suất của VNINDEX: nếu portfolio vượt trội hơn benchmark, nghĩa là danh mục này có khả năng sinh lời tốt hơn mức trung bình của thị trường – “đầu tư thôi, không cần ngại ngần!”; còn nếu thấp hơn, Mười biết mình nên cân nhắc lại phân bổ hoặc chờ thời điểm khác.""")
+
+    
 
     # Two-column layout: Table on left, Graph on right
     col_table, col_graph = st.columns([1, 1.2])
@@ -1647,26 +1637,6 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
         best_day_date = merged_df.iloc[best_day_idx]['time'].strftime('%b %d')
         worst_day_date = merged_df.iloc[worst_day_idx]['time'].strftime('%b %d')
         
-        # Build table data
-        table_data = []
-        periods_data = [
-            ('1 Day', ret_1d, bench_1d),
-            ('1 Week', ret_1w, bench_1w),
-            ('1 Month', ret_1mo, bench_1mo),
-            ('3 Months', ret_3mo, bench_3mo),
-            ('1 Year', ret_1yr, bench_1yr),
-            ('3 Years', ret_3yr, bench_3yr),
-        ]
-        
-        for period_name, port_ret, bench_ret in periods_data:
-            if port_ret is not None and bench_ret is not None:
-                diff = port_ret - bench_ret
-                table_data.append({
-                    'Period': period_name,
-                    'Portfolio %': f"{port_ret:.2f}",
-                    'Market (VNINDEX) %': f"{bench_ret:.2f}",
-                    'Excess Return %': f"{diff:+.2f}"
-                })
         
         # LEFT COLUMN: Best/Worst Days
         with col_table:
@@ -1676,10 +1646,20 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
                 st.metric("📈 Best", f"{best_day_return:.2f}%", f"{best_day_date}")
             with col_w:
                 st.metric("📉 Worst", f"{worst_day_return:.2f}%", f"{worst_day_date}")
+
+            # Market Timing Insights Box
+            st.markdown("""
+            <div style="background-color: #F3E5F5; padding: 15px; border-radius: 10px; 
+                        border-left: 5px solid #9C27B0; margin-bottom: 20px;">
+                <p style="color: #555; font-size: 18px; line-height: 1.6; margin: 0;">
+                <li>Hiệu quả danh mục nhìn chung tăng trưởng tích cực trong trung và dài hạn, dù biến động trong ngắn hạn. Ở giai đoạn những tháng đầu tiên, mức tăng trưởng của return danh mục và thị trường gần sát nhau. Tuy nhiên, về dài hạn, danh mục có return vượt lên so với thị trường, đồng thời giảm thiểu rủi ro so với thị trường trong giai đoạn thị trường đi xuống từ tháng 8 đến tháng 11 2022.</li><br>
+                <li>Ngoài ra, danh mục ghi nhận hai ngày tăng giảm mạnh đột biến và gần nhau là 08/04 và 10/04. Cả hai ngày này đều do tin tức từ chính phủ Mỹ về thuế đối ứng 46% với hàng hóa Việt Nam, khiến thị trường chứng khoán Việt Nam sụt giảm sâu.</li>
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
         
         # RIGHT COLUMN: Cumulative Returns Graph
         with col_graph:
-            st.markdown("##### 📈 Cumulative Returns Comparison")
             
             # Create Plotly figure for cumulative returns
             fig = go.Figure()
@@ -1717,20 +1697,6 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
             
             st.plotly_chart(fig, use_container_width=True)
             
-            st.markdown("""
-Sau khi đánh giá danh mục của mình và thấy "hơi hớn hở" vì có vẻ sinh lời, Nguyễn Văn Mười – newbie 20 tuổi, vốn chẳng hiểu mấy về chứng khoán – bắt đầu băn khoăn:
-
-"Liệu mình có nên mua luôn không? Giá nào là hợp lý đây?"
-
-Trong thế giới đầy các phương pháp tính toán phức tạp – FCFF, WACC, CAPM – Mười nhanh chóng nhận ra: với trình độ newbie, cậu chỉ cần một con đường dễ hiểu và dễ tiếp cận nhất. Và thế là, Mười chọn công thức DCF theo kiểu Warren Buffett, tức là tính intrinsic value dựa trên FCFE – dòng tiền tự do mà công ty có thể trả cho cổ đông.
-
-Với FCFE, Mười có thể dự báo các dòng tiền trong tương lai bằng Holt-Winters Exponential Smoothing, rồi tính giá trị hiện tại của chúng. Cậu thích cách này: máy tính làm việc thay cậu, dữ liệu nói chuyện, còn cậu chỉ cần nhìn vào kết quả và hỏi:
-
-"Ồ, cổ phiếu này rẻ hay đắt?"
-
-Bằng cách này, Mười vừa có thể hiểu rõ giá trị thực của cổ phiếu, vừa tự tin đưa ra quyết định mua hay chờ – tất cả mà không bị lạc vào rừng công thức phức tạp. Một newbie mà vẫn "chơi lớn" theo phong cách của Buffett!
-            """)
-        
     except Exception as e:
         st.error(f"Error: {str(e)}")
 
@@ -1741,10 +1707,11 @@ Bằng cách này, Mười vừa có thể hiểu rõ giá trị thực của c�
     # ============================================================================
     # SECTOR ALLOCATION COMPARISON (FIRST SECTION)
     # ============================================================================
-    st.markdown("#### 🔺 Sector Allocation Comparison")
-    st.markdown(
-        "*Portfolio vs VNIndex: Detailed sector breakdown*"
-    )
+    st.markdown("""
+        Sau khi so sánh hiệu suất tổng thể với VNINDEX, Mười lại tò mò: “Liệu portfolio của mình có tập trung quá nhiều vào một ngành không nhỉ?” Với newbie như Mười, nhìn vào từng cổ phiếu thì rối mắt quá, nên cậu quyết định so sánh phân bổ theo ngành.
+        
+Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng từng ngành trong portfolio, rồi đối chiếu với cơ cấu ngành của VNINDEX. Nếu portfolio nghiêng hẳn về một ngành – ví dụ công nghệ hoặc ngân hàng – thì rủi ro cao hơn; còn nếu phân bổ gần với benchmark, danh mục sẽ cân bằng hơn, “vừa sinh lời vừa… an toàn”.
+""")
     
     col_table, col_graph = st.columns([1.2, 1])
     
@@ -1846,223 +1813,17 @@ Bằng cách này, Mười vừa có thể hiểu rõ giá trị thực của c�
     st.markdown("---")
     st.markdown("")
 
-    # ============================================================================
-    # RISK-RETURN SCATTER PLOT (SEPARATE ROW)
-    # ============================================================================
-    st.markdown("### Risk-Return Scatter Plot")
-
-    try:
-        # Load market and risk-free rate data
-        rf_rm_df = pd.read_csv('attached_assets/rf-rm_1763969726233.csv')
-        rf_rm_df['time'] = pd.to_datetime(rf_rm_df['time'], format='%d/%m/%Y')
-        rf_rm_df = rf_rm_df.sort_values('time')
-        
-        # Prepare iml_df for merging
-        iml_df_merge = iml_df.copy()
-        iml_df_merge['time'] = pd.to_datetime(iml_df_merge['time'], format='%d/%m/%Y')
-        iml_df_merge = iml_df_merge.sort_values('time')
-        
-        # Merge datasets
-        merged_df = pd.merge(iml_df_merge, rf_rm_df[['time', 'rf', 'rm']], on='time', how='inner')
-        
-        # Calculate risk-return metrics for each stock from daily returns
-        stocks = ['ACB', 'HPG', 'VNM', 'DBD']
-        stock_metrics = []
-        
-        for stock in stocks:
-            daily_return = merged_df[stock].mean() * 100  # Convert to percentage
-            daily_volatility = merged_df[stock].std() * 100  # Convert to percentage
-            stock_metrics.append({
-                'Stock': stock,
-                'Return': daily_return,
-                'Volatility': daily_volatility,
-                'Type': 'Stock'
-            })
-        
-        # Calculate portfolio metrics using minimum variance weights
-        min_variance_weights = frontier_df.iloc[0][['w.ACB', 'w.DBD', 'w.HPG', 'w.VNM']].values
-        portfolio_returns = []
-        for i, row in merged_df.iterrows():
-            portfolio_ret = (row['ACB'] * min_variance_weights[0] + 
-                           row['DBD'] * min_variance_weights[1] + 
-                           row['HPG'] * min_variance_weights[2] + 
-                           row['VNM'] * min_variance_weights[3])
-            portfolio_returns.append(portfolio_ret)
-        
-        portfolio_daily_return = np.mean(portfolio_returns) * 100
-        portfolio_daily_volatility = np.std(portfolio_returns) * 100
-        
-        stock_metrics.append({
-            'Stock': 'Portfolio',
-            'Return': portfolio_daily_return,
-            'Volatility': portfolio_daily_volatility,
-            'Type': 'Portfolio'
-        })
-        
-        # Calculate market VNIndex (VNINDEX) metrics
-        market_daily_return = merged_df['rm'].mean() * 100
-        market_daily_volatility = merged_df['rm'].std() * 100
-        
-        stock_metrics.append({
-            'Stock': 'VNIndex',
-            'Return': market_daily_return,
-            'Volatility': market_daily_volatility,
-            'Type': 'VNIndex'
-        })
-        
-        stocks_analysis = pd.DataFrame(stock_metrics)
-        
-        fig_scatter = px.scatter(stocks_analysis,
-                                 x='Volatility',
-                                 y='Return',
-                                 size=[170 if t == 'Portfolio' else (125 if t == 'VNIndex' else 80) for t in stocks_analysis['Type']],
-                                 color='Type',
-                                 hover_name='Stock',
-                                 title='Risk-Return Profile: Daily Returns Analysis',
-                                 labels={'Volatility': 'Daily Volatility (%)', 'Return': 'Daily Return (%)'},
-                                 color_discrete_map={
-                                     'Stock': '#4A90E2',
-                                     'Portfolio': '#1B5E20',
-                                     'VNIndex': '#FF6B6B'
-                                 })
-
-        fig_scatter.update_layout(height=630,
-                                  template='plotly',
-                                  plot_bgcolor='#f5f5f5',
-                                  paper_bgcolor='#f5f5f5',
-                                  yaxis_title='Daily Return (%)',
-                                  xaxis_title='Daily Volatility (%)',
-                                  hovermode='closest')
-
-        # Create two-column layout for scatter plot and risk metrics table
-        col_scatter, col_table = st.columns([1.3, 1])
-        
-        with col_scatter:
-            st.markdown("")
-            st.markdown("")
-            st.plotly_chart(fig_scatter, use_container_width=True)
-    except Exception as e:
-        st.error(f"Error creating Risk-Return scatter plot: {e}")
-        col_scatter, col_table = st.columns([1.3, 1])
-    
-    with col_table:
-        st.markdown("#### **Risk and Return Statistics**")
-        
-        try:
-            # Calculate statistics for 3 months and 1 year
-            trading_days_3m = 63
-            trading_days_1y = 252
-            total_days = len(merged_df)
-            
-            # 3 Months calculations
-            if total_days >= trading_days_3m:
-                portfolio_3m = pd.Series(portfolio_returns[-trading_days_3m:])
-                market_3m = merged_df['rm'].iloc[-trading_days_3m:].values
-                rf_3m = merged_df['rf'].iloc[-trading_days_3m:].values
-                
-                port_std_3m = portfolio_3m.std() * np.sqrt(252) * 100  # Annualized
-                market_std_3m = np.std(market_3m) * np.sqrt(252) * 100
-                
-                port_mean_3m = portfolio_3m.mean() * 252 * 100  # Annualized
-                market_mean_3m = np.mean(market_3m) * 252 * 100
-                
-                rf_rate_3m = np.mean(rf_3m) * 252 * 100  # Annualized
-                
-                # Sharpe Ratio
-                port_sharpe_3m = (port_mean_3m - rf_rate_3m) / port_std_3m if port_std_3m != 0 else 0
-                market_sharpe_3m = (market_mean_3m - rf_rate_3m) / market_std_3m if market_std_3m != 0 else 0
-                
-                # Beta and Alpha
-                covariance_3m = np.cov(portfolio_3m, market_3m)[0, 1]
-                market_var_3m = np.var(market_3m)
-                beta_3m = covariance_3m / market_var_3m if market_var_3m != 0 else 0
-                alpha_3m = port_mean_3m - (rf_rate_3m + beta_3m * (market_mean_3m - rf_rate_3m))
-            
-            # 1 Year calculations
-            if total_days >= trading_days_1y:
-                portfolio_1y = pd.Series(portfolio_returns[-trading_days_1y:])
-                market_1y = merged_df['rm'].iloc[-trading_days_1y:].values
-                rf_1y = merged_df['rf'].iloc[-trading_days_1y:].values
-                
-                port_std_1y = portfolio_1y.std() * np.sqrt(252) * 100  # Annualized
-                market_std_1y = np.std(market_1y) * np.sqrt(252) * 100
-                
-                port_mean_1y = portfolio_1y.mean() * 252 * 100  # Annualized
-                market_mean_1y = np.mean(market_1y) * 252 * 100
-                
-                rf_rate_1y = np.mean(rf_1y) * 252 * 100  # Annualized
-                
-                # Sharpe Ratio
-                port_sharpe_1y = (port_mean_1y - rf_rate_1y) / port_std_1y if port_std_1y != 0 else 0
-                market_sharpe_1y = (market_mean_1y - rf_rate_1y) / market_std_1y if market_std_1y != 0 else 0
-                
-                # Beta and Alpha
-                covariance_1y = np.cov(portfolio_1y, market_1y)[0, 1]
-                market_var_1y = np.var(market_1y)
-                beta_1y = covariance_1y / market_var_1y if market_var_1y != 0 else 0
-                alpha_1y = port_mean_1y - (rf_rate_1y + beta_1y * (market_mean_1y - rf_rate_1y))
-            
-            # Build HTML table
-            html_table = f"""
-            <table style="width:100%; border-collapse: collapse; font-size: 17px;">
-                <tr style="border-bottom: 2px solid #ddd; background-color: #f0f0f0;">
-                    <th style="padding: 6px; text-align: center; border-right: 1px solid #ddd;"></th>
-                    <th colspan="2" style="padding: 6px; text-align: center; border-right: 1px solid #ddd;"><b>3M</b></th>
-                    <th colspan="2" style="padding: 6px; text-align: center;"><b>1Y</b></th>
-                </tr>
-                <tr style="border-bottom: 2px solid #ddd; background-color: #f9f9f9;">
-                    <th style="padding: 6px; text-align: center; border-right: 1px solid #ddd;"><b>Metric</b></th>
-                    <th style="padding: 6px; text-align: center; border-right: 1px solid #ddd;"><b>Port</b></th>
-                    <th style="padding: 6px; text-align: center; border-right: 1px solid #ddd;"><b>VNIndex</b></th>
-                    <th style="padding: 6px; text-align: center; border-right: 1px solid #ddd;"><b>Port</b></th>
-                    <th style="padding: 6px; text-align: center;"><b>VNIndex</b></th>
-                </tr>
-                <tr style="border-bottom: 1px solid #ddd;">
-                    <td style="padding: 6px; text-align: center; border-right: 1px solid #ddd; font-weight: bold;">Std Dev</td>
-                    <td style="padding: 6px; text-align: center; border-right: 1px solid #ddd;">{port_std_3m:.2f}</td>
-                    <td style="padding: 6px; text-align: center; border-right: 1px solid #ddd;">{market_std_3m:.2f}</td>
-                    <td style="padding: 6px; text-align: center; border-right: 1px solid #ddd;">{port_std_1y:.2f}</td>
-                    <td style="padding: 6px; text-align: center;">{market_std_1y:.2f}</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ddd;">
-                    <td style="padding: 6px; text-align: center border-right: 1px solid #ddd; font-weight: bold;">Mean</td>
-                    <td style="padding: 6px; text-align: center; border-right: 1px solid #ddd;">{port_mean_3m:.2f}</td>
-                    <td style="padding: 6px; text-align: center; border-right: 1px solid #ddd;">{market_mean_3m:.2f}</td>
-                    <td style="padding: 6px; text-align: center; border-right: 1px solid #ddd;">{port_mean_1y:.2f}</td>
-                    <td style="padding: 6px; text-align: center;">{market_mean_1y:.2f}</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #ddd;">
-                    <td style="padding: 6px; text-align: left; border-right: 1px solid #ddd; font-weight: bold;">Sharpe</td>
-                    <td style="padding: 6px; text-align: center; border-right: 1px solid #ddd;">{port_sharpe_3m:.3f}</td>
-                    <td style="padding: 6px; text-align: center; border-right: 1px solid #ddd;">{market_sharpe_3m:.3f}</td>
-                    <td style="padding: 6px; text-align: center; border-right: 1px solid #ddd;">{port_sharpe_1y:.3f}</td>
-                    <td style="padding: 6px; text-align: center;">{market_sharpe_1y:.3f}</td>
-                </tr>
-            </table>
-            """
-            st.markdown(html_table, unsafe_allow_html=True)
-        except Exception as e:
-            st.error(f"Error calculating Risk and Return Statistics: {e}")
-
-        st.markdown("___")
-
-        st.markdown("""
-        <div style="background-color: #F3E5F5; padding: 15px; border-radius: 10px; border-left: 5px solid #00897B;">
-            <p style="color: #555; font-size: 17px; line-height: 1.6; margin: 0;">
-            Danh mục đầu tư của Mười đang có sự tập trung cực lớn vào ngành Sản xuất (79.5%), dẫn đến việc thiếu trọng số nghiêm trọng ở ngành Dịch vụ (chỉ 20.5%, trong khi VNINDEX là 75.14%). Sự mất cân bằng này làm tăng rủi ro tập trung và tạo ra độ lệch pha lớn so với thị trường chung. Về mặt hiệu suất, mặc dù rủi ro của danh mục thấp hơn trong 3 tháng, lợi nhuận thực tế (Mean) và lợi nhuận điều chỉnh theo rủi ro (Sharpe Ratio) của danh mục đều thua kém đáng kể VNINDEX trong cả giai đoạn 3 tháng và 1 năm. Điều này cho thấy chiến lược tập trung vào Sản xuất của bạn đã không mang lại hiệu quả vượt trội so với rủi ro đã chấp nhận.
-            </div>
-        """, unsafe_allow_html=True)
-
-            
-    st.markdown("")
-
     # Valuation Multiples and Profitability Analysis
-    st.markdown("### 📊 Valuation Multiples & Profitability")
-    
+    st.markdown("##### Valuation Multiples & Profitability")
+    st.markdown("""
+             Cuối cùng, Mười quyết định nhìn portfolio bằng “kính hiển vi” của các nhà đầu tư chuyên nghiệp: valuation multiples và profitability. Cậu tò mò: “Giá cổ phiếu đang rẻ hay đắt so với lợi nhuận mà công ty tạo ra?”
+
+    Mười liệt kê các chỉ số quen thuộc như P/E, P/B, ROE, ROA, so sánh với trung bình ngành và với VNINDEX. Nhìn vào các con số, Mười nhanh chóng nhận ra: cổ phiếu nào đang bị định giá thấp so với lợi nhuận, cổ phiếu nào hấp dẫn nhưng rủi ro cao. """)
     col_valuation, col_profitability = st.columns(2)
-    
+
     with col_valuation:
         st.markdown("**Valuation Multiples**")
+        
         valuation_html = """
         <table style="width:100%; border-collapse: collapse; font-size: 17px;">
             <tr style="border-bottom: 2px solid #ddd; background-color: #f0f0f0;">
@@ -2672,56 +2433,27 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     st.markdown(html, unsafe_allow_html=True)
     
     st.markdown("<p style='color: red; font-weight: bold;'>Bài viết này không sử dụng DCF cho ngân hàng do đặc thù trong cơ cấu tài chính của ngân hàng.</p>", unsafe_allow_html=True)
-    
-    import streamlit as st
+
 
     st.markdown(
-        """
-        <div style="
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        ">
-            <div style="
-                width: 70%;
-                background: #ffffff;
-                border: 2px solid #1E90FF;
-                border-radius: 12px;
-                padding: 20px 28px;
-                font-size: 16px;
-                line-height: 1.6;
-                color: #333;
-            ">
-                <h4 style="text-align:center; color:#1E90FF; margin-bottom:15px;">
-                    Các bước tính FCFE với CAPM và Holt-Winters
-                </h4>
-                <p><b>Bước 1:</b> Xác định <b>FCFE</b> bằng công thức:</p>
-        """,
-        unsafe_allow_html=True
-    )
+            "<h3 style='text-align:center; color:#1E90FF;'>Các bước tính FCFE với CAPM và Holt-Winters</h3>",
+            unsafe_allow_html=True
+        )
 
+
+    st.markdown("**Bước 1:** Xác định **FCFE** bằng công thức:")
     st.latex(r"FCFE = Net\ Income + Depreciation - CapEx - \Delta WC + Net\ Borrowing")
 
-    st.markdown(
-        """
-                <p><b>Bước 2:</b> Dự báo <b>3 giá trị FCFE tương lai</b> bằng mô hình Holt-Winters.</p>
-                <p><b>Bước 3:</b> Tính <b>chi phí vốn cổ đông</b> bằng CAPM:</p>
-        """,
-        unsafe_allow_html=True
-    )
+    st.markdown("**Bước 2:** Dự báo **3 giá trị FCFE tương lai** bằng mô hình Holt-Winters.")
 
+    st.markdown("**Bước 3:** Tính **chi phí vốn cổ đông** bằng CAPM:")
     st.latex(r"r_e = R_f + \beta (R_m - R_f)")
 
-    st.markdown(
-        """
-                <p><b>Bước 4:</b> Chọn tốc độ tăng trưởng dài hạn g = 3%.</p>
-                <p><b>Bước 5:</b> Tính <b>PV</b> bằng cách chiết khấu FCFE dự báo và terminal value.</p>
+    st.markdown("**Bước 4:** Chọn tốc độ tăng trưởng dài hạn \(g = 3\%\).")
 
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.markdown("**Bước 5:** Tính **PV** bằng cách chiết khấu FCFE dự báo và terminal value.")
+
+    st.markdown("</div>", unsafe_allow_html=True)
 
     
     
@@ -2993,20 +2725,6 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
                                 st.metric("Growth Rate", "3%")
                             with sup_col5:
                                 st.metric("Terminal Value", "288.738 Tr đ")
-                        
-                        upside_pct = dcf_result['upside_downside_pct']
-                        if upside_pct > 20:
-                            interpretation = "🚀 **Highly Undervalued** - Strong buy signal"
-                        elif upside_pct > 10:
-                            interpretation = "📈 **Undervalued** - Potential value opportunity"
-                        elif upside_pct > -10:
-                            interpretation = "➡️ **Fairly Valued** - Market price reflects fundamentals"
-                        elif upside_pct > -20:
-                            interpretation = "📉 **Slightly Overvalued** - Limited upside"
-                        else:
-                            interpretation = "⚠️ **Significantly Overvalued** - Consider reducing"
-                        
-                        st.markdown(f"**Valuation Interpretation:**\n\n{interpretation}")
         
         except Exception as e:
             st.warning(f"Unable to complete CAPM and DCF analysis: {str(e)}")
