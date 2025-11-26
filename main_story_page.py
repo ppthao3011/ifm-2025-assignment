@@ -2645,40 +2645,71 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     st.markdown(" ### INTRINSIC VALUE ANALYSIS")
     
     # Narrative section about Mười's valuation journey
-    st.markdown("""
-    <div style="background-color: #FFF8E7; padding: 20px; border-radius: 10px; border-left: 5px solid #FF9800; margin-bottom: 20px;">
-        <p style="font-size: 16px; line-height: 1.8; color: #333;">
-        Sau khi đánh giá danh mục của mình và thấy "hơi hớn hở" vì có vẻ sinh lời, Nguyễn Văn Mười – newbie 20 tuổi, vốn chẳng hiểu mấy về chứng khoán – bắt đầu băn khoăn: 
-        <br><br>
-        <strong style="color: #FF6F00;">"Liệu mình có nên mua luôn không? Giá nào là hợp lý đây?"</strong>
-        <br><br>
-        Trong thế giới đầy các phương pháp tính toán phức tạp – FCFF, WACC, CAPM – Mười nhanh chóng nhận ra: với trình độ newbie, cậu chỉ cần một con đường dễ hiểu và dễ tiếp cận nhất. Và thế là, Mười chọn <strong>công thức DCF theo kiểu Warren Buffett</strong>, tức là tính <strong>intrinsic value</strong> dựa trên <strong>FCFE</strong> – dòng tiền tự do mà công ty có thể trả cho cổ đông.
-        <br><br>
-        Với FCFE, Mười có thể dự báo các dòng tiền trong tương lai bằng <strong>Holt-Winters Exponential Smoothing</strong>, rồi tính giá trị hiện tại của chúng. Cậu thích cách này: máy tính làm việc thay cậu, dữ liệu nói chuyện, còn cậu chỉ cần nhìn vào kết quả và hỏi:
-        <br><br>
-        <strong style="color: #FF6F00;">"Ồ, cổ phiếu này rẻ hay đắt?"</strong>
-        <br><br>
-        Bằng cách này, Mười vừa có thể hiểu rõ giá trị thực của cổ phiếu, vừa tự tin đưa ra quyết định mua hay chờ – tất cả mà không bị lạc vào rừng công thức phức tạp. <strong>Một newbie mà vẫn "chơi lớn" theo phong cách của Buffett!</strong>
-        </p>
+    html = """
+    <div style="padding:18px; border-radius:10px; background:#ffffff; border:1px solid #e6e9ef; color:#111; font-size:16px; line-height:1.6;">
+      <p>Sau khi đánh giá danh mục của mình và thấy "hơi hớn hở" vì có vẻ sinh lời, Nguyễn Văn Mười bắt đầu băn khoăn:</p>
+
+      <p style="margin-left:10px;">
+        <span style="color:#1E90FF; font-weight:700;">
+          "Liệu mình có nên mua luôn không? Giá nào là hợp lý đây?"
+        </span>
+      </p>
+
+      <p>Trong thế giới đầy các phương pháp tính toán phức tạp – FCFF, WACC, CAPM – Mười nhanh chóng nhận ra: với trình độ newbie, cậu chỉ cần một con đường dễ hiểu và dễ tiếp cận nhất. Và thế là, Mười chọn công thức <strong>DCF - Discount Cash Flow</strong> - theo kiểu Warren Buffett, tức là tính intrinsic value dựa trên <strong>FCFE – dòng tiền tự do mà công ty có thể trả cho cổ đông</strong>.</p>
+
+      <p>Với FCFE, Mười có thể dự báo các dòng tiền trong tương lai bằng <strong>Holt-Winters Exponential Smoothing</strong>, rồi tính giá trị hiện tại của chúng. Cậu thích cách này: máy tính làm việc thay cậu, dữ liệu nói chuyện, còn cậu chỉ cần nhìn vào kết quả và hỏi:</p>
+
+      <p style="margin-left:10px;">
+        <span style="color:#1E90FF; font-weight:700;">
+          "Ồ, cổ phiếu này rẻ hay đắt?"
+        </span>
+      </p>
+
+      <p>Bằng cách này, Mười vừa có thể hiểu rõ giá trị thực của cổ phiếu, vừa tự tin đưa ra quyết định mua hay chờ – tất cả mà không bị lạc vào rừng công thức phức tạp. Một newbie mà vẫn "chơi lớn" theo phong cách của Buffett!</p>
     </div>
-    """, unsafe_allow_html=True)
+    """
+
+    st.markdown(html, unsafe_allow_html=True)
     
     st.markdown("<p style='color: red; font-weight: bold;'>Bài viết này không sử dụng DCF cho ngân hàng do đặc thù trong cơ cấu tài chính của ngân hàng.</p>", unsafe_allow_html=True)
     
-    st.markdown("##### 🔹 Các bước tính FCFE với CAPM và Holt-Winters")
-    st.markdown("""
-    - **Bước 1:** Xác định **FCFE** bằng công thức:  
-      $$FCFE = Net\\ Income + Depreciation - CapEx - \\Delta WC + Net\\ Borrowing$$
+    st.markdown(
+        """
+        <div style="
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        ">
+            <div style="
+                width: 70%;
+                background: #ffffff;
+                border: 2px solid #1E90FF;
+                border-radius: 12px;
+                padding: 20px 28px;
+                font-size: 16px;
+                line-height: 1.6;
+                color: #333;
+            ">
+                <h4 style="text-align:center; color:#1E90FF; margin-bottom:15px;">
+                    Các bước tính FCFE với CAPM và Holt-Winters
+                </h4>
 
-    - **Bước 2:** Dự báo **3 giá trị FCFE tương lai** sử dụng mô hình **Holt-Winters (Exponential Smoothing)**.
+                <p><b>Bước 1:</b> Xác định <b>FCFE</b> bằng công thức:<br>
+                $$FCFE = Net\\ Income + Depreciation - CapEx - \\Delta WC + Net\\ Borrowing$$</p>
 
-    - **Bước 3:** Tính **chi phí vốn cổ đông** bằng CAPM:  
-      $$r_e = R_f + \\beta (R_m - R_f)$$
+                <p><b>Bước 2:</b> Dự báo <b>3 giá trị FCFE tương lai</b> sử dụng mô hình <b>Holt-Winters (Exponential Smoothing)</b>.</p>
 
-    - **Bước 4:** Chọn tốc độ **tăng trưởng dài hạn** $g = 3\%$ cho FCFE.
+                <p><b>Bước 3:</b> Tính <b>chi phí vốn cổ đông</b> bằng CAPM:<br>
+                $$r_e = R_f + \\beta (R_m - R_f)$$</p>
 
-    - **Bước 5:** Tính **giá trị hiện tại (PV)** bằng cách chiết khấu 3 FCFE forecast và terminal value với $r_e$ và $g$.
-                            """)
+                <p><b>Bước 4:</b> Chọn tốc độ <b>tăng trưởng dài hạn</b> $g = 3\%$.</p>
+
+                <p><b>Bước 5:</b> Tính <b>giá trị hiện tại (PV)</b> bằng cách chiết khấu 3 FCFE forecast và terminal value với $r_e$ và $g$.</p>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
     
     
     # Import required calculation functions
