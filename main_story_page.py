@@ -2665,20 +2665,61 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     
     st.markdown("<p style='color: red; font-weight: bold;'>Bài viết này không sử dụng DCF cho ngân hàng do đặc thù trong cơ cấu tài chính của ngân hàng.</p>", unsafe_allow_html=True)
     
-    st.markdown("##### 🔹 Các bước tính FCFE với CAPM và Holt-Winters")
-    st.markdown("""
-    - **Bước 1:** Xác định **FCFE** bằng công thức:  
-      $$FCFE = Net\\ Income + Depreciation - CapEx - \\Delta WC + Net\\ Borrowing$$
-
-    - **Bước 2:** Dự báo **3 giá trị FCFE tương lai** sử dụng mô hình **Holt-Winters (Exponential Smoothing)**.
-
-    - **Bước 3:** Tính **chi phí vốn cổ đông** bằng CAPM:  
-      $$r_e = R_f + \\beta (R_m - R_f)$$
-
-    - **Bước 4:** Chọn tốc độ **tăng trưởng dài hạn** $g = 3\%$ cho FCFE.
-
-    - **Bước 5:** Tính **giá trị hiện tại (PV)** bằng cách chiết khấu 3 FCFE forecast và terminal value với $r_e$ và $g$.
-                            """)
+    # Centered section title
+    st.markdown("<div style='text-align: center;'><h3>🔹 Các bước tính FCFE với CAPM và Holt-Winters</h3></div>", unsafe_allow_html=True)
+    
+    # Visualization options
+    viz_option = st.segmented_control(
+        "Chọn cách hiển thị:",
+        ["📋 Danh sách", "📊 Biểu đồ", "🔢 Công thức"],
+        selection_mode="single",
+        default="📋 Danh sách"
+    )
+    
+    if viz_option == "📋 Danh sách":
+        st.markdown("""
+        <div style="background-color: #F0F4FF; padding: 25px; border-radius: 10px; border: 2px solid #1976D2; margin: 20px 0; text-align: center;">
+            <p style="font-size: 16px; line-height: 2.0; color: #1565C0; margin: 0;">
+            <strong>Bước 1:</strong> Xác định <strong>FCFE</strong> bằng công thức<br><br>
+            <strong>Bước 2:</strong> Dự báo <strong>3 giá trị FCFE tương lai</strong> sử dụng <strong>Holt-Winters</strong><br><br>
+            <strong>Bước 3:</strong> Tính <strong>chi phí vốn cổ đông</strong> bằng <strong>CAPM</strong><br><br>
+            <strong>Bước 4:</strong> Chọn tốc độ <strong>tăng trưởng dài hạn</strong> <strong>g = 3%</strong><br><br>
+            <strong>Bước 5:</strong> Tính <strong>giá trị hiện tại (PV)</strong> bằng cách chiết khấu tất cả dòng tiền
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    elif viz_option == "📊 Biểu đồ":
+        st.markdown("""
+        <div style="background-color: #F5F5F5; padding: 25px; border-radius: 10px; border: 2px solid #666; margin: 20px 0; text-align: center;">
+            <p style="font-size: 14px; color: #666; margin: 10px 0;">
+            <strong>Quy trình DCF - FCFE Valuation</strong>
+            </p>
+            <p style="font-size: 13px; color: #999; line-height: 2.5; margin: 0;">
+            📊 FCFE Calculation → 📈 Holt-Winters Forecast → 🎯 CAPM Discount Rate → 💰 Terminal Value → 🔍 Intrinsic Value
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    else:  # 🔢 Công thức
+        st.markdown("""
+        <div style="background-color: #FFF8E7; padding: 25px; border-radius: 10px; border: 2px solid #FF9800; margin: 20px 0;">
+            <div style="text-align: center;">
+                <p style="font-size: 15px; margin: 15px 0; color: #333;">
+                <strong>Công thức FCFE:</strong><br>
+                FCFE = Net Income + Depreciation - CapEx - ΔWC + Net Borrowing
+                </p>
+                <p style="font-size: 15px; margin: 15px 0; color: #333;">
+                <strong>Công thức CAPM:</strong><br>
+                r<sub>e</sub> = R<sub>f</sub> + β(R<sub>m</sub> - R<sub>f</sub>)
+                </p>
+                <p style="font-size: 15px; margin: 15px 0; color: #333;">
+                <strong>Công thức DCF:</strong><br>
+                Intrinsic Value = Σ(FCFE<sub>t</sub>/(1+r<sub>e</sub>)<sup>t</sup>) + Terminal Value/(1+r<sub>e</sub>)<sup>n</sup>
+                </p>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
     
     
     # Import required calculation functions
