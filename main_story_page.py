@@ -21,11 +21,18 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
         st.markdown("---")
         
         sections = [
-            ("Risk & Return Analysis", "#risk-and-return-analysis"),
-            ("Value at Risk (VaR)", "#value-at-risk-va-r-3-phuong-phap-tinh-toan"),
+            ("Stock Selection", "#stock-selection-for-portfolio"),
+            ("Stock Filtering", "#stock-filtering-funnel"),
+            ("Efficient Frontier", "#efficient-frontier-analysis"),
+            ("Stock Details", "#selected-stocks-details"),
+            ("Stock Prices", "#stock-prices-individual"),
+            ("Price Correlation", "#price-correlation"),
+            ("Sector Allocation", "#sector-allocation-comparison"),
+            ("Risk-Return Scatter", "#risk-return-scatter-plot"),
+            ("Valuation Multiples", "#valuation-multiples-and-profitability"),
+            ("Performance Metrics", "#performance-metrics-comparison"),
+            ("VaR & ES Analysis", "#value-at-risk-va-r-3-phuong-phap-tinh-toan"),
             ("CAPM Analysis", "#capm-analysis"),
-            ("Intrinsic Value Analysis", "#intrinsic-value-analysis"),
-            ("Portfolio vs Market", "#portfolio-vs-market"),
             ("GBM Forecast", "#gbm-forecast"),
         ]
         
@@ -1884,10 +1891,28 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
     # ============================================================================
     # SECTION 3: RISK AND RETURN
     # ============================================================================
-    st.header("⚠️ RISK AND RETURN ANALYSIS")
+    st.markdown("### VII. BETA",
+         unsafe_allow_html=True
+    )
+
+    st.markdown("""
+    Để trả lời cho câu hỏi:
+    *"Danh mục của mình nhạy cảm với thị trường tới mức nào nhỉ?"*  
+
+    Đây là lúc cậu gặp chỉ số **beta** – công cụ đo lường mức độ biến động của cổ phiếu so với toàn bộ thị trường:  
+
+    - **Beta > 1** → cổ phiếu “nổi loạn”, biến động mạnh hơn thị trường.  
+    - **Beta < 1** → cổ phiếu “hiền lành”, ổn định hơn thị trường.  
+
+     Mười đơn giản **so sánh lịch sử biến động của cổ phiếu với VNINDEX**, tính beta, và dùng kết quả để đánh giá rủi ro danh mục:  
+
+    - Nếu beta quá cao → Mười chuẩn bị tinh thần cho những “cơn sóng lớn”.  
+    - Nếu beta thấp → portfolio yên tâm hơn, thích hợp cho chiến lược dài hạn.  
+
+    """)
 
     st.subheader("📊 So sánh: Daily Beta vs Rolling 60-Day Beta")
-
+    
     try:
         # Load both beta files
         beta_daily_df = pd.read_csv('beta.csv', index_col=0, parse_dates=True)
@@ -2059,8 +2084,21 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
 
 
 
-    st.subheader("📊 Value at Risk (VaR) - 3 Phương pháp Tính toán")
+    st.markdown("### VIII. EVALUATE RISK",
+         unsafe_allow_html=True
+    )
+    st.markdown("""
+    Vì Mười là một sinh viên nghèo, mỗi đồng đầu tư đều quý như “vàng trong túi”. Vậy nên cậu cần lường trước mình sẽ lỗ bao nhiêu tiền.
 
+    Đây là lúc **VaR (Value at Risk)** và **ES (Expected Shortfall)** xuất hiện:  
+
+    - **VaR**: cho Mười biết mức **tổn thất tối đa có thể xảy ra trong một khoảng thời gian nhất định**, với xác suất cao.  
+      Ví dụ, VaR 1 ngày 5% nghĩa là: *“Trong 95% thời gian, mình sẽ không mất quá số tiền này.”*  
+
+    - **ES**: cho biết **mức mất mát trung bình nếu vượt qua VaR**, giúp Mười chuẩn bị tinh thần cho những cú sốc lớn hơn bình thường.  
+
+    Với sinh viên nghèo như Mười, VaR và ES là “lá chắn” để **bảo vệ túi tiền**, ước lượng rủi ro cực đoan của danh mục và đảm bảo rằng ngay cả trong những ngày thị trường xấu nhất, cậu cũng không bị “cháy ví”.
+    """)
     try:
         # Load portfolio returns
         returns_df = pd.read_csv('port.csv', usecols=['Portfolio'])
@@ -2253,7 +2291,9 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     st.markdown("")
     st.markdown("")
 
-    st.header("📈 CAPM Analysis")
+    st.markdown("### IX. BETA",
+         unsafe_allow_html=True
+    )
     st.markdown("*Phân tích tại ngày (1/10/2025)*")
 
     try:
@@ -2396,7 +2436,7 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     # SECTION 4: INTRINSIC VALUE
     # ============================================================================
     
-    st.markdown(" ### INTRINSIC VALUE ANALYSIS")
+    st.markdown(" ### X. INTRINSIC VALUE ANALYSIS")
     
     # Narrative section about Mười's valuation journey
     html = """
@@ -2756,7 +2796,7 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     # ============================================================================
     # SECTION 5: FORECAST WITH GBM
     # ============================================================================
-    st.markdown("### VI. PORTFOLIO vs MARKET",
+    st.markdown("### XI. GBM TO FORECAST FUTURE PRICE",
          unsafe_allow_html=True
     )
     st.markdown("""
@@ -2819,28 +2859,16 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
         
         np.random.seed(42)
         
-        # Silent progress during simulation
-        progress_bar = st.progress(0)
-        status_text = st.empty()
-        
         all_paths[:, 0, :] = S0
         mu_arr = mu.values
         sigma_arr = sigma.values
         
         for t in range(1, N + 1):
-            if t % max(1, N // 10) == 0:
-                progress_bar.progress(t / N)
-                status_text.text(f"Generating scenarios... {t}/{N}")
-            
             z = np.random.normal(size=(n_sims, n_assets))
             eps = z @ L.T
             drift = (mu_arr - 0.5 * sigma_arr**2) * dt
             diffusion = sigma_arr * eps * np.sqrt(dt)
             all_paths[:, t, :] = all_paths[:, t-1, :] * np.exp(drift + diffusion)
-        
-        progress_bar.progress(1.0)
-        status_text.text(f"✓ Generated {n_sims} scenarios for {forecast_days} days")
-        st.empty()
         
         st.markdown("")
         
@@ -3008,61 +3036,6 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
             
             st.markdown("")
             
-            # Distribution chart for portfolio returns
-            fig_portfolio_dist = go.Figure()
-            
-            fig_portfolio_dist.add_trace(go.Histogram(
-                x=portfolio_returns * 100,
-                nbinsx=40,
-                name='Portfolio Return Distribution',
-                marker_color='rgba(31, 119, 180, 0.7)',
-                hovertemplate='Return Range: %{x:.2f}%<br>Frequency: %{y}<extra></extra>'
-            ))
-            
-            # Add percentile lines
-            fig_portfolio_dist.add_vline(
-                x=portfolio_return_p10,
-                line_dash="dash",
-                line_color="#FF9800",
-                line_width=2,
-                annotation_text=f"10th: {portfolio_return_p10:.2f}%",
-                annotation_position="top left"
-            )
-            
-            fig_portfolio_dist.add_vline(
-                x=portfolio_return_median,
-                line_dash="solid",
-                line_color="#00D9FF",
-                line_width=2.5,
-                annotation_text=f"Median: {portfolio_return_median:.2f}%",
-                annotation_position="top"
-            )
-            
-            fig_portfolio_dist.add_vline(
-                x=portfolio_return_p90,
-                line_dash="dash",
-                line_color="#FF6B6B",
-                line_width=2,
-                annotation_text=f"90th: {portfolio_return_p90:.2f}%",
-                annotation_position="top right"
-            )
-            
-            fig_portfolio_dist.update_layout(
-                title=f'Portfolio Return Distribution (Min Variance Weights) - {forecast_days} Days',
-                xaxis_title='Return (%)',
-                yaxis_title='Frequency',
-                height=400,
-                template='plotly',
-                plot_bgcolor='#f5f5f5',
-                paper_bgcolor='#f5f5f5',
-                hovermode='x unified',
-                showlegend=False,
-                xaxis=dict(gridcolor='#eee'),
-                yaxis=dict(gridcolor='#eee'),
-                margin=dict(l=50, r=30, t=40, b=40)
-            )
-            
-            st.plotly_chart(fig_portfolio_dist, use_container_width=True)
             
         except Exception as e:
             st.error(f"Error calculating portfolio returns: {e}")
