@@ -1,11 +1,7 @@
 import streamlit as st
-from theme_config import create_theme_selector_widget
 
 def show_cover_page():
     
-    # Theme selector at the top
-    create_theme_selector_widget()
-    st.markdown("---")
 
     # Custom CSS with enhanced design
     st.markdown("""
