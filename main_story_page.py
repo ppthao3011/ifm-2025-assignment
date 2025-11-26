@@ -1694,11 +1694,13 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
             # Best/Worst Days Section
             st.markdown("---")
             st.markdown("**Best/Worst Days**")
-            col_b, col_w = st.columns(2)
+            col_b, col_w, col_notes = st.columns([1, 1, 1.2])
             with col_b:
                 st.metric("📈 Best", f"{best_day_return:.2f}%", f"{best_day_date}")
             with col_w:
                 st.metric("📉 Worst", f"{worst_day_return:.2f}%", f"{worst_day_date}")
+            with col_notes:
+                st.text_area("📝 Notes", placeholder="Add your analysis notes here...", height=100, label_visibility="collapsed")
         
         # RIGHT COLUMN: Cumulative Returns Graph
         with col_graph:
