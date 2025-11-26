@@ -21,18 +21,11 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
         st.markdown("---")
         
         sections = [
-            ("Stock Selection", "#stock-selection-for-portfolio"),
-            ("Stock Filtering", "#stock-filtering-funnel"),
-            ("Efficient Frontier", "#efficient-frontier-analysis"),
-            ("Stock Details", "#selected-stocks-details"),
-            ("Stock Prices", "#stock-prices-individual"),
-            ("Price Correlation", "#price-correlation"),
-            ("Sector Allocation", "#sector-allocation-comparison"),
-            ("Risk-Return Scatter", "#risk-return-scatter-plot"),
-            ("Valuation Multiples", "#valuation-multiples-and-profitability"),
-            ("Performance Metrics", "#performance-metrics-comparison"),
-            ("VaR & ES Analysis", "#value-at-risk-va-r-3-phuong-phap-tinh-toan"),
+            ("Risk & Return Analysis", "#risk-and-return-analysis"),
+            ("Value at Risk (VaR)", "#value-at-risk-va-r-3-phuong-phap-tinh-toan"),
             ("CAPM Analysis", "#capm-analysis"),
+            ("Intrinsic Value Analysis", "#intrinsic-value-analysis"),
+            ("Portfolio vs Market", "#portfolio-vs-market"),
             ("GBM Forecast", "#gbm-forecast"),
         ]
         
@@ -2725,6 +2718,20 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
                                 st.metric("Growth Rate", "3%")
                             with sup_col5:
                                 st.metric("Terminal Value", "288.738 Tr đ")
+                        
+                        upside_pct = dcf_result['upside_downside_pct']
+                        if upside_pct > 20:
+                            interpretation = "🚀 **Highly Undervalued** - Strong buy signal"
+                        elif upside_pct > 10:
+                            interpretation = "📈 **Undervalued** - Potential value opportunity"
+                        elif upside_pct > -10:
+                            interpretation = "➡️ **Fairly Valued** - Market price reflects fundamentals"
+                        elif upside_pct > -20:
+                            interpretation = "📉 **Slightly Overvalued** - Limited upside"
+                        else:
+                            interpretation = "⚠️ **Significantly Overvalued** - Consider reducing"
+                        
+                        st.markdown(f"**Valuation Interpretation:**\n\n{interpretation}")
         
         except Exception as e:
             st.warning(f"Unable to complete CAPM and DCF analysis: {str(e)}")
@@ -2749,11 +2756,20 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     # ============================================================================
     # SECTION 5: FORECAST WITH GBM
     # ============================================================================
-    st.header("🔮 GBM Forecast")
-    st.markdown(
-        "*Geometric Brownian Motion simulations with Cholesky decomposition maintaining correlation between stocks*"
+    st.markdown("### VI. PORTFOLIO vs MARKET",
+         unsafe_allow_html=True
     )
+    st.markdown("""
+    Sau khi đánh giá portfolio bằng DCF, benchmark, phân bổ ngành, scatter plot và valuation multiples, Nguyênc Văn Mười bắt đầu tò mò:  
+    "Liệu giá cổ phiếu tương lai sẽ đi về đâu?"
+    Đây là lúc hai công cụ “toàn năng” xuất hiện: **GBM (Geometric Brownian Motion)** và **Cholesky decomposition**.  
 
+    - **GBM**: Mười tưởng tượng cổ phiếu như một con thuyền trên sóng – mỗi ngày giá đi lên đi xuống theo một “ngẫu nhiên có trật tự”. GBM giúp mô phỏng nhiều kịch bản giá trong tương lai.  
+
+    - **Cholesky decomposition**: Vì portfolio có nhiều cổ phiếu và chúng không đi một mình, Cholesky giúp Mười **tạo các biến ngẫu nhiên có tương quan**, mô phỏng giá các cổ phiếu đồng thời, vẫn giữ đúng mối quan hệ giữa chúng như thật.  
+
+    Nhìn vào kết quả forecast, Mười thấy được **các kịch bản giá trong tương lai** cho từng cổ phiếu và toàn bộ danh mục. Giờ cậu đã có “bản đồ sóng ngầm” của thị trường trong tay – chuẩn bị cho mọi quyết định đầu tư một cách thông minh, nhưng vẫn cực kỳ newbie!  
+    """)
     try:
         # Load price data silently
         price_df = pd.read_csv('attached_assets/price.csv')
