@@ -259,7 +259,7 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
     # ============================================================================
     # 3 BOXES ON THE SAME LINE - STOCK SELECTION CRITERIA
     # ============================================================================
-    st.markdown("### STOCK SELECTION FOR PORTFOLIO",
+    st.markdown("### I. STOCK SELECTION FOR PORTFOLIO",
          unsafe_allow_html=True
     )
 
@@ -755,8 +755,26 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
     # ============================================================================
     # EFFICIENT FRONTIER ANALYSIS
     # ============================================================================
-    st.markdown("#### 📈 Efficient Frontier Analysis")
-
+    st.markdown("### II. TIME RANGE SELECTION",
+         unsafe_allow_html=True
+    )
+    st.markdown("Giai đoạn từ 01/06/2022 đánh dấu thời điểm thị trường chứng khoán Việt Nam bước vào trạng thái **hậu COVID-19**, khi các yếu tố bất thường do đại dịch dần được loại bỏ khỏi hoạt động kinh tế. Sau năm 2021–2022, nền kinh tế chuyển sang giai đoạn ổn định vĩ mô và hồi phục tuần tự, các chính sách hỗ trợ được thu hẹp, hành vi nhà đầu tư trở nên bình thường hóa hơn, và lợi nhuận doanh nghiệp bắt đầu phản ánh đúng sức khỏe hoạt động thay vì biến động do gián đoạn sản xuất.")
+    st.markdown("Vì mục tiêu của Mười là phân tích để chuẩn bị đầu tư, cậu cần một khoảng dữ liệu vừa đủ dài để mô hình hóa rủi ro–lợi nhuận, nhưng đồng thời phải gần với bối cảnh hiện tại để các yếu tố ảnh hưởng thật sự còn giá trị dự báo. Vậy nên cậu đã chọn mốc thời gian bắt đầu từ: ")
+    
+    # Important date visualization
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.markdown("""
+        <div style='text-align: center; padding: 20px; background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%); border-radius: 10px; color: white;'>
+            <div style='font-size: 14px; opacity: 0.9; letter-spacing: 2px; text-transform: uppercase;'>📅 Important Date</div>
+            <div style='font-size: 32px; font-weight: 900; margin: 10px 0;'>June 1st, 2022</div>
+            <div style='font-size: 12px; opacity: 0.85;'>Start of Post-COVID Era Analysis</div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("### III. PORTFOLIO OPTIMIZATION",
+         unsafe_allow_html=True
+    )
     st.markdown("""
     <p style='font-size:18px; line-height:1.6;'>
     Sau khi chốt được các mã cổ phiếu trong danh mục, Mười lại đối mặt với một vấn đề nan giải khác: vốn đầu tư có hạn. Câu hỏi đặt ra là nên phân bổ bao nhiêu vào từng loại cổ phiếu, theo tỉ lệ nào, để vừa tối đa hóa lợi nhuận, vừa đảm bảo danh mục an toàn và cân bằng rủi ro.
