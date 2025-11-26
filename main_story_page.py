@@ -1565,124 +1565,127 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
         "*Comparative analysis: Portfolio performance relative to market VNIndexs*"
     )
 
-    col1, col2 = st.columns(2)
+    # Market Timing Insights Box
+    st.markdown("""
+    <div style="background-color: #F3E5F5; padding: 15px; border-radius: 10px; 
+                border-left: 5px solid #9C27B0; margin-bottom: 20px;">
+        <h4 style="color: #7B1FA2; margin-top: 0;">📊 Market Timing Insights</h4>
+        <p style="color: #555; font-size: 18px; line-height: 1.6; margin: 0;">
+        Hiệu quả danh mục nhìn chung tăng trưởng tích cực trong trung và dài hạn, dù biến động trong ngắn hạn. Ở chu kỳ 1 ngày và 1 tháng, danh mục vượt thị trường nhẹ, cho thấy khả năng nắm bắt cơ hội ngắn hạn. Tuy nhiên trong 1 tuần và đặc biệt 3 tháng – 1 năm, danh mục kém hơn VNINDEX, phản ánh áp lực điều chỉnh ngắn-trung hạn của chiến lược. Dù vậy, ở chu kỳ 3 năm, danh mục đạt 46.02%, cao hơn thị trường 36.60%, cho thấy hiệu quả tích lũy dài hạn tốt và mang lại giá trị vượt trội khi đầu tư bền bỉ theo thời gian.
+        Ngoài ra, danh mục ghi nhận ngày tăng mạnh nhất +6.95% và ngày giảm sâu nhất -6.90%, phản ánh mức biến động hai chiều rõ rệt nhưng cũng thể hiện khả năng tạo alpha trong những giai đoạn thuận lợi của thị trường.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
-    with col1:
-        st.markdown("""
-        <div style="background-color: #F3E5F5; padding: 15px; border-radius: 10px; 
-                    border-left: 5px solid #9C27B0; max-width: 700px; margin: auto;">
-            <h4 style="color: #7B1FA2; margin-top: 0;">📊 Market Timing Insights</h4>
-            <p style="color: #555; font-size: 18px; line-height: 1.6; margin: 0;">
-            Hiệu quả danh mục nhìn chung tăng trưởng tích cực trong trung và dài hạn, dù biến động trong ngắn hạn. Ở chu kỳ 1 ngày và 1 tháng, danh mục vượt thị trường nhẹ, cho thấy khả năng nắm bắt cơ hội ngắn hạn. Tuy nhiên trong 1 tuần và đặc biệt 3 tháng – 1 năm, danh mục kém hơn VNINDEX, phản ánh áp lực điều chỉnh ngắn-trung hạn của chiến lược. Dù vậy, ở chu kỳ 3 năm, danh mục đạt 46.02%, cao hơn thị trường 36.60%, cho thấy hiệu quả tích lũy dài hạn tốt và mang lại giá trị vượt trội khi đầu tư bền bỉ theo thời gian.
-            Ngoài ra, danh mục ghi nhận ngày tăng mạnh nhất +6.95% và ngày giảm sâu nhất -6.90%, phản ánh mức biến động hai chiều rõ rệt nhưng cũng thể hiện khả năng tạo alpha trong những giai đoạn thuận lợi của thị trường.
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
-
-
-
+    # Two-column layout: Table on left, Graph on right
+    col_table, col_graph = st.columns([1, 1.2])
+    
+    try:
+        # Load market and risk-free rate data
+        rf_rm_df = pd.read_csv('attached_assets/rf-rm_1763969726233.csv')
+        rf_rm_df['time'] = pd.to_datetime(rf_rm_df['time'], format='%d/%m/%Y')
+        rf_rm_df = rf_rm_df.sort_values('time')
         
-
-    with col2:
-        st.markdown("##### 📊 Trailing Returns & Metrics")
+        # Prepare iml_df for merging
+        iml_df_merge = iml_df.copy()
+        iml_df_merge['time'] = pd.to_datetime(iml_df_merge['time'], format='%d/%m/%Y')
+        iml_df_merge = iml_df_merge.sort_values('time')
         
-        try:
-            # Load market and risk-free rate data
-            rf_rm_df = pd.read_csv('attached_assets/rf-rm_1763969726233.csv')
-            rf_rm_df['time'] = pd.to_datetime(rf_rm_df['time'], format='%d/%m/%Y')
-            rf_rm_df = rf_rm_df.sort_values('time')
-            
-            # Prepare iml_df for merging
-            iml_df_merge = iml_df.copy()
-            iml_df_merge['time'] = pd.to_datetime(iml_df_merge['time'], format='%d/%m/%Y')
-            iml_df_merge = iml_df_merge.sort_values('time')
-            
-            # Merge datasets
-            merged_df = pd.merge(iml_df_merge, rf_rm_df[['time', 'rf', 'rm']], on='time', how='inner')
-            
-            # Calculate portfolio returns using min variance weights
-            min_variance_weights = frontier_df.iloc[0][['w.ACB', 'w.DBD', 'w.HPG', 'w.VNM']].values
-            portfolio_daily_returns = []
-            for i, row in merged_df.iterrows():
-                portfolio_ret = (row['ACB'] * min_variance_weights[0] + 
-                               row['DBD'] * min_variance_weights[1] + 
-                               row['HPG'] * min_variance_weights[2] + 
-                               row['VNM'] * min_variance_weights[3])
-                portfolio_daily_returns.append(portfolio_ret)
-            
-            portfolio_series = pd.Series(portfolio_daily_returns)
-            market_series = pd.Series(merged_df['rm'].values)
-            rf_series = pd.Series(merged_df['rf'].values)
-            
-            # Calculate returns for different periods
-            trading_days_1d = 1
-            trading_days_1w = 5
-            trading_days_1mo = 21
-            trading_days_3mo = 63
-            trading_days_1yr = 252
-            trading_days_3yr = 756
-            
-            total_days = len(portfolio_series)
-            
-            # Calculate portfolio returns for available periods
-            ret_1d = ((1 + portfolio_series.iloc[-trading_days_1d:]).prod() - 1) * 100 if total_days >= trading_days_1d else None
-            ret_1w = ((1 + portfolio_series.iloc[-trading_days_1w:]).prod() - 1) * 100 if total_days >= trading_days_1w else None
-            ret_1mo = ((1 + portfolio_series.iloc[-trading_days_1mo:]).prod() - 1) * 100 if total_days >= trading_days_1mo else None
-            ret_3mo = ((1 + portfolio_series.iloc[-trading_days_3mo:]).prod() - 1) * 100 if total_days >= trading_days_3mo else None
-            ret_1yr = ((1 + portfolio_series.iloc[-trading_days_1yr:]).prod() - 1) * 100 if total_days >= trading_days_1yr else None
-            ret_3yr = ((1 + portfolio_series.iloc[-trading_days_3yr:]).prod() - 1) * 100 if total_days >= trading_days_3yr else None
-            
-            # Calculate market (VNINDEX) returns for the same periods
-            bench_1d = ((1 + market_series.iloc[-trading_days_1d:]).prod() - 1) * 100 if total_days >= trading_days_1d else None
-            bench_1w = ((1 + market_series.iloc[-trading_days_1w:]).prod() - 1) * 100 if total_days >= trading_days_1w else None
-            bench_1mo = ((1 + market_series.iloc[-trading_days_1mo:]).prod() - 1) * 100 if total_days >= trading_days_1mo else None
-            bench_3mo = ((1 + market_series.iloc[-trading_days_3mo:]).prod() - 1) * 100 if total_days >= trading_days_3mo else None
-            bench_1yr = ((1 + market_series.iloc[-trading_days_1yr:]).prod() - 1) * 100 if total_days >= trading_days_1yr else None
-            bench_3yr = ((1 + market_series.iloc[-trading_days_3yr:]).prod() - 1) * 100 if total_days >= trading_days_3yr else None
-            
-            # Find best and worst days for portfolio
-            best_day_idx = portfolio_series.idxmax()
-            worst_day_idx = portfolio_series.idxmin()
-            best_day_return = portfolio_series.max() * 100
-            worst_day_return = portfolio_series.min() * 100
-            best_day_date = merged_df.iloc[best_day_idx]['time'].strftime('%b %d')
-            worst_day_date = merged_df.iloc[worst_day_idx]['time'].strftime('%b %d')
-            
-            # Build table data
-            table_data = []
-            periods_data = [
-                ('1 Day', ret_1d, bench_1d),
-                ('1 Week', ret_1w, bench_1w),
-                ('1 Month', ret_1mo, bench_1mo),
-                ('3 Months', ret_3mo, bench_3mo),
-                ('1 Year', ret_1yr, bench_1yr),
-                ('3 Years', ret_3yr, bench_3yr),
-            ]
-            
-            for period_name, port_ret, bench_ret in periods_data:
-                if port_ret is not None and bench_ret is not None:
-                    diff = port_ret - bench_ret
-                    table_data.append({
-                        'Period': period_name,
-                        'Portfolio %': f"{port_ret:.2f}",
-                        'Market (VNINDEX) %': f"{bench_ret:.2f}",
-                        'Excess Return %': f"{diff:+.2f}"
-                    })
+        # Merge datasets
+        merged_df = pd.merge(iml_df_merge, rf_rm_df[['time', 'rf', 'rm']], on='time', how='inner')
+        
+        # Define portfolio weights: ACB(20.5%), HPG(3.1%), VNM(39.5%), DBD(36.9%)
+        portfolio_weights = {'ACB': 0.205, 'HPG': 0.031, 'VNM': 0.395, 'DBD': 0.369}
+        
+        # Calculate portfolio daily returns using specified weights
+        portfolio_daily_returns = []
+        for i, row in merged_df.iterrows():
+            portfolio_ret = (row['ACB'] * portfolio_weights['ACB'] + 
+                           row['DBD'] * portfolio_weights['DBD'] + 
+                           row['HPG'] * portfolio_weights['HPG'] + 
+                           row['VNM'] * portfolio_weights['VNM'])
+            portfolio_daily_returns.append(portfolio_ret)
+        
+        portfolio_series = pd.Series(portfolio_daily_returns)
+        market_series = pd.Series(merged_df['rm'].values)
+        
+        # Calculate cumulative returns (1 + daily return) starting from 1
+        portfolio_cumulative = (1 + portfolio_series).cumprod() * 100
+        market_cumulative = (1 + market_series).cumprod() * 100
+        
+        # Calculate returns for different periods
+        trading_days_1d = 1
+        trading_days_1w = 5
+        trading_days_1mo = 21
+        trading_days_3mo = 63
+        trading_days_1yr = 252
+        trading_days_3yr = 756
+        
+        total_days = len(portfolio_series)
+        
+        # Calculate portfolio returns for available periods
+        ret_1d = ((1 + portfolio_series.iloc[-trading_days_1d:]).prod() - 1) * 100 if total_days >= trading_days_1d else None
+        ret_1w = ((1 + portfolio_series.iloc[-trading_days_1w:]).prod() - 1) * 100 if total_days >= trading_days_1w else None
+        ret_1mo = ((1 + portfolio_series.iloc[-trading_days_1mo:]).prod() - 1) * 100 if total_days >= trading_days_1mo else None
+        ret_3mo = ((1 + portfolio_series.iloc[-trading_days_3mo:]).prod() - 1) * 100 if total_days >= trading_days_3mo else None
+        ret_1yr = ((1 + portfolio_series.iloc[-trading_days_1yr:]).prod() - 1) * 100 if total_days >= trading_days_1yr else None
+        ret_3yr = ((1 + portfolio_series.iloc[-trading_days_3yr:]).prod() - 1) * 100 if total_days >= trading_days_3yr else None
+        
+        # Calculate market (VNINDEX) returns for the same periods
+        bench_1d = ((1 + market_series.iloc[-trading_days_1d:]).prod() - 1) * 100 if total_days >= trading_days_1d else None
+        bench_1w = ((1 + market_series.iloc[-trading_days_1w:]).prod() - 1) * 100 if total_days >= trading_days_1w else None
+        bench_1mo = ((1 + market_series.iloc[-trading_days_1mo:]).prod() - 1) * 100 if total_days >= trading_days_1mo else None
+        bench_3mo = ((1 + market_series.iloc[-trading_days_3mo:]).prod() - 1) * 100 if total_days >= trading_days_3mo else None
+        bench_1yr = ((1 + market_series.iloc[-trading_days_1yr:]).prod() - 1) * 100 if total_days >= trading_days_1yr else None
+        bench_3yr = ((1 + market_series.iloc[-trading_days_3yr:]).prod() - 1) * 100 if total_days >= trading_days_3yr else None
+        
+        # Find best and worst days for portfolio
+        best_day_idx = portfolio_series.idxmax()
+        worst_day_idx = portfolio_series.idxmin()
+        best_day_return = portfolio_series.max() * 100
+        worst_day_return = portfolio_series.min() * 100
+        best_day_date = merged_df.iloc[best_day_idx]['time'].strftime('%b %d')
+        worst_day_date = merged_df.iloc[worst_day_idx]['time'].strftime('%b %d')
+        
+        # Build table data
+        table_data = []
+        periods_data = [
+            ('1 Day', ret_1d, bench_1d),
+            ('1 Week', ret_1w, bench_1w),
+            ('1 Month', ret_1mo, bench_1mo),
+            ('3 Months', ret_3mo, bench_3mo),
+            ('1 Year', ret_1yr, bench_1yr),
+            ('3 Years', ret_3yr, bench_3yr),
+        ]
+        
+        for period_name, port_ret, bench_ret in periods_data:
+            if port_ret is not None and bench_ret is not None:
+                diff = port_ret - bench_ret
+                table_data.append({
+                    'Period': period_name,
+                    'Portfolio %': f"{port_ret:.2f}",
+                    'Market (VNINDEX) %': f"{bench_ret:.2f}",
+                    'Excess Return %': f"{diff:+.2f}"
+                })
+        
+        # LEFT COLUMN: Metrics Table
+        with col_table:
+            st.markdown("##### 📊 Trailing Returns & Metrics")
             
             # Display as HTML table with centered content
             if table_data:
                 metrics_df = pd.DataFrame(table_data)
-                html_metrics = '<table style="width:100%; border-collapse: collapse; font-size: 17px; text-align: center; margin: 15px 0;">'
+                html_metrics = '<table style="width:100%; border-collapse: collapse; font-size: 14px; text-align: center; margin: 15px 0;">'
                 html_metrics += '<tr style="background-color: #E3F2FD; border-bottom: 2px solid #1976D2;">'
                 for col in metrics_df.columns:
-                    html_metrics += f'<th style="padding: 12px; text-align: center; border-right: 1px solid #ddd; font-weight: bold;">{col}</th>'
+                    html_metrics += f'<th style="padding: 10px; text-align: center; border-right: 1px solid #ddd; font-weight: bold; font-size: 13px;">{col}</th>'
                 html_metrics += '</tr>'
                 
                 for idx, row in metrics_df.iterrows():
                     bg_color = '#F5F5F5' if idx % 2 == 0 else '#FFFFFF'
                     html_metrics += f'<tr style="background-color: {bg_color}; border-bottom: 1px solid #ddd;">'
                     for col in metrics_df.columns:
-                        html_metrics += f'<td style="padding: 12px; text-align: center; border-right: 1px solid #ddd;">{row[col]}</td>'
+                        html_metrics += f'<td style="padding: 10px; text-align: center; border-right: 1px solid #ddd; font-size: 13px;">{row[col]}</td>'
                     html_metrics += '</tr>'
                 
                 html_metrics += '</table>'
@@ -1695,9 +1698,50 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
             with col_b:
                 st.metric("📈 Best", f"{best_day_return:.2f}%", f"{best_day_date}")
             with col_w:
-                st.metric("📉 Worst", f"{worst_day_return:.2f}%", f"{worst_day_date}")    
-        except Exception as e:
-            st.error(f"Error: {str(e)}")
+                st.metric("📉 Worst", f"{worst_day_return:.2f}%", f"{worst_day_date}")
+        
+        # RIGHT COLUMN: Cumulative Returns Graph
+        with col_graph:
+            st.markdown("##### 📈 Cumulative Returns Comparison")
+            
+            # Create Plotly figure for cumulative returns
+            fig = go.Figure()
+            
+            # Add portfolio cumulative returns
+            fig.add_trace(go.Scatter(
+                x=merged_df['time'],
+                y=portfolio_cumulative,
+                name='Portfolio',
+                line=dict(color='#1976D2', width=3),
+                hovertemplate='<b>Portfolio</b><br>Date: %{x|%b %d, %Y}<br>Cumulative Return: %{y:.2f}%<extra></extra>'
+            ))
+            
+            # Add market (VNINDEX) cumulative returns
+            fig.add_trace(go.Scatter(
+                x=merged_df['time'],
+                y=market_cumulative,
+                name='VNINDEX',
+                line=dict(color='#D32F2F', width=3, dash='dash'),
+                hovertemplate='<b>VNINDEX</b><br>Date: %{x|%b %d, %Y}<br>Cumulative Return: %{y:.2f}%<extra></extra>'
+            ))
+            
+            fig.update_layout(
+                title='Portfolio vs VNINDEX Cumulative Returns',
+                xaxis_title='Date',
+                yaxis_title='Cumulative Return (%)',
+                hovermode='x unified',
+                plot_bgcolor='rgba(240,240,240,0.5)',
+                paper_bgcolor='white',
+                font=dict(size=11),
+                height=400,
+                margin=dict(l=50, r=50, t=50, b=50),
+                legend=dict(x=0.02, y=0.98, bgcolor='rgba(255,255,255,0.8)')
+            )
+            
+            st.plotly_chart(fig, use_container_width=True)
+        
+    except Exception as e:
+        st.error(f"Error: {str(e)}")
 
     st.markdown("")
     st.markdown("---")
