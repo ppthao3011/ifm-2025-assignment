@@ -1,0 +1,68 @@
+<div style='margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #333;'>
+        <div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;'>
+            <div style='display: flex; align-items: center; gap: 10px;'>
+                <span style='background-color: #FF9800; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;'>
+                    2
+                </span>
+                <span style='font-weight: 600; font-size: 15px; color: #fff;'>Long-term Growth Potential</span>
+            </div>
+            <span style='background-color: #FF9800; color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 13px;'>
+                85%
+            </span>
+        </div>
+        <div style='background-color: #333; height: 6px; border-radius: 3px; overflow: hidden;'>
+            <div style='background-color: #FF9800; height: 100%; width: 85%; border-radius: 3px;'></div>
+        </div>
+    </div>
+
+    <div style='margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #333;'>
+        <div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;'>
+            <div style='display: flex; align-items: center; gap: 10px;'>
+                <span style='background-color: #FFC107; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;'>
+                    3
+                </span>
+                <span style='font-weight: 600; font-size: 15px; color: #fff;'>Financial Stability</span>
+            </div>
+            <span style='background-color: #FFC107; color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 13px;'>
+                78%
+            </span>
+        </div>
+        <div style='background-color: #333; height: 6px; border-radius: 3px; overflow: hidden;'>
+            <div style='background-color: #FFC107; height: 100%; width: 78%; border-radius: 3px;'></div>
+        </div>
+    </div>
+
+    <div style='margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #333;'>
+        <div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;'>
+            <div style='display: flex; align-items: center; gap: 10px;'>
+                <span style='background-color: #8BC34A; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;'>
+                    4
+                </span>
+                <span style='font-weight: 600; font-size: 15px; color: #fff;'>Market Liquidity</span>
+            </div>
+            <span style='background-color: #8BC34A; color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 13px;'>
+                65%
+            </span>
+        </div>
+        <div style='background-color: #333; height: 6px; border-radius: 3px; overflow: hidden;'>
+            <div style='background-color: #8BC34A; height: 100%; width: 65%; border-radius: 3px;'></div>
+        </div>
+    </div>
+
+    <div style='margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #333;'>
+        <div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;'>
+            <div style='display: flex; align-items: center; gap: 10px;'>
+                <span style='background-color: #4CAF50; color: white; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;'>
+                    5
+                </span>
+                <span style='font-weight: 600; font-size: 15px; color: #fff;'>Sector Trends & Outlook</span>
+            </div>
+            <span style='background-color: #4CAF50; color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 13px;'>
+                55%
+            </span>
+        </div>
+        <div style='background-color: #333; height: 6px; border-radius: 3px; overflow: hidden;'>
+            <div style='background-color: #4CAF50; height: 100%; width: 55%; border-radius: 3px;'></div>
+        </div>
+    </div>
+    </div>

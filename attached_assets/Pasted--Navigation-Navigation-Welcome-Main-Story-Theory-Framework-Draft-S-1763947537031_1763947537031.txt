@@ -1,0 +1,171 @@
+
+📖 Navigation
+Navigation
+
+
+Welcome
+
+
+📊 Main Story
+
+
+📚 Theory Framework
+
+
+📖 Draft Story
+
+⚙️ Portfolio Settings
+Historical Data Range
+Select Time Period
+
+📖 Câu chuyện đầu tư của Nguyễn Văn Mười
+( Lấy cảm hứng từ cuốn sách nổi tiếng Kế toán vỉa hè)
+
+
+📌 Begin of the story...
+Đây là Nguyễn Văn Mười — cậu bé vừa bước sang tuổi 20 và bắt đầu cảm thấy FOMO khi bạn bè quanh mình ai cũng có kế hoạch quản lý tiền bạc và đầu tư rõ ràng. Muốn bắt kịp nhịp chung, Mười tìm hiểu các kênh đầu tư phổ biến của small investors ở Việt Nam và quyết định thử sức với thị trường chứng khoán như bước khởi đầu cho hành trình tài chính của mình.
+
+Warren Buffett từng nói: “I started investing at the age of 11, but I still regret starting late.” Lời nhắn đó khiến Nguyễn Văn Mười suy nghĩ. Thế là cậu quyết định vừa đầu tư vừa tự học theo châm ngôn:
+
+Châm ngôn 1: Learning by doing
+Châm ngôn 2: Đầu tư càng sớm càng tốt
+
+🚀 Why an only stocks portfolio?
+Nguyễn Văn Mười chọn asset allocation phổ biến nhất cho một newbie - an only stocks portfolio - vì những lý do sau:
+
+📈
+Faster Money Growth
+Stocks can grow your money faster over time compared to savings or bonds. Historical data shows stocks have delivered average annual returns of 10% or more over the long term.
+
+⏰
+Time on Your Side
+Young investors can handle ups and downs in stock prices since they have decades to recover from market downturns. Time is your greatest asset for wealth building.
+
+💻
+Easy to Access
+Stocks are easy to buy and sell, with plenty of research and information available for free, making learning simple. Digital platforms have made investing accessible to everyone.
+
+🎯
+Low Starting Capital
+You don't need a large amount of money to start investing in stocks. Many brokers allow you to start with as little as $1-50, making it accessible for everyone.
+
+🎯 Chiến lược Đầu tư Của Nguyễn Văn Mười
+Nguyễn Văn Mười tham khảo các chiến lược đầu tư và đặt ra mục tiêu rõ ràng cho bản thân:
+
+📊 Parameter	📌 Value	📝 Description
+⏳ Horizon	Long-term	
+Capture compounded growth over time
+Smooth out short-term market volatility
+Benefit from company performance across multiple business cycles
+🛡️ Risk Profile	Safe	
+Prioritize capital preservation
+Reduce exposure to extreme market fluctuations
+Maintain portfolio stability for sustainable wealth accumulation
+📈 Required Return	13% / year	
+Balance growth aspirations with prudence
+Set a realistic yet ambitious target
+Align expected returns with historical equity performance while managing downside risk
+🎯 Benchmark	Intrinsic Value	
+Focus on fundamental analysis and the true economic worth of companies
+Avoid being influenced by short-term market price movements
+Inspired by Warren Buffett’s long-term value investing strategy, buying quality companies below intrinsic value and holding for sustainable growth
+💭 Chiến lược chọn cổ phiếu: Cậu tập trung vào việc chọn những cổ phiếu có giá trị nội tại rõ ràng, đồng thời đảm bảo lợi nhuận kỳ vọng vừa đủ để an toàn nhưng vẫn hấp dẫn theo thời gian. Mục tiêu là xây dựng một danh mục đầu tư bền vững và có ý nghĩa.
+
+📋 Tiêu chí chọn cổ phiếu (3 Pillar Framework)
+🏢
+Thương hiệu (Brand & Market Presence)
+Đánh giá mức độ nhận diện và sự ổn định của doanh nghiệp trên thị trường:
+
+Sàn giao dịch: HSX được xem là minh bạch hơn
+Số năm lên sàn: Dữ liệu tin cậy hơn, ít rủi ro
+Độ phổ biến trong quỹ: Tín hiệu về chất lượng
+Missing value: Ít missing = thanh khoản tốt
+📊
+Performance & Triển vọng
+Đánh giá sức khỏe tài chính & triển vọng trung – dài hạn:
+
+EPS: Thu nhập trên mỗi cổ phiếu
+ROE: Hiệu quả sử dụng vốn chủ
+F-score: Chất lượng tài chính (Piotroski)
+M-score: Phát hiện gian lận lợi nhuận
+Z-score: Rủi ro phá sản (Altman)
+💰
+Reasonably Priced (Giá hợp lý)
+Đảm bảo giá cổ phiếu không quá cao so với giá trị nội tại:
+
+P/E Ratio: Định giá tương đối, cần so sánh ngành
+Intrinsic Value: Ước tính giá trị nội tại (Buffett principle)
+Margin of Safety: Luôn tìm mua dưới giá trị nội tại
+Long-term Focus: Tập trung vào giá trị thực chứ không giá tạm thời
+🔍 STOCK FILTERING PROCESS
+How we use Criteria A, B, C, D, E to filter through all stocks in the market
+
+📊 Lọc cổ phiếu - Từ Toàn thị trường đến Portfolio
+Quá trình loại sàng từng bước
+
+📈 Kết quả & Quy trình
+Thị trường toàn bộ
+
+1,589
+
+Cổ phiếu được chọn
+
+20
+
+Tỷ lệ lọc: 1.26% (20/1,589)
+
+📋 Quá trình lọc từng bước:
+
+1. Toàn bộ thị trường
+1,589 | -0.0%
+Toàn bộ thị trường được đưa vào danh sách ban đầu trước khi áp điều kiện.
+
+2. EPS > 1,500
+607 | -61.8%
+Loại bỏ doanh nghiệp lợi nhuận quá thấp; chỉ giữ lại nhóm có sức tạo lợi nhuận ổn định và đủ lớn.
+
+3. ROE > 12%
+472 | -70.3%
+Tiếp tục giữ những công ty sử dụng vốn hiệu quả, loại các doanh nghiệp hiệu suất thấp.
+
+4. Sàn giao dịch: HSX & HNX
+255 | -84.0%
+Ưu tiên các sàn có mức minh bạch và thanh khoản cao hơn, loại bỏ UPCoM.
+
+5. Missing data < 150
+137 | -91.4%
+Đảm bảo dữ liệu đủ sạch, đủ dài để phân tích; tránh tùy chọn quá rủi ro do thiếu dữ liệu.
+
+6. 3-score (M/F/Z-score)
+20 | -98.7%
+Giữ lại những doanh nghiệp có chất lượng tài chính bền vững, không có dấu hiệu gian lận, không rủi ro kiệt quệ.
+
+📊 Most Commonly Held Stocks in Vietnamese Funds
+Top 15 stocks by sector
+
+📌 Thông tin quan trọng
+Biểu đồ này hiển thị 15 cổ phiếu được quỹ nắm giữ nhiều nhất trên thị trường, được phân loại theo ngành.
+
+Mỗi màu sắc đại diện cho một ngành khác nhau, giúp bạn hiểu rõ phân bố đầu tư của các quỹ.
+
+Những cổ phiếu này là những lựa chọn được tin tưởng nhất trong cộng đồng quỹ đầu tư.
+
+📌 Kết Luận Từ Quá Trình Lọc
+Kết hợp kết quả từ quá trình lọc chi tiết (từ 1,589 xuống 20 cổ phiếu) và phân tích 15 cổ phiếu được quỹ nắm giữ nhiều nhất, chúng tôi đã quyết định chọn 4 cổ phiếu để đưa vào danh mục đầu tư:
+
+🎯 ACB • HPG • VNM • DBD
+
+📈 Efficient Frontier Analysis
+Daily return-risk profile of optimal portfolio allocations
+
+📊 Portfolio Strategy Comparison & Allocation Weights
+📊 Portfolio Summary Table (Allocation & Performance)
+Strategy	Daily Risk %	Daily Return %	Annual Return %	VNM 🌾	DBD 🏗️	HPG ⛏️	ACB 🏦
+Min Variance	1.020%	0.0496%	13.31%	39.5%	36.9%	3.1%	20.5%
+Optimum (Max Sharpe)	1.174%	0.0750%	20.80%	0.0%	47.9%	3.4%	48.7%
+Max Return	1.587%	0.0810%	22.64%	0.0%	0.0%	0.0%	100.0%
+🎯 PORTFOLIO CONCLUSION - Final Selection
+The 4 chosen stocks for the investment portfolio
+
+📊 Portfolio Allocation by Stock
+📊 Portfolio Summary Metric
