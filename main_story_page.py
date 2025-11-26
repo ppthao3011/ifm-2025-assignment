@@ -761,62 +761,15 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
     st.markdown("Giai đoạn từ 01/06/2022 đánh dấu thời điểm thị trường chứng khoán Việt Nam bước vào trạng thái **hậu COVID-19**, khi các yếu tố bất thường do đại dịch dần được loại bỏ khỏi hoạt động kinh tế. Sau năm 2021–2022, nền kinh tế chuyển sang giai đoạn ổn định vĩ mô và hồi phục tuần tự, các chính sách hỗ trợ được thu hẹp, hành vi nhà đầu tư trở nên bình thường hóa hơn, và lợi nhuận doanh nghiệp bắt đầu phản ánh đúng sức khỏe hoạt động thay vì biến động do gián đoạn sản xuất.")
     st.markdown("Vì mục tiêu của Mười là phân tích để chuẩn bị đầu tư, cậu cần một khoảng dữ liệu vừa đủ dài để mô hình hóa rủi ro–lợi nhuận, nhưng đồng thời phải gần với bối cảnh hiện tại để các yếu tố ảnh hưởng thật sự còn giá trị dự báo. Vậy nên cậu đã chọn mốc thời gian bắt đầu từ: ")
     
-    # Important date visualization - Multiple style options
-    st.markdown("**Choose visualization style:**")
-    vis_style = st.radio("", ["Gradient Card", "Timeline Milestone", "Badge", "Highlight Box", "Info Card"], horizontal=True, label_visibility="collapsed")
-    
-    if vis_style == "Gradient Card":
-        col1, col2, col3 = st.columns([1, 2, 1])
-        with col2:
-            st.markdown("""
-            <div style='text-align: center; padding: 20px; background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%); border-radius: 10px; color: white;'>
-                <div style='font-size: 14px; opacity: 0.9; letter-spacing: 2px; text-transform: uppercase;'>📅 Important Date</div>
-                <div style='font-size: 32px; font-weight: 900; margin: 10px 0;'>June 1st, 2022</div>
-                <div style='font-size: 12px; opacity: 0.85;'>Start of Post-COVID Era Analysis</div>
-            </div>
-            """, unsafe_allow_html=True)
-    
-    elif vis_style == "Timeline Milestone":
-        col1, col2, col3 = st.columns([1, 2, 1])
-        with col2:
-            st.markdown("""
-            <div style='text-align: center; padding: 20px; border-left: 5px solid #667EEA; background-color: #f8f9ff; border-radius: 5px;'>
-                <div style='font-size: 24px; font-weight: 900; color: #667EEA; margin-bottom: 5px;'>📍 June 1st, 2022</div>
-                <div style='font-size: 13px; color: #555;'>⏱️ Timeline Milestone: Start of Post-COVID Era Analysis</div>
-            </div>
-            """, unsafe_allow_html=True)
-    
-    elif vis_style == "Badge":
-        col1, col2, col3 = st.columns([0.5, 2.5, 0.5])
-        with col2:
-            st.markdown("""
-            <div style='display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;'>
-                <span style='display: inline-block; padding: 8px 16px; background-color: #667EEA; color: white; border-radius: 20px; font-weight: bold;'>📅 June 1st, 2022</span>
-                <span style='display: inline-block; padding: 8px 16px; background-color: #f0f4ff; color: #667EEA; border-radius: 20px; font-size: 12px;'>Post-COVID Analysis Start</span>
-            </div>
-            """, unsafe_allow_html=True)
-    
-    elif vis_style == "Highlight Box":
+    # Important date visualization - Timeline Milestone style
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
         st.markdown("""
-        <div style='padding: 15px 20px; background-color: #FFF9E6; border-left: 4px solid #FFB800; border-radius: 5px;'>
-            <div style='font-weight: bold; color: #FF8C00; margin-bottom: 5px;'>⭐ Key Date</div>
-            <div style='font-size: 20px; font-weight: 900; color: #333;'>June 1st, 2022</div>
-            <div style='font-size: 12px; color: #666; margin-top: 5px;'>Marks the beginning of post-COVID era analysis period</div>
+        <div style='text-align: center; padding: 20px; border-left: 5px solid #667EEA; background-color: #f8f9ff; border-radius: 5px;'>
+            <div style='font-size: 24px; font-weight: 900; color: #667EEA; margin-bottom: 5px;'>📍 June 1st, 2022</div>
+            <div style='font-size: 13px; color: #555;'>⏱️ Timeline Milestone: Start of Post-COVID Era Analysis</div>
         </div>
         """, unsafe_allow_html=True)
-    
-    else:  # Info Card
-        col1, col2, col3 = st.columns([0.5, 2, 0.5])
-        with col2:
-            st.markdown("""
-            <div style='padding: 20px; background-color: #E3F2FD; border: 2px solid #1976D2; border-radius: 10px;'>
-                <div style='text-align: center;'>
-                    <div style='font-size: 28px; margin-bottom: 8px;'>📅</div>
-                    <div style='font-size: 18px; font-weight: bold; color: #1976D2; margin-bottom: 3px;'>June 1st, 2022</div>
-                    <div style='font-size: 12px; color: #555;'>Start of Post-COVID Era Analysis</div>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
     
     st.markdown("### III. PORTFOLIO OPTIMIZATION",
          unsafe_allow_html=True
