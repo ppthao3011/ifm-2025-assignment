@@ -2673,6 +2673,8 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     
     st.markdown("<p style='color: red; font-weight: bold;'>Bài viết này không sử dụng DCF cho ngân hàng do đặc thù trong cơ cấu tài chính của ngân hàng.</p>", unsafe_allow_html=True)
     
+    import streamlit as st
+
     st.markdown(
         """
         <div style="
@@ -2693,18 +2695,34 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
                 <h4 style="text-align:center; color:#1E90FF; margin-bottom:15px;">
                     Các bước tính FCFE với CAPM và Holt-Winters
                 </h4>
-                <p><b>Bước 1:</b> Xác định <b>FCFE</b> bằng công thức:<br>
-                <code style="background:#f5f5f5; padding:8px; border-radius:4px;">FCFE = Net Income + Depreciation − CapEx − ΔWC + Net Borrowing</code></p>
-                <p><b>Bước 2:</b> Dự báo <b>3 giá trị FCFE tương lai</b> sử dụng mô hình <b>Holt-Winters (Exponential Smoothing)</b>.</p>
-                <p><b>Bước 3:</b> Tính <b>chi phí vốn cổ đông</b> bằng CAPM:<br>
-                <code style="background:#f5f5f5; padding:8px; border-radius:4px;">r<sub>e</sub> = R<sub>f</sub> + β(R<sub>m</sub> − R<sub>f</sub>)</code></p>
-                <p><b>Bước 4:</b> Chọn tốc độ <b>tăng trưởng dài hạn</b> g = 3%.</p>
-                <p><b>Bước 5:</b> Tính <b>giá trị hiện tại (PV)</b> bằng cách chiết khấu 3 FCFE forecast và terminal value với r<sub>e</sub> và g.</p>
+                <p><b>Bước 1:</b> Xác định <b>FCFE</b> bằng công thức:</p>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.latex(r"FCFE = Net\ Income + Depreciation - CapEx - \Delta WC + Net\ Borrowing")
+
+    st.markdown(
+        """
+                <p><b>Bước 2:</b> Dự báo <b>3 giá trị FCFE tương lai</b> bằng mô hình Holt-Winters.</p>
+                <p><b>Bước 3:</b> Tính <b>chi phí vốn cổ đông</b> bằng CAPM:</p>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.latex(r"r_e = R_f + \beta (R_m - R_f)")
+
+    st.markdown(
+        """
+                <p><b>Bước 4:</b> Chọn tốc độ tăng trưởng dài hạn g = 3%.</p>
+                <p><b>Bước 5:</b> Tính <b>PV</b> bằng cách chiết khấu FCFE dự báo và terminal value.</p>
+
             </div>
         </div>
         """,
         unsafe_allow_html=True
     )
+
     
     
     # Import required calculation functions
