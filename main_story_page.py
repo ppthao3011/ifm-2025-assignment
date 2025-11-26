@@ -1668,31 +1668,8 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
                     'Excess Return %': f"{diff:+.2f}"
                 })
         
-        # LEFT COLUMN: Metrics Table
+        # LEFT COLUMN: Best/Worst Days
         with col_table:
-            st.markdown("##### 📊 Trailing Returns & Metrics")
-            
-            # Display as HTML table with centered content
-            if table_data:
-                metrics_df = pd.DataFrame(table_data)
-                html_metrics = '<table style="width:100%; border-collapse: collapse; font-size: 14px; text-align: center; margin: 15px 0;">'
-                html_metrics += '<tr style="background-color: #E3F2FD; border-bottom: 2px solid #1976D2;">'
-                for col in metrics_df.columns:
-                    html_metrics += f'<th style="padding: 10px; text-align: center; border-right: 1px solid #ddd; font-weight: bold; font-size: 13px;">{col}</th>'
-                html_metrics += '</tr>'
-                
-                for idx, row in metrics_df.iterrows():
-                    bg_color = '#F5F5F5' if idx % 2 == 0 else '#FFFFFF'
-                    html_metrics += f'<tr style="background-color: {bg_color}; border-bottom: 1px solid #ddd;">'
-                    for col in metrics_df.columns:
-                        html_metrics += f'<td style="padding: 10px; text-align: center; border-right: 1px solid #ddd; font-size: 13px;">{row[col]}</td>'
-                    html_metrics += '</tr>'
-                
-                html_metrics += '</table>'
-                st.markdown(html_metrics, unsafe_allow_html=True)
-            
-            # Best/Worst Days Section
-            st.markdown("---")
             st.markdown("**Best/Worst Days**")
             col_b, col_w = st.columns(2)
             with col_b:
