@@ -128,6 +128,27 @@ def create_theme_selector():
         st.session_state.current_theme = selected_theme
         st.rerun()
 
+def create_theme_selector_widget():
+    """Create theme selector widget for top of page"""
+    col1, col2, col3 = st.columns([2, 1, 1])
+    
+    with col3:
+        st.markdown("### 🎨")
+        theme_options = list(THEMES.keys())
+        current_idx = theme_options.index(st.session_state.get("current_theme", "Default Blue"))
+        
+        selected_theme = st.selectbox(
+            "Theme",
+            options=theme_options,
+            index=current_idx,
+            key="theme_selector_widget",
+            label_visibility="collapsed"
+        )
+        
+        if selected_theme != st.session_state.get("current_theme", "Default Blue"):
+            st.session_state.current_theme = selected_theme
+            st.rerun()
+
 def apply_theme_css():
     """Apply theme CSS to the page"""
     theme = get_current_theme()

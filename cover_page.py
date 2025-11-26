@@ -1,7 +1,11 @@
 import streamlit as st
+from theme_config import create_theme_selector_widget
 
 def show_cover_page():
-    """Beautiful professional cover page with complete assignment information"""
+    
+    # Theme selector at the top
+    create_theme_selector_widget()
+    st.markdown("---")
 
     # Custom CSS with enhanced design
     st.markdown("""
@@ -258,8 +262,8 @@ def show_cover_page():
     st.markdown("""
     <div class="hero-section">
         <div class="hero-label">📚 Assignment</div>
-        <div class="hero-title">Hướng dẫn đầu tư cho Newbie</div>
-        <div class="hero-subtitle">Phân tích danh mục đầu tư với các phương pháp định lượng: Beta, VaR, ES và CAPM</div>
+        <div class="hero-title">Portfolio Analysis - Góc nhìn của newbie</div>
+        <div class="hero-subtitle">Phân tích danh mục đầu tư với các phương pháp định lượng</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -267,13 +271,13 @@ def show_cover_page():
     st.markdown("""
     <div class="info-cards-grid">
         <div class="info-card">
-            <div class="info-label">👨‍🏫 Giáo viên hướng dẫn</div>
-            <div class="info-content">Đinh Thị Hồng Thêu</div>
+            <div class="info-label">Nhấn vào để xem</div>
+            <div class="info-content">Phân tích danh mục đầu tư</div>
         </div>
         <a href="#team-section" style="text-decoration: none; display: block;">
             <div class="info-card" style="cursor: pointer;">
-                <div class="info-label">🏫 Trường đại học</div>
-                <div class="info-content">Kinh tế Quốc dân</div>
+                <div class="info-label">Nhấn vào để xem</div>
+                <div class="info-content">Danh sách thành viên nhóm</div>
             </div>
         </a>
     </div>
@@ -282,12 +286,13 @@ def show_cover_page():
     # Overview Section  
     intro_text = """
     <div class="content-section overview-section">
-         <div class="section-title" style="font-family: 'Comic Sans MS', cursive;">📖 Lời mở đầu</div>
+         <div class="section-title" , cursive;">📖 Giới thiệu bài làm</div>
         <div style="margin-top: 20px; color: #1565C0; line-height: 1.8; font-size: 18px;">
-            <p>Bài báo cáo này được nhóm chung em xây dựng dưới góc nhìn của Nguyễn Văn Mười, một sinh viên 20 tuổi mới chập chững bước vào thị trường tài chính. Hình tượng của Mười ở đây chính là đại diện cho nhóm sinh viên như chúng em: những người còn ít trải nghiệm thực tế, đang trong giai đoạn khám phá và tiếp cận các khái niệm đầu tư một cách sơ khởi.</p>
-            <p>Vì vậy, xuyên suốt bài phân tích sẽ xuất hiện các lựa chọn cổ phiếu mang tính thận trọng,  những danh mục ưu tiên an toàn và một số cách đánh giá còn đơn giản, phản ánh đúng mức độ hiểu biết của một nhà đầu tư mới. Mặc dù các phương pháp phân tích chưa thể toàn diện như giới đầu tư chuyên nghiệp, bài báo cáo hướng tới mục tiêu trình bày lại quá trình tiếp cận thị trường theo cách dễ hiểu, phù hợp với đối tượng người mới (newbie).</p>
-            <p>Thông qua hành trình đầu tư của Mười, chúng em mong muốn người đọc – đặc biệt là những bạn mới bắt đầu (newbie) – có thể hiểu hơn phần nào về cách tiếp cận thị trường chứng khoán ở giai đoạn đầu: từ việc lựa chọn cổ phiếu, xem xét chỉ số đến xây dựng danh mục. Bài báo cáo không chỉ mô phỏng trải nghiệm thực tế của một nhà đầu tư trẻ mà còn hướng đến việc truyền tải kiến thức theo cách nhẹ nhàng, gần gũi và dễ tiếp cận.</p>
-            <p>Chúng em ý thức rằng bài phân tích vẫn còn nhiều thiếu sót do hạn chế về kinh nghiệm và góc nhìn, và mong cô thông cảm. Tuy nhiên, chúng em hy vọng nội dung bài báo cáo có thể mang lại giá trị tham khảo cho những ai đang bắt đầu tìm hiểu về đầu tư tài chính..</p>
+            <p>Bài tập lớn này được nhóm chung em xây dựng dưới góc nhìn của một nhân vật đại diện là Nguyễn Văn Mười, một sinh viên 20 tuổi mới chập chững học về thị trường tài chính. Mười là đại diện những người còn ít trải nghiệm thực tế, đang trong giai đoạn khám phá và tiếp cận các khái niệm đầu tư from scratch.</p>
+            <p>Vì vậy, chúng xem mở đầu từ cách chọn Portfolio thật thận trọng, những danh mục ưu tiên an toàn và một số cách đánh giá còn đơn giản, phản ánh đúng mức độ hiểu biết của một nhà đầu tư mới. Mặc dù các phương pháp phân tích chưa thể toàn diện như giới đầu tư chuyên nghiệp, bài báo cáo hướng tới mục tiêu trình bày lại quá trình tiếp cận thị trường theo cách dễ hiểu của một newbie.</p>
+            <p>Thông qua hành trình đầu tư của Mười, chúng em mong muốn người đọc – đặc biệt – có thể hiểu hơn phần nào về cách tiếp cận thị trường chứng khoán ở giai đoạn đầu: từ việc lựa chọn cổ phiếu, xem xét chỉ số đến xây dựng danh mục. Bài báo cáo không chỉ mô phỏng trải nghiệm thực tế của một nhà đầu tư trẻ mà còn hướng đến việc truyền tải kiến thức theo cách nhẹ nhàng, gần gũi và dễ tiếp cận.</p>
+            <p>Chúng em ý thức rằng bài phân tích vẫn còn nhiều thiếu sót do hạn chế về học thuật kết hợp với kiến thức kinh tế tài chính vĩ mô, và mong cô thông cảm. Tuy nhiên, trong quá trình làm bài, chúng em thấy rất vui và hào hứng trong cả quá trình từ lên ý tưởng, nghiên cứu, thực hiện và cuối cùng là trình bày.</p>
+            <p>Chúng em rất cảm ơn cô rất nhiều vì đã cho chúng em cơ hội được freestyle làm một bài tập lớn thật tuyệt như này ạ 💕 Chúc cô luôn vui vẻ, đạt nhiều thành công trong cuộc sống và tạo càng nhiều những cơ hội tuyệt vời như thế này với các bạn sinh viên của mình 💐</p>
         </div>
     </div>
     """
