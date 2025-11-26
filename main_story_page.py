@@ -764,7 +764,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
     </p>
     
     <p style='font-size: 18px; line-height: 1.6;'>
-    Vì mục tiêu của Mười là phân tích để chuẩn bị đầu tư, cậu cần một khoảng dữ liệu vừa đủ dài để mô hình hóa rủi ro–lợi nhuận, nhưng đồng thời phải gần với bối cảnh hiện tại để các yếu tố ảnh hưởng thật sự còn giá trị dự báo. Vậy nên cậu đã chọn mốc thời gian bắt đầu từ:
+    Vì mục tiêu của Mười là phân tích để chuẩn bị đầu tư, cậu cần một khoảng dữ liệu vừa đủ dài để mô hình hóa rủi ro–lợi nhuận, nhưng đồng thời phải gần với bối cảnh hiện tại để các yếu tố ảnh hưởng thật sự còn giá trị dự báo. Mười dự định đầu tư từ ngày 01/10/2025. Vậy nên cậu đã chọn khoảng thời gian:
     </p>
     """, unsafe_allow_html=True)
     
@@ -773,8 +773,8 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
     with col2:
         st.markdown("""
         <div style='text-align: center; padding: 20px; border-left: 5px solid #667EEA; background-color: #f8f9ff; border-radius: 5px;'>
-            <div style='font-size: 24px; font-weight: 900; color: #667EEA; margin-bottom: 5px;'>📍 June 1st, 2022</div>
-            <div style='font-size: 13px; color: #555;'>⏱️ Timeline Milestone: Start of Post-COVID Era Analysis</div>
+            <div style='font-size: 24px; font-weight: 900; color: #667EEA; margin-bottom: 5px;'>📍 01/06/2022 - 01/10/2025</div>
+            <div style='font-size: 13px; color: #555;'>⏱️ Hậu cú shock COVID19 tới Hiện tại</div>
         </div>
         """, unsafe_allow_html=True)
     
@@ -788,6 +788,9 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
 
     <p style='font-size:18px; line-height:1.6;'>
     Xong, sau khi tìm hiểu Mười phát hiện ra một công cụ rất hữu ích: <strong>Efficient Frontier</strong>. Đây là phương pháp giúp xác định tỷ lệ phân bổ vốn tối ưu giữa các cổ phiếu trong danh mục, sao cho vừa đạt lợi nhuận kỳ vọng cao nhất, vừa giữ rủi ro ở mức an toàn. Nhờ áp dụng <strong>Efficient Frontier</strong>, Mười có thể hình dung được các lựa chọn đầu tư tối ưu, so sánh các danh mục khác nhau và chọn ra phương án phân bổ vốn hợp lý, từ đó xây dựng một danh mục đầu tư vừa sinh lời vừa bền vững.
+    </p>
+    <p style='font-size:18px; line-height:1.6;'>
+    Mười sử dụng chuỗi daily closing price để tính ra chuỗi <span title="=(Price ngày sau - Price ngày trước)/Price ngày trước" style="border-bottom: 1px dotted #1f77b4; cursor: help;"><strong>daily return</strong></span> rồi áp dụng Efficient Frontier để tìm ra danh mục tối ưu.
     </p>
     """, unsafe_allow_html=True)
     
@@ -1085,7 +1088,9 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
     # ============================================================================
     # PORTFOLIO CONCLUSION - CHOSEN 4 STOCKS
     # ============================================================================
-    st.subheader("PORTFOLIO SUMMARY")
+    st.markdown("### IV. PORTFOLIO SUMMARY",
+         unsafe_allow_html=True
+    )
     st.markdown(
         """
         <div style="
@@ -1149,7 +1154,9 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
         st.plotly_chart(fig_allocation, use_container_width=True)
         
         st.markdown("")
-        st.markdown("##### Portfolio Summary Metrics")
+        st.markdown("### V. HISTORICAL PRICE AND RETURN",
+             unsafe_allow_html=True
+        )
         
         # Calculate portfolio metrics from daily returns
         try:
@@ -1228,7 +1235,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
             st.warning(f"Could not calculate portfolio metrics: {e}")
 
     with col2:
-        st.markdown("### 📋 Selected Stocks Details")
+        st.markdown("##### Selected Stocks Details")
 
         # Company descriptions
         company_info = {
@@ -1250,7 +1257,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
         
         # Stock selection
         selected_stock = st.selectbox(
-            "Choose a stock to view details:",
+            "Chọn mã để xem chi tiết:",
             options=chosen_stocks['Stock'].tolist(),
             key="stock_details_selector"
         )
@@ -1261,7 +1268,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
             stock_name = stock_row['Stock']
             
             # Company Description
-            st.markdown("**About the Company**")
+            st.markdown("**Thông tin chung**")
             st.markdown(company_info.get(stock_name, "Information not available"))
             
             # Daily Returns Statistics
@@ -1370,8 +1377,6 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
 
     st.markdown("")
     
-    # Cumulative Performance Comparison - Including Market & Risk-Free Rate
-    st.markdown("##### Cumulative Performance Comparison")
     
     try:
         # Load market and risk-free rate data
@@ -1491,7 +1496,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
              <li><strong>HPG:</strong> Mã này từng gây thất vọng lớn vào cuối 2022 với mức lỗ <strong>~50%</strong>. Tuy nhiên, HPG đã có cú lội ngược dòng ấn tượng từ 2023-2025, xóa bỏ toàn bộ khoản lỗ và kết thúc với mức lãi dương khoảng <strong>40–50%</strong>.<br></li>
              <li><strong>VNM:</strong> Là nỗi thất vọng lớn nhất. Trong khi các mã khác tăng trưởng, VNM liên tục đi ngang và suy yếu. Kết thúc chu kỳ, VNM lợi nhuận âm khoảng <strong>-5% đến -10%</strong>, thua cả <strong>Risk-Free Rate</strong>, đồng nghĩa nhà đầu tư chịu <strong>chi phí cơ hội rất lớn</strong>.<br></li><br>
             Đường <strong>Portfolio</strong> cho thấy hiệu quả giảm biến động của return. Mặc dù lợi nhuận cuối cùng khoảng <strong>45%</strong> thấp hơn ACB và DBD, danh mục này giúp nhà đầu tư <strong>tránh được cú sốc lớn</strong>. Ví dụ, khi HPG giảm 50% năm 2022, danh mục chung chỉ giảm nhẹ quanh mức <strong>0–10%</strong>.<br>
-            Danh mục cũng <strong>chiến thắng thị trường</strong>, vượt <strong>Risk-Free Rate</strong> và tránh được rủi ro thua lỗ của VNM, giúp cân bằng lợi nhuận và rủi ro.
+            Danh mục cũng <strong>chiến thắng thị trường</strong>, và tránh được rủi ro thua lỗ của VNM, giúp cân bằng lợi nhuận và rủi ro.
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -1503,8 +1508,8 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
 
     
     # Price correlation
-    st.markdown("### 💹 Price Correlation")
-    st.markdown("*Correlation analysis showing relationships between stock prices*")
+    st.markdown("##### Price Correlation")
+    st.markdown("*Mười muốn đánh giá tương quan trong chuỗi giá để diversify giữa các mã chứng khoán trong danh mục. Nếu các mã có tương quan ngược nhau, nếu mã này có dấu hiệu xuống, mã khác sẽ bù lại phần rủi ro đó.*")
     
     try:
         # Load price data
