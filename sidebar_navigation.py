@@ -1,5 +1,4 @@
 import streamlit as st
-from theme_config import create_theme_selector
 
 def create_pill_navigation():
     """Option 8: Rounded Pill Buttons sidebar - All buttons styled consistently"""
@@ -72,5 +71,3 @@ def create_pill_navigation():
             st.session_state.page = page["id"]
             st.rerun()
     
-    st.sidebar.markdown("---")
-    create_theme_selector()
