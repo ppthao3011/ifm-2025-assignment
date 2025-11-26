@@ -1717,7 +1717,23 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
             
             st.plotly_chart(fig, use_container_width=True)
             
-            st.text_area("", value="hihihihihihihihiihihihi", height=100, label_visibility="collapsed", disabled=True)
+            st.markdown("""
+            <div style="background-color: #F5F5F5; padding: 15px; border-radius: 8px; border: 1px solid #E0E0E0; margin-top: 15px;">
+                <p style="color: #333; font-size: 14px; line-height: 1.8; margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;">
+                Sau khi đánh giá danh mục của mình và thấy "hơi hớn hở" vì có vẻ sinh lời, Nguyễn Văn Mười – newbie 20 tuổi, vốn chẳng hiểu mấy về chứng khoán – bắt đầu băn khoăn:<br><br>
+                
+                "Liệu mình có nên mua luôn không? Giá nào là hợp lý đây?"<br><br>
+                
+                Trong thế giới đầy các phương pháp tính toán phức tạp – FCFF, WACC, CAPM – Mười nhanh chóng nhận ra: với trình độ newbie, cậu chỉ cần một con đường dễ hiểu và dễ tiếp cận nhất. Và thế là, Mười chọn công thức DCF theo kiểu Warren Buffett, tức là tính intrinsic value dựa trên FCFE – dòng tiền tự do mà công ty có thể trả cho cổ đông.<br><br>
+                
+                Với FCFE, Mười có thể dự báo các dòng tiền trong tương lai bằng Holt-Winters Exponential Smoothing, rồi tính giá trị hiện tại của chúng. Cậu thích cách này: máy tính làm việc thay cậu, dữ liệu nói chuyện, còn cậu chỉ cần nhìn vào kết quả và hỏi:<br><br>
+                
+                "Ồ, cổ phiếu này rẻ hay đắt?"<br><br>
+                
+                Bằng cách này, Mười vừa có thể hiểu rõ giá trị thực của cổ phiếu, vừa tự tin đưa ra quyết định mua hay chờ – tất cả mà không bị lạc vào rừng công thức phức tạp. Một newbie mà vẫn "chơi lớn" theo phong cách của Buffett!
+                </p>
+            </div>
+            """, unsafe_allow_html=True)
         
     except Exception as e:
         st.error(f"Error: {str(e)}")
