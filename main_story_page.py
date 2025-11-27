@@ -2770,6 +2770,8 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
                             interpretation = "📉 **Slightly Overvalued** - Limited upside"
                         else:
                             interpretation = "⚠️ **Significantly Overvalued** - Consider reducing"
+                        
+                        st.markdown(f"**Valuation Interpretation:**\n\n{interpretation}")
         
         except Exception as e:
             st.warning(f"Unable to complete CAPM and DCF analysis: {str(e)}")
@@ -3067,3 +3069,27 @@ Kết quả mô phỏng đã sử dụng **Cholesky decomposition** để đảm
 - **Dải 10–90:** Bao phủ 80% kết quả có thể xảy ra.  
 - **Các đường mô phỏng:** Thể hiện các kịch bản thị trường với tương quan được bảo toàn.
     """)
+    st.markdown("### XII. CONCLUSION",
+         unsafe_allow_html=True
+    )
+    st.markdown("""
+    Mười hài lòng với portfolio của mình sau một quá trình phân tích kỹ lưỡng.
+    - **Chọn lọc kỹ**: tất cả cổ phiếu trong danh mục đều được đánh giá cẩn thận.  
+    - **Efficient**: danh mục mang lại **return cao** trong khi **risk thấp hơn benchmark**.  
+    - **Diversify tương đối**: phân bổ ngành hợp lý, không quá tập trung.  
+    - **Rủi ro ở mức chấp nhận được**: các chỉ số **VaR** và **ES** cho thấy portfolio chịu được các cú sốc lớn.  
+    - **Giá mua hợp lý**: các cổ phiếu hiện tại **dưới giá trị nội tại**, nên có thể **đầu tư ngay**.  
+    - **Dự báo tương lai**: sử dụng **GBM** để **forecast giá**, theo dõi khi nào giá vượt **intrinsic value** và ra quyết định mua bán kịp thời.  
+
+    Nhờ những yếu tố này, Mười cảm thấy portfolio vừa **an toàn**, vừa có **cơ hội sinh lời**, tất cả mà vẫn giữ phong cách **newbie vui vẻ nhưng thông minh**.
+    """)
+    # Footer
+    st.markdown("""
+    <div class="cover-footer">
+        © 2025 • Khoa Toán kinh tế • Đại học Kinh tế Quốc dân
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown('</div>', unsafe_allow_html=True)
+
+

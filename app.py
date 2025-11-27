@@ -7,7 +7,6 @@ from datetime import datetime, timedelta
 import numpy as np
 from theory_page import show_theory_page
 from main_story_page import show_draft_story_page
-from draft_2_page import show_draft_2_page
 from cover_page import show_cover_page
 from live_dashboard import show_live_dashboard
 from sidebar_navigation import create_pill_navigation
@@ -1929,9 +1928,6 @@ if page == "📊 Main Story":
 
 if page == "📖 Draft Story":
     show_draft_story_page(portfolio_df, extended_hist, PORTFOLIO_HOLDINGS)
-
-if page == "📝 Draft 2":
-    show_draft_2_page(portfolio_df, extended_hist, PORTFOLIO_HOLDINGS)
 
 if page == "💹 LIVE Portfolio Dashboard (beta)":
     show_live_dashboard()

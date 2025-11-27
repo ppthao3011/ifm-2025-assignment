@@ -9,7 +9,6 @@ def create_pill_navigation():
         {"id": "📋 Cover Page", "label": "📋 Cover Page"},
         {"id": "📚 Theory Framework", "label": "📚 Theory Framework"},
         {"id": "📖 Draft Story", "label": "📖 Draft Story"},
-        {"id": "📝 Draft 2", "label": "📝 Draft 2"},
         {"id": "💹 LIVE Portfolio Dashboard (beta)", "label": "💹 LIVE Portfolio Dashboard (beta)"},
         {"id": "📚 References", "label": "📚 References"},
     ]
