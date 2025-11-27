@@ -155,6 +155,63 @@ create_pill_navigation()
 # Apply theme CSS
 apply_theme_css()
 
+# ============================================================================
+# THEME SELECTOR - CUSTOM THEME
+# ============================================================================
+theme_col1, theme_col2, theme_col3 = st.columns([1, 1, 2])
+
+with theme_col1:
+    st.markdown("### 🎨 Custom Theme")
+
+with theme_col2:
+    theme_option = st.selectbox(
+        "Select Theme:",
+        ["Light", "Dark", "Custom Color"],
+        key="theme_selectbox"
+    )
+
+if theme_option == "Light":
+    st.markdown("""
+    <style>
+    :root {
+        --primary-color: #1E88E5;
+        --bg-color: #F5F5F5;
+        --sidebar-color: #EEEEEE;
+        --text-color: #212121;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+elif theme_option == "Dark":
+    st.markdown("""
+    <style>
+    :root {
+        --primary-color: #BB86FC;
+        --bg-color: #121212;
+        --sidebar-color: #1E1E1E;
+        --text-color: #FFFFFF;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+elif theme_option == "Custom Color":
+    custom_col1, custom_col2 = st.columns(2)
+    with custom_col1:
+        primary_color = st.color_picker("Primary Color", value="#4A90E2")
+    with custom_col2:
+        bg_color = st.color_picker("Background Color", value="#E8F4F8")
+    
+    st.markdown(f"""
+    <style>
+    :root {{
+        --primary-color: {primary_color};
+        --bg-color: {bg_color};
+    }}
+    </style>
+    """, unsafe_allow_html=True)
+
+st.divider()
+
 page = st.session_state.page
 
 # Generate data for use throughout pages
