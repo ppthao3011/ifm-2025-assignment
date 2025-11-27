@@ -264,35 +264,9 @@ def show_cover_page():
     """, unsafe_allow_html=True)
 
     # Info Cards (Teacher & University)
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("""
-        <style>
-        button[data-testid="stButton"][data-baseweb="button"]:has(span:contains("Phân")){
-            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%) !important;
-            border: none !important;
-            padding: 35px !important;
-            border-radius: 15px !important;
-            box-shadow: 0 10px 35px rgba(102, 126, 234, 0.25) !important;
-            transition: all 0.3s ease !important;
-            color: white !important;
-            font-size: 22px !important;
-            font-weight: 800 !important;
-        }
-        
-        button[data-testid="stButton"][data-baseweb="button"]:has(span:contains("Phân")):hover {
-            transform: translateY(-5px) !important;
-            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.35) !important;
-        }
-        </style>
-        """, unsafe_allow_html=True)
-        
-        if st.button("Nhấn vào để xem\n\nPhân tích danh mục đầu tư", key="portfolio_btn_button", use_container_width=True):
-            st.session_state.page = "📖 Main Story"
-            st.rerun()
-    
-    with col2:
         st.markdown("""
         <a href="#team-section" style="text-decoration: none; display: block;">
             <div class="info-card" style="cursor: pointer;">
@@ -302,7 +276,7 @@ def show_cover_page():
         </a>
         """, unsafe_allow_html=True)
     
-    with col3:
+    with col2:
         if st.button("Navigate to Main Story", key="main_story_btn"):
             st.session_state.page = "📖 Main Story"
             st.rerun()
