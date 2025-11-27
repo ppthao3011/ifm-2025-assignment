@@ -330,12 +330,18 @@ def show_cover_page():
         st.rerun()
     
     # Team Members Button
-    if st.button("👥 Xem thành viên nhóm →", key="hero_team_btn"):
-        st.markdown("""
-        <script>
-        window.location.hash = '#team-section';
-        </script>
-        """, unsafe_allow_html=True)
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        if st.button("👥 Xem thành viên nhóm →", key="hero_team_btn", use_container_width=True):
+            st.markdown("""
+            <script>
+            const element = document.querySelector('[id="team-section"]');
+            if (element) {
+                element.scrollIntoView({behavior: 'smooth', block: 'start'});
+            }
+            </script>
+            """, unsafe_allow_html=True)
+            st.session_state.scroll_to_team = True
 
     # Info Cards (Teacher & University)
     col1, col2 = st.columns(2)
