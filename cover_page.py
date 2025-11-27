@@ -268,7 +268,7 @@ def show_cover_page():
     
     with col1:
         st.markdown("""
-        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4066115" target="_blank" style="text-decoration: none; display: block;">
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4066115" style="text-decoration: none; display: block;">
             <div class="info-card" style="cursor: pointer;">
                 <div class="info-label">Nhấn vào để xem</div>
                 <div class="info-content">Phân tích danh mục đầu tư</div>
