@@ -324,34 +324,32 @@ def show_cover_page():
     </div>
     """, unsafe_allow_html=True)
     
-    # Main Story Button
-    if st.button("📖 Khám phá bài phân tích ngay →", key="hero_cta_btn"):
-        st.session_state.page = "📖 Main Story"
-        st.rerun()
-    
+   
 
     # Info Cards (Teacher & University)
     col1, col2 = st.columns(2)
     
     with col1:
+        if st.button("Navigate to Main Story Card", key="card_main_story"):
+            st.session_state.page = "📖 Main Story"
+            st.rerun()
         st.markdown("""
-        <div style="cursor: pointer;" onclick="document.querySelector('[data-testid=\\'stButton\\'][key=\\'hero_cta_btn\\']')?.click();">
-            <div class="info-card">
-                <div class="info-label">Nhấn vào để xem</div>
-                <div class="info-content">Phân tích danh mục đầu tư</div>
-            </div>
+        <div class="info-card" style="cursor: pointer; margin-top: -52px;">
+            <div class="info-label">Nhấn vào để xem</div>
+            <div class="info-content">Phân tích danh mục đầu tư</div>
         </div>
         """, unsafe_allow_html=True)
     
     with col2:
         st.markdown("""
-        <div style="cursor: pointer;" onclick="document.querySelector('[id=\\'team-section\\']').scrollIntoView({behavior: \\'smooth\\', block: \\'start\\'});">
-            <div class="info-card">
+        <a href="#team-section" style="text-decoration: none; display: block;">
+            <div class="info-card" style="cursor: pointer;">
                 <div class="info-label">Nhấn vào để xem</div>
                 <div class="info-content">Danh sách thành viên nhóm</div>
             </div>
-        </div>
+        </a>
         """, unsafe_allow_html=True)
+        
 
     # Overview Section  
     intro_text = """
@@ -389,6 +387,10 @@ def show_cover_page():
     </div>
     """
     st.markdown(team_text, unsafe_allow_html=True)
+    
+    if st.button("📖 Khám phá bài phân tích ngay →", key="hero_cta_btn"):
+        st.session_state.page = "📖 Main Story"
+        st.rerun()
 
     # Footer
     st.markdown("""
@@ -398,4 +400,6 @@ def show_cover_page():
     """, unsafe_allow_html=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
+
+
 
