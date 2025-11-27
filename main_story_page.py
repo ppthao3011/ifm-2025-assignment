@@ -2488,7 +2488,7 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-    
+    st.markdown("**Nhấn vào từng tab để xem từng mã chứng khoán**")
     
     # Import required calculation functions
     def calculate_capm_return(risk_free_rate, beta, market_risk_premium):
@@ -2770,8 +2770,6 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
                             interpretation = "📉 **Slightly Overvalued** - Limited upside"
                         else:
                             interpretation = "⚠️ **Significantly Overvalued** - Consider reducing"
-                        
-                        st.markdown(f"**Valuation Interpretation:**\n\n{interpretation}")
         
         except Exception as e:
             st.warning(f"Unable to complete CAPM and DCF analysis: {str(e)}")
@@ -2820,12 +2818,12 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
         n_assets = len(stocks)
         
         # User inputs for GBM parameters
-        st.markdown("#### ⚙️ Simulation Parameters")
+        st.markdown("#### ⚙️ Chọn số ngày dự báo và số kịch bản")
         col_params1, col_params2 = st.columns(2)
         
         with col_params1:
             n_sims = st.slider(
-                "Number of scenarios",
+                "Số lượng kịch bản",
                 min_value=100,
                 max_value=5000,
                 value=1000,
@@ -2835,7 +2833,7 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
         
         with col_params2:
             forecast_days = st.slider(
-                "Days to predict",
+                "Số ngày dự báo",
                 min_value=30,
                 max_value=756,
                 value=252,
@@ -2859,21 +2857,34 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
         
         np.random.seed(42)
         
+        # Silent progress during simulation
+        progress_bar = st.progress(0)
+        status_text = st.empty()
+        
         all_paths[:, 0, :] = S0
         mu_arr = mu.values
         sigma_arr = sigma.values
         
         for t in range(1, N + 1):
+            if t % max(1, N // 10) == 0:
+                progress_bar.progress(t / N)
+                status_text.text(f"Tạo kịch bản... {t}/{N}")
+            
             z = np.random.normal(size=(n_sims, n_assets))
             eps = z @ L.T
             drift = (mu_arr - 0.5 * sigma_arr**2) * dt
             diffusion = sigma_arr * eps * np.sqrt(dt)
             all_paths[:, t, :] = all_paths[:, t-1, :] * np.exp(drift + diffusion)
         
+        progress_bar.progress(1.0)
+        status_text.text(f"Kết quả của {n_sims} kịch bản cho dự báo {forecast_days} ngày tới.")
+        st.empty()
+        
         st.markdown("")
         
         # Create tabs for each stock
-        st.markdown(f"#### 📊 1. Stock Price Predictions ({forecast_days} days)")
+        st.markdown(f"#### 📊 1. Giá dự báo ({forecast_days} ngày sau)")
+        st.markdown("**Nhấn vào từng tab để xem từng mã chứng khoán**")
         
         tabs = st.tabs([f"📈 {stock}" for stock in stocks])
         
@@ -2933,9 +2944,9 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
                               hovertemplate='90th Percentile<br>Day: %{x}<br>Price: %{y:.2f}kVNĐ<extra></extra>'))
                 
                 fig_stock.update_layout(
-                    title=f'{stock} - {sample_paths} Sample Paths ({n_sims} total scenarios)',
-                    xaxis_title='Trading Days',
-                    yaxis_title='Stock Price (kVNĐ)',
+                    title=f'{stock} - Kết quả dự báo của {n_sims} kịch bản',
+                    xaxis_title='Số ngày giao dịch',
+                    yaxis_title='Giá chứng khoán (nghìn VND)',
                     height=450,
                     template='plotly',
                     plot_bgcolor='#f5f5f5',
