@@ -264,7 +264,7 @@ def show_cover_page():
     """, unsafe_allow_html=True)
 
     # Info Cards (Teacher & University)
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
     
     with col1:
         st.markdown("""
@@ -285,6 +285,16 @@ def show_cover_page():
         if st.button("Nhấn vào để xem\n\nChính bài phân tích", key="main_story_btn_2", use_container_width=True):
             st.session_state.page = "📖 Main Story"
             st.rerun()
+    
+    with col4:
+        st.markdown("""
+        <a href="#team-section" style="text-decoration: none; display: block;">
+            <div class="info-card" style="cursor: pointer;">
+                <div class="info-label">Nhấn vào để xem</div>
+                <div class="info-content">Danh sách thành viên nhóm</div>
+            </div>
+        </a>
+        """, unsafe_allow_html=True)
 
     # Overview Section  
     intro_text = """
