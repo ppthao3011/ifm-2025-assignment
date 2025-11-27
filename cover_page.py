@@ -268,12 +268,22 @@ def show_cover_page():
     
     with col1:
         st.markdown("""
-        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4066115" style="text-decoration: none; display: block;">
-            <div class="info-card" style="cursor: pointer;">
-                <div class="info-label">Nhấn vào để xem</div>
-                <div class="info-content">Phân tích danh mục đầu tư</div>
-            </div>
-        </a>
+        <style>
+        button[data-testid="stButton"][key="story_nav_col1"] {
+            display: none !important;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+        
+        if st.button("Navigate to Main Story", key="story_nav_col1"):
+            st.session_state.page = "📖 Main Story"
+            st.rerun()
+        
+        st.markdown("""
+        <div class="info-card" style="cursor: pointer; margin-top: -52px;">
+            <div class="info-label">Nhấn vào để xem</div>
+            <div class="info-content">Phân tích danh mục đầu tư</div>
+        </div>
         """, unsafe_allow_html=True)
     
     
