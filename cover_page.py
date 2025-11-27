@@ -267,13 +267,14 @@ def show_cover_page():
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
+        if st.button("Navigate to Main Story", key="left_nav_btn", label_visibility="collapsed"):
+            st.session_state.page = "📖 Main Story"
+            st.rerun()
         st.markdown("""
-        <a href="#team-section" style="text-decoration: none; display: block;">
-            <div class="info-card" style="cursor: pointer;">
-                <div class="info-label">Nhấn vào để xem</div>
-                <div class="info-content">Danh sách thành viên nhóm</div>
-            </div>
-        </a>
+        <div class="info-card" style="cursor: pointer; margin-top: -52px;">
+            <div class="info-label">Nhấn vào để xem</div>
+            <div class="info-content">Danh sách thành viên nhóm</div>
+        </div>
         """, unsafe_allow_html=True)
     
     with col2:
