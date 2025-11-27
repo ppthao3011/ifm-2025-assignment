@@ -513,8 +513,8 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
             {"title": "2. EPS > 1,500", "count": "607", "color": "#FF9800", "explanation": "Loại bỏ doanh nghiệp lợi nhuận quá thấp; chỉ giữ lại nhóm có sức tạo lợi nhuận ổn định và đủ lớn."},
             {"title": "3. ROE > 12%", "count": "472", "color": "#FFC107", "explanation": "Tiếp tục giữ những công ty sử dụng vốn hiệu quả, loại các doanh nghiệp hiệu suất thấp."},
             {"title": "4. Sàn giao dịch: HSX & HNX", "count": "255", "color": "#8BC34A", "explanation": "Ưu tiên các sàn có mức minh bạch và thanh khoản cao hơn, loại bỏ UPcom ."},
-            {"title": "5. Missing data < 150", "count": "203", "color": "#4CAF50", "explanation": "Đảm bảo dữ liệu đủ sạch, đủ dài để phân tích; tránh tùy chọn quá rủi ro do thiếu dữ liệu."},
-            {"title": "6. 3-score (M/F/Z-score) ", "count": "137", "color": "#00D9FF", "explanation": "ĐĐiểm M-Score, Z-score và F-score trong 3 năm ở mức an toàn. "}
+            {"title": "5. Missing data < 150", "count": "137", "color": "#4CAF50", "explanation": "Đảm bảo dữ liệu đủ sạch, đủ dài để phân tích; tránh tùy chọn quá rủi ro do thiếu dữ liệu."},
+            {"title": "6. 3-score (M/F/Z-score) ", "count": "20", "color": "#00D9FF", "explanation": "ĐĐiểm M-Score, Z-score và F-score trong 3 năm ở mức an toàn. "}
         ]
 
         # Progress Flow Design
