@@ -20,17 +20,19 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
         st.markdown("---")
         
         sections = [
-            ("I. Stock Selection", "#i-stock-selection-for-portfolio"),
-            ("II. Time Range Selection", "#ii-time-range-selection"),
-            ("III. Portfolio Optimization", "#iii-portfolio-optimization"),
-            ("IV. Portfolio Summary", "#iv-portfolio-summary"),
-            ("V. Historical Price & Return", "#v-historical-price-and-return"),
-            ("VI. Portfolio vs Market", "#vi-portfolio-vs-market"),
-            ("VII. Beta Analysis", "#vii-beta"),
-            ("VIII. Risk Evaluation", "#viii-evaluate-risk"),
-            ("IX. CAPM Analysis", "#ix-capm-analysis"),
-            ("X. Intrinsic Value Analysis", "#x-intrinsic-value-analysis"),
-            ("XI. GBM Forecast", "#xi-gbm-to-forecast-future-price"),
+            ("Stock Selection", "#stock-selection-for-portfolio"),
+            ("Stock Filtering", "#stock-filtering-funnel"),
+            ("Efficient Frontier", "#efficient-frontier-analysis"),
+            ("Stock Details", "#selected-stocks-details"),
+            ("Stock Prices", "#stock-prices-individual"),
+            ("Price Correlation", "#price-correlation"),
+            ("Sector Allocation", "#sector-allocation-comparison"),
+            ("Risk-Return Scatter", "#risk-return-scatter-plot"),
+            ("Valuation Multiples", "#valuation-multiples-and-profitability"),
+            ("Performance Metrics", "#performance-metrics-comparison"),
+            ("VaR & ES Analysis", "#value-at-risk-va-r-3-phuong-phap-tinh-toan"),
+            ("CAPM Analysis", "#capm-analysis"),
+            ("GBM Forecast", "#gbm-forecast"),
         ]
         
         for label, anchor in sections:
