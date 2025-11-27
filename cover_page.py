@@ -277,16 +277,18 @@ def show_cover_page():
         """, unsafe_allow_html=True)
     
     with col2:
-        if st.button("Navigate to Main Story", key="main_story_btn"):
+        st.markdown("""
+        <a href="javascript:void(0);" onclick="document.querySelector('[data-testid=\"stButton\"][key=\"main_story_nav\"]')?.click();" style="text-decoration: none; display: block;">
+            <div class="info-card" style="cursor: pointer;">
+                <div class="info-label">Nhấn vào để xem</div>
+                <div class="info-content">Chính bài phân tích</div>
+            </div>
+        </a>
+        """, unsafe_allow_html=True)
+        
+        if st.button("Go to Main Story", key="main_story_nav"):
             st.session_state.page = "📖 Main Story"
             st.rerun()
-        
-        st.markdown("""
-        <div class="info-card" style="cursor: pointer; margin-top: -50px; position: relative; z-index: 0;">
-            <div class="info-label">Nhấn vào để xem</div>
-            <div class="info-content">Chính bài phân tích</div>
-        </div>
-        """, unsafe_allow_html=True)
 
     # Overview Section  
     intro_text = """
