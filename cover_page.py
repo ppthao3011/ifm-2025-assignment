@@ -361,12 +361,12 @@ def show_cover_page():
     
     with col2:
         st.markdown("""
-        <a href="#team-section" style="text-decoration: none; display: block;">
-            <div class="info-card" style="cursor: pointer;">
+        <div style="cursor: pointer;" onclick="document.querySelector('[id=\\'team-section\\']').scrollIntoView({behavior: \\'smooth\\', block: \\'start\\'});">
+            <div class="info-card">
                 <div class="info-label">Nhấn vào để xem</div>
                 <div class="info-content">Danh sách thành viên nhóm</div>
             </div>
-        </a>
+        </div>
         """, unsafe_allow_html=True)
 
     # Overview Section  
