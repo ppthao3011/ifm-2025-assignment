@@ -443,3 +443,25 @@ def show_theory_page():
     st.markdown("---")
     
     st.info("💬 **Ghi chú:** 9 phương pháp trên được áp dụng trong bài báo cáo này để phân tích danh mục đầu tư của Mười một cách toàn diện và khoa học, bao gồm đánh giá rủi ro, sức khỏe tài chính, dự báo xu hướng, và định giá dòng tiền.")
+
+    st.header("X. CHOLESKY DECOMPOSITION")
+    st.markdown("""
+Cholesky Decomposition
+
+Cho ma trận hiệp phương sai $\\Sigma$ của các biến ngẫu nhiên, Cholesky decomposition phân tách thành ma trận tam giác dưới $L$ sao cho:
+
+$$
+\\Sigma = L L^\\top
+$$
+
+Khi nhân ma trận $L$ với vector các biến ngẫu nhiên chuẩn độc lập $Z \\sim N(0,1)$, ta thu được vector:
+
+$$
+X = L Z
+$$
+
+Vector $X$ có **ma trận hiệp phương sai đúng bằng $\\Sigma$**, giữ nguyên mối tương quan giữa các biến.
+""")
+
+
+
