@@ -3,45 +3,9 @@ headless = true
 address = "0.0.0.0"
 port = 5000
 
-# ============================================================================
-# THEME 1: LIGHT PINK
-# To use this theme, copy the [theme] section below and replace the active one
-# ============================================================================
-# [theme]
-# base = "light"
-# primaryColor = "#ffb6c1"
-# backgroundColor = "#ffeef0"
-# secondaryBackgroundColor = "#ffdce0"
-# textColor = "#222222"
-
-# ============================================================================
-# THEME 2: LIGHT BLUE (ACTIVE)
-# ============================================================================
 [theme]
 base = "light"
-primaryColor = "#4A90E2"
-backgroundColor = "#E8F4F8"
-secondaryBackgroundColor = "#D4E8F0"
-textColor = "#222222"
-
-# ============================================================================
-# THEME 3: LIGHT CLEAN NEUTRAL
-# To use this theme, copy the [theme] section below and replace the active one
-# ============================================================================
-# [theme]
-# base = "light"
-# primaryColor = "#1E88E5"
-# backgroundColor = "#F5F5F5"
-# secondaryBackgroundColor = "#EEEEEE"
-# textColor = "#212121"
-
-# ============================================================================
-# THEME 4: LIGHT PINK ALTERNATIVE (SOFT)
-# To use this theme, copy the [theme] section below and replace the active one
-# ============================================================================
-# [theme]
-# base = "light"
-# primaryColor = "#E91E63"
-# backgroundColor = "#FCE4EC"
-# secondaryBackgroundColor = "#F8BBD0"
-# textColor = "#880E4F"
+primaryColor = "#1E88E5"
+backgroundColor = "#F5F5F5"
+secondaryBackgroundColor = "#EEEEEE"
+textColor = "#212121"
