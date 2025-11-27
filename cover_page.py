@@ -267,7 +267,15 @@ def show_cover_page():
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-        if st.button("Navigate to Main Story", key="left_nav_btn", label_visibility="collapsed"):
+        st.markdown("""
+        <style>
+        button[data-testid="stButton"][key="left_nav_btn"] {
+            display: none !important;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+        
+        if st.button("Navigate to Main Story", key="left_nav_btn"):
             st.session_state.page = "📖 Main Story"
             st.rerun()
         st.markdown("""
