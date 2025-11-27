@@ -266,46 +266,56 @@ def show_cover_page():
     # Big CTA Button - Premium Design
     st.markdown("""
     <style>
-    button[data-testid="stButton"][key="hero_cta_btn"] {
-        background: linear-gradient(135deg, #667EEA 0%, #764BA2 50%, #F093FB 100%) !important;
+    button[data-testid="stButton"][key="hero_cta_btn"],
+    button[data-testid="stButton"][key="hero_team_btn"] {
         color: white !important;
         border: 2px solid rgba(255, 255, 255, 0.3) !important;
         padding: 32px 100px !important;
         border-radius: 25px !important;
         font-size: 22px !important;
         font-weight: 900 !important;
-        box-shadow: 
-            0 8px 32px rgba(102, 126, 234, 0.4),
-            0 0 60px rgba(102, 126, 234, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
         transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
         letter-spacing: 1.5px !important;
         width: fit-content !important;
         display: block !important;
-        margin: 50px auto !important;
+        margin: 20px auto !important;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
         position: relative !important;
         overflow: hidden !important;
     }
-    button[data-testid="stButton"][key="hero_cta_btn"]::before {
-        content: "" !important;
-        position: absolute !important;
-        top: 0 !important;
-        left: -100% !important;
-        width: 100% !important;
-        height: 100% !important;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
-        transition: left 0.5s !important;
+    button[data-testid="stButton"][key="hero_cta_btn"] {
+        background: linear-gradient(135deg, #667EEA 0%, #764BA2 50%, #F093FB 100%) !important;
+        box-shadow: 
+            0 8px 32px rgba(102, 126, 234, 0.4),
+            0 0 60px rgba(102, 126, 234, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    }
+    button[data-testid="stButton"][key="hero_team_btn"] {
+        background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 50%, #FFB4B4 100%) !important;
+        box-shadow: 
+            0 8px 32px rgba(255, 107, 107, 0.4),
+            0 0 60px rgba(255, 107, 107, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    }
+    button[data-testid="stButton"][key="hero_cta_btn"]:hover,
+    button[data-testid="stButton"][key="hero_team_btn"]:hover {
+        transform: translateY(-12px) scale(1.05) !important;
+        letter-spacing: 2px !important;
     }
     button[data-testid="stButton"][key="hero_cta_btn"]:hover {
-        transform: translateY(-12px) scale(1.05) !important;
         box-shadow: 
             0 20px 60px rgba(102, 126, 234, 0.5),
             0 0 100px rgba(240, 147, 251, 0.3),
             inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
-        letter-spacing: 2px !important;
     }
-    button[data-testid="stButton"][key="hero_cta_btn"]:active {
+    button[data-testid="stButton"][key="hero_team_btn"]:hover {
+        box-shadow: 
+            0 20px 60px rgba(255, 107, 107, 0.5),
+            0 0 100px rgba(255, 179, 180, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+    }
+    button[data-testid="stButton"][key="hero_cta_btn"]:active,
+    button[data-testid="stButton"][key="hero_team_btn"]:active {
         transform: translateY(-6px) scale(1.02) !important;
     }
     </style>
@@ -314,10 +324,18 @@ def show_cover_page():
     </div>
     """, unsafe_allow_html=True)
     
-    # Hidden button to handle navigation
+    # Main Story Button
     if st.button("📖 Khám phá bài phân tích ngay →", key="hero_cta_btn"):
         st.session_state.page = "📖 Main Story"
         st.rerun()
+    
+    # Team Members Button
+    if st.button("👥 Xem thành viên nhóm →", key="hero_team_btn"):
+        st.markdown("""
+        <script>
+        window.location.hash = '#team-section';
+        </script>
+        """, unsafe_allow_html=True)
 
     # Info Cards (Teacher & University)
     col1, col2 = st.columns(2)
