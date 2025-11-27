@@ -103,7 +103,7 @@ def create_pill_navigation():
     }
     
     if "selected_theme" not in st.session_state:
-        st.session_state.selected_theme = "Light Blue"
+        st.session_state.selected_theme = "Light Neutral"
     
     selected = st.sidebar.selectbox(
         "Choose Theme:",
