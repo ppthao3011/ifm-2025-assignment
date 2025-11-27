@@ -69,3 +69,55 @@ def create_pill_navigation():
             st.session_state.page = page["id"]
             st.rerun()
     
+    # ============================================================================
+    # THEME SELECTOR
+    # ============================================================================
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("### 🎨 Custom Theme")
+    
+    theme_option = st.sidebar.radio(
+        "Select Theme:",
+        ["Light", "Dark", "Custom Color"],
+        key="theme_radio"
+    )
+    
+    if theme_option == "Light":
+        st.markdown("""
+        <style>
+        :root {
+            --primary-color: #1E88E5;
+            --bg-color: #F5F5F5;
+            --sidebar-color: #EEEEEE;
+            --text-color: #212121;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+    
+    elif theme_option == "Dark":
+        st.markdown("""
+        <style>
+        :root {
+            --primary-color: #BB86FC;
+            --bg-color: #121212;
+            --sidebar-color: #1E1E1E;
+            --text-color: #FFFFFF;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+    
+    elif theme_option == "Custom Color":
+        col1, col2 = st.sidebar.columns(2)
+        with col1:
+            primary_color = st.sidebar.color_picker("Primary", value="#4A90E2")
+        with col2:
+            bg_color = st.sidebar.color_picker("Background", value="#E8F4F8")
+        
+        st.markdown(f"""
+        <style>
+        :root {{
+            --primary-color: {primary_color};
+            --bg-color: {bg_color};
+        }}
+        </style>
+        """, unsafe_allow_html=True)
+    
