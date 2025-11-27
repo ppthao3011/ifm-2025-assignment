@@ -282,14 +282,9 @@ def show_cover_page():
             st.rerun()
     
     with col3:
-        st.markdown("""
-        <a href="#team-section" style="text-decoration: none; display: block;">
-            <div class="info-card" style="cursor: pointer;">
-                <div class="info-label">Nhấn vào để xem</div>
-                <div class="info-content">Danh sách thành viên nhóm</div>
-            </div>
-        </a>
-        """, unsafe_allow_html=True)
+        if st.button("Nhấn vào để xem\n\nChính bài phân tích", key="main_story_btn_2", use_container_width=True):
+            st.session_state.page = "📖 Main Story"
+            st.rerun()
 
     # Overview Section  
     intro_text = """
