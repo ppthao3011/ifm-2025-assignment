@@ -2,12 +2,11 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime, timedelta
 import numpy as np
-from theory_page import show_theory_page
-from main_story_page import show_draft_story_page
-from cover_page import show_cover_page
-from live_dashboard import show_live_dashboard
-from sidebar_navigation import create_pill_navigation
-from theme_config import apply_theme_css
+import plotly.graph_objects as go
+import plotly.express as px
+import base64
+import yfinance as yf
+from scipy.stats import norm
 
 # Page configuration
 st.set_page_config(page_title="Stock Portfolio Story",
@@ -176,7 +175,6 @@ if page == "📚 Theory Framework":
     show_theory_page()
 
 if page == "📚 References":
-    from references_page import show_references_page
     show_references_page()
 import streamlit as st
 import plotly.graph_objects as go
