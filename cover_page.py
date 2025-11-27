@@ -264,20 +264,59 @@ def show_cover_page():
     """, unsafe_allow_html=True)
 
     # Info Cards (Teacher & University)
-    st.markdown("""
-    <div class="info-cards-grid">
-        <div class="info-card">
-            <div class="info-label">Nhấn vào để xem</div>
-            <div class="info-content">Phân tích danh mục đầu tư</div>
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        <style>
+        .portfolio-button {
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+            padding: 35px;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 10px 35px rgba(102, 126, 234, 0.25);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .portfolio-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.35);
+        }
+        .portfolio-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.9;
+            margin-bottom: 12px;
+            font-weight: 700;
+            display: block;
+        }
+        .portfolio-content {
+            font-size: 22px;
+            font-weight: 800;
+        }
+        </style>
+        <div class="portfolio-button" onclick="document.querySelector('[data-testid=stButton]').click()">
+            <span class="portfolio-label">Nhấn vào để xem</span>
+            <span class="portfolio-content">Phân tích danh mục đầu tư</span>
         </div>
+        """, unsafe_allow_html=True)
+        
+        if st.button("Navigate", key="portfolio_btn", label_visibility="collapsed"):
+            st.session_state.page = "📖 Main Story"
+            st.rerun()
+    
+    with col2:
+        st.markdown("""
         <a href="#team-section" style="text-decoration: none; display: block;">
             <div class="info-card" style="cursor: pointer;">
                 <div class="info-label">Nhấn vào để xem</div>
                 <div class="info-content">Danh sách thành viên nhóm</div>
             </div>
         </a>
-    </div>
-    """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
     # Overview Section  
     intro_text = """
