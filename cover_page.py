@@ -267,7 +267,24 @@ def show_cover_page():
     st.markdown("""
     <style>
     button[data-testid="stButton"][key="hero_cta_btn"] {
-        display: none !important;
+        background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%) !important;
+        color: white !important;
+        border: none !important;
+        padding: 25px 80px !important;
+        border-radius: 20px !important;
+        font-size: 18px !important;
+        font-weight: 800 !important;
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3) !important;
+        transition: all 0.3s ease !important;
+        letter-spacing: 1px !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+    button[data-testid="stButton"][key="hero_cta_btn"]:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 25px 60px rgba(102, 126, 234, 0.4) !important;
     }
     .cta-button-container {
         display: flex;
