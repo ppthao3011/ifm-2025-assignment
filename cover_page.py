@@ -329,34 +329,18 @@ def show_cover_page():
         st.session_state.page = "📖 Main Story"
         st.rerun()
     
-    # Team Members Button
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        if st.button("👥 Xem thành viên nhóm →", key="hero_team_btn", use_container_width=True):
-            st.markdown("""
-            <script>
-            const element = document.querySelector('[id="team-section"]');
-            if (element) {
-                element.scrollIntoView({behavior: 'smooth', block: 'start'});
-            }
-            </script>
-            """, unsafe_allow_html=True)
-            st.session_state.scroll_to_team = True
 
     # Info Cards (Teacher & University)
     col1, col2 = st.columns(2)
     
     with col1:
-        
-       
-        
         st.markdown("""
-        <a href="#team-section" style="text-decoration: none; display: block;">
-            <div class="info-card" style="cursor: pointer;">
+        <div style="cursor: pointer;" onclick="document.querySelector('[data-testid=\\'stButton\\'][key=\\'hero_cta_btn\\']')?.click();">
+            <div class="info-card">
                 <div class="info-label">Nhấn vào để xem</div>
                 <div class="info-content">Phân tích danh mục đầu tư</div>
             </div>
-        </a>
+        </div>
         """, unsafe_allow_html=True)
     
     with col2:
