@@ -304,7 +304,7 @@ def show_cover_page():
         </div>
         """, unsafe_allow_html=True)
         
-        if st.button("Navigate", key="portfolio_btn", label_visibility="collapsed"):
+        if st.button("Navigate to Main Story", key="portfolio_btn"):
             st.session_state.page = "📖 Main Story"
             st.rerun()
     
