@@ -262,42 +262,65 @@ def show_cover_page():
         <div class="hero-subtitle">Phân tích danh mục đầu tư với các phương pháp định lượng</div>
     </div>
     """, unsafe_allow_html=True)
+    
+    # Big CTA Button
+    st.markdown("""
+    <style>
+    .cta-button-container {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0;
+    }
+    .cta-button {
+        background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+        color: white;
+        padding: 25px 80px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 800;
+        display: inline-block;
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        transition: all 0.3s ease;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    .cta-button:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 60px rgba(102, 126, 234, 0.4);
+        text-decoration: none;
+        color: white;
+    }
+    </style>
+    <div class="cta-button-container">
+        <a href="javascript:void(0);" onclick="document.querySelector('[data-testid=\"stButton\"][key=\"hero_cta_btn\"]')?.click();" class="cta-button">
+            📖 Khám phá bài phân tích ngay
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Hidden button to handle navigation
+    if st.button("Navigate to Main Story", key="hero_cta_btn", label_visibility="collapsed"):
+        st.session_state.page = "📖 Main Story"
+        st.rerun()
 
     # Info Cards (Teacher & University)
-    col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("""
-        <style>
-        button[data-testid="stButton"][key="story_nav_col1"] {
-            display: none !important;
-        }
-        </style>
-        """, unsafe_allow_html=True)
         
-        if st.button("Navigate to Main Story", key="story_nav_col1"):
-            st.session_state.page = "📖 Main Story"
-            st.rerun()
+       
         
-        st.markdown("""
-        <div class="info-card" style="cursor: pointer; margin-top: -52px;">
-            <div class="info-label">Nhấn vào để xem</div>
-            <div class="info-content">Phân tích danh mục đầu tư</div>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    
-    with col2:
         st.markdown("""
         <a href="#team-section" style="text-decoration: none; display: block;">
             <div class="info-card" style="cursor: pointer;">
                 <div class="info-label">Nhấn vào để xem</div>
-                <div class="info-content">Danh sách thành viên nhóm</div>
+                <div class="info-content">Phân tích danh mục đầu tư</div>
             </div>
         </a>
         """, unsafe_allow_html=True)
     
-    with col3:
+    with col2:
         st.markdown("""
         <a href="#team-section" style="text-decoration: none; display: block;">
             <div class="info-card" style="cursor: pointer;">
