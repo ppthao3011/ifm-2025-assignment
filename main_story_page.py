@@ -20,16 +20,14 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
         st.markdown("---")
         
         sections = [
-            ("Stock Selection", "#stock-selection-for-portfolio"),
-            ("Stock Filtering", "#stock-filtering-funnel"),
-            ("Efficient Frontier", "#efficient-frontier-analysis"),
+            ("Stock Selection", "#i-stock-selection-for-portfolio"),
+            ("Stock Filtering", "#loc-co-phieu-tu-toan-thi-truong-den-portfolio"),
+            ("Time selection", "#ii-time-range-selection"),
+            ("Efficient Frontier", "#iii-portfolio-optimization"),
             ("Stock Details", "#selected-stocks-details"),
-            ("Stock Prices", "#stock-prices-individual"),
+            ("Stock Prices", "#price-trends-analysis"),
             ("Price Correlation", "#price-correlation"),
-            ("Sector Allocation", "#sector-allocation-comparison"),
-            ("Risk-Return Scatter", "#risk-return-scatter-plot"),
             ("Valuation Multiples", "#valuation-multiples-and-profitability"),
-            ("Performance Metrics", "#performance-metrics-comparison"),
             ("VaR & ES Analysis", "#value-at-risk-va-r-3-phuong-phap-tinh-toan"),
             ("CAPM Analysis", "#capm-analysis"),
             ("GBM Forecast", "#gbm-forecast"),

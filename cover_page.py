@@ -353,7 +353,7 @@ def show_cover_page():
     # Overview Section  
     intro_text = """
     <div class="content-section overview-section">
-         <div class="section-title" , cursive;">📖 Giới thiệu bài làm</div>
+         <div class="section-title" , cursive;">📖 Lời mở đầu</div>
         <div style="margin-top: 20px; color: #1565C0; line-height: 1.8; font-size: 18px;">
             <p>Bài tập lớn này được nhóm chung em xây dựng dưới góc nhìn của một nhân vật đại diện là Nguyễn Văn Mười, một sinh viên 20 tuổi mới chập chững học về thị trường tài chính. Mười là đại diện những người còn ít trải nghiệm thực tế, đang trong giai đoạn khám phá và tiếp cận các khái niệm đầu tư from scratch.</p>
             <p>Vì vậy, chúng xem mở đầu từ cách chọn Portfolio thật thận trọng, những danh mục ưu tiên an toàn và một số cách đánh giá còn đơn giản, phản ánh đúng mức độ hiểu biết của một nhà đầu tư mới. Mặc dù các phương pháp phân tích chưa thể toàn diện như giới đầu tư chuyên nghiệp, bài báo cáo hướng tới mục tiêu trình bày lại quá trình tiếp cận thị trường theo cách dễ hiểu của một newbie.</p>
