@@ -258,9 +258,7 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
     # ============================================================================
     # 3 BOXES ON THE SAME LINE - STOCK SELECTION CRITERIA
     # ============================================================================
-    st.markdown("### I. STOCK SELECTION FOR PORTFOLIO",
-         unsafe_allow_html=True
-    )
+    st.markdown('<h3 id="stock-selection-for-portfolio">I. STOCK SELECTION FOR PORTFOLIO</h3>', unsafe_allow_html=True)
 
     st.markdown(
         """
@@ -450,7 +448,7 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
     col_funnel, col_results = st.columns([1.2, 1])
 
     with col_funnel:
-        st.markdown("#### 🔽 Lọc cổ phiếu - Từ Toàn thị trường đến Portfolio")
+        st.markdown('<h4 id="stock-filtering-funnel">🔽 Lọc cổ phiếu - Từ Toàn thị trường đến Portfolio</h4>', unsafe_allow_html=True)
     
 
         # Funnel data
@@ -1153,7 +1151,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
         st.plotly_chart(fig_allocation, use_container_width=True)
         
         st.markdown("")
-        st.markdown("### V. HISTORICAL PRICE AND RETURN",
+        st.markdown('<h3 id="stock-prices-individual">V. HISTORICAL PRICE AND RETURN</h3>',
              unsafe_allow_html=True
         )
         
@@ -1234,7 +1232,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
             st.warning(f"Could not calculate portfolio metrics: {e}")
 
     with col2:
-        st.markdown("##### Selected Stocks Details")
+        st.markdown('<h5 id="selected-stocks-details">Selected Stocks Details</h5>', unsafe_allow_html=True)
 
         # Company descriptions
         company_info = {
@@ -1505,7 +1503,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
 
     
     # Price correlation
-    st.markdown("##### Price Correlation")
+    st.markdown('<h5 id="price-correlation">Price Correlation</h5>', unsafe_allow_html=True)
     st.markdown("*Mười muốn đánh giá tương quan trong chuỗi giá để diversify giữa các mã chứng khoán trong danh mục. Nếu các mã có tương quan ngược nhau, nếu mã này có dấu hiệu xuống, mã khác sẽ bù lại phần rủi ro đó.*")
     
     try:
@@ -1557,7 +1555,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
     # ============================================================================
     # SECTION 2: PORTFOLIO VS MARKET
     # ============================================================================
-    st.markdown("### VI. PORTFOLIO vs MARKET",
+    st.markdown('<h3 id="risk-return-scatter-plot">VI. PORTFOLIO vs MARKET</h3>',
          unsafe_allow_html=True
     )
     st.markdown("""
@@ -1813,7 +1811,7 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
     st.markdown("")
 
     # Valuation Multiples and Profitability Analysis
-    st.markdown("##### Valuation Multiples & Profitability")
+    st.markdown('<h5 id="valuation-multiples-and-profitability">Valuation Multiples & Profitability</h5>', unsafe_allow_html=True)
     st.markdown("""
              Cuối cùng, Mười quyết định nhìn portfolio bằng “kính hiển vi” của các nhà đầu tư chuyên nghiệp: valuation multiples và profitability. Cậu tò mò: “Giá cổ phiếu đang rẻ hay đắt so với lợi nhuận mà công ty tạo ra?”
 
@@ -1890,7 +1888,7 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
     # ============================================================================
     # SECTION 3: RISK AND RETURN
     # ============================================================================
-    st.markdown("### VII. BETA",
+    st.markdown('<h3 id="performance-metrics-comparison">VII. BETA</h3>',
          unsafe_allow_html=True
     )
 
@@ -2083,7 +2081,7 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
 
 
 
-    st.markdown("### VIII. EVALUATE RISK",
+    st.markdown('<h3 id="value-at-risk-va-r-3-phuong-phap-tinh-toan">VIII. EVALUATE RISK</h3>',
          unsafe_allow_html=True
     )
     st.markdown("""
@@ -2290,7 +2288,7 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     st.markdown("")
     st.markdown("")
 
-    st.markdown("### IX. BETA",
+    st.markdown('<h3 id="capm-analysis">IX. CAPM MODEL</h3>',
          unsafe_allow_html=True
     )
     st.markdown("*Phân tích tại ngày (1/10/2025)*")
@@ -2435,7 +2433,7 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     # SECTION 4: INTRINSIC VALUE
     # ============================================================================
     
-    st.markdown(" ### X. INTRINSIC VALUE ANALYSIS")
+    st.markdown('<h3 id="efficient-frontier-analysis">X. INTRINSIC VALUE ANALYSIS</h3>', unsafe_allow_html=True)
     
     # Narrative section about Mười's valuation journey
     html = """
@@ -2782,7 +2780,7 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     # ============================================================================
     # SECTION 5: FORECAST WITH GBM
     # ============================================================================
-    st.markdown("### XI. GBM TO FORECAST FUTURE PRICE",
+    st.markdown('<h3 id="gbm-forecast">XI. GBM TO FORECAST FUTURE PRICE</h3>',
          unsafe_allow_html=True
     )
     st.markdown("""
