@@ -303,30 +303,16 @@ def show_cover_page():
         """, unsafe_allow_html=True)
     
     with col3:
-        st.markdown("""
-        <style>
-        button[data-testid="stButton"][data-baseweb="button"]:has(span:contains("Chính")){
-            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%) !important;
-            border: none !important;
-            padding: 35px !important;
-            border-radius: 15px !important;
-            box-shadow: 0 10px 35px rgba(102, 126, 234, 0.25) !important;
-            transition: all 0.3s ease !important;
-            color: white !important;
-            font-size: 22px !important;
-            font-weight: 800 !important;
-        }
-        
-        button[data-testid="stButton"][data-baseweb="button"]:has(span:contains("Chính")):hover {
-            transform: translateY(-5px) !important;
-            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.35) !important;
-        }
-        </style>
-        """, unsafe_allow_html=True)
-        
-        if st.button("Nhấn vào để xem\n\nChính bài phân tích", key="main_story_btn", use_container_width=True):
+        if st.button("Navigate to Main Story", key="main_story_btn"):
             st.session_state.page = "📖 Main Story"
             st.rerun()
+        
+        st.markdown("""
+        <div class="info-card" style="cursor: pointer; margin-top: -50px; position: relative; z-index: 0;">
+            <div class="info-label">Nhấn vào để xem</div>
+            <div class="info-content">Chính bài phân tích</div>
+        </div>
+        """, unsafe_allow_html=True)
 
     # Overview Section  
     intro_text = """
