@@ -263,64 +263,59 @@ def show_cover_page():
     </div>
     """, unsafe_allow_html=True)
     
-    # Big CTA Button
+    # Big CTA Button - Premium Design
     st.markdown("""
     <style>
     button[data-testid="stButton"][key="hero_cta_btn"] {
-        background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%) !important;
+        background: linear-gradient(135deg, #667EEA 0%, #764BA2 50%, #F093FB 100%) !important;
         color: white !important;
-        border: none !important;
-        padding: 25px 80px !important;
-        border-radius: 20px !important;
-        font-size: 18px !important;
-        font-weight: 800 !important;
-        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3) !important;
-        transition: all 0.3s ease !important;
-        letter-spacing: 1px !important;
-        width: 100% !important;
-        max-width: 400px !important;
+        border: 2px solid rgba(255, 255, 255, 0.3) !important;
+        padding: 32px 100px !important;
+        border-radius: 25px !important;
+        font-size: 22px !important;
+        font-weight: 900 !important;
+        box-shadow: 
+            0 8px 32px rgba(102, 126, 234, 0.4),
+            0 0 60px rgba(102, 126, 234, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+        letter-spacing: 1.5px !important;
+        width: fit-content !important;
         display: block !important;
-        margin: 0 auto !important;
+        margin: 50px auto !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+    button[data-testid="stButton"][key="hero_cta_btn"]::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+        transition: left 0.5s !important;
     }
     button[data-testid="stButton"][key="hero_cta_btn"]:hover {
-        transform: translateY(-8px) !important;
-        box-shadow: 0 25px 60px rgba(102, 126, 234, 0.4) !important;
+        transform: translateY(-12px) scale(1.05) !important;
+        box-shadow: 
+            0 20px 60px rgba(102, 126, 234, 0.5),
+            0 0 100px rgba(240, 147, 251, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+        letter-spacing: 2px !important;
     }
-    .cta-button-container {
-        display: flex;
-        justify-content: center;
-        margin: 40px 0;
-    }
-    .cta-button {
-        background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
-        color: white;
-        padding: 25px 80px;
-        border-radius: 20px;
-        text-decoration: none;
-        font-size: 24px;
-        font-weight: 800;
-        display: inline-block;
-        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
-        transition: all 0.3s ease;
-        text-align: center;
-        letter-spacing: 1px;
-    }
-    .cta-button:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 25px 60px rgba(102, 126, 234, 0.4);
-        text-decoration: none;
-        color: white;
+    button[data-testid="stButton"][key="hero_cta_btn"]:active {
+        transform: translateY(-6px) scale(1.02) !important;
     }
     </style>
-    <div class="cta-button-container">
-        <a href="javascript:void(0);" onclick="document.querySelector('[data-testid=\"stButton\"][key=\"hero_cta_btn\"]')?.click();" class="cta-button">
-            📖 Khám phá bài phân tích ngay
-        </a>
+    <div style="text-align: center; margin: 60px 0 40px 0;">
+        <div style="font-size: 14px; color: #667EEA; font-weight: 700; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase;">✨ Bắt đầu hành trình đầu tư ✨</div>
     </div>
     """, unsafe_allow_html=True)
     
     # Hidden button to handle navigation
-    if st.button("Navigate to Main Story", key="hero_cta_btn"):
+    if st.button("📖 Khám phá bài phân tích ngay →", key="hero_cta_btn"):
         st.session_state.page = "📖 Main Story"
         st.rerun()
 
