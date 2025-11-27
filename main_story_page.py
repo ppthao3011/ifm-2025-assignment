@@ -4,7 +4,6 @@ import plotly.express as px
 import numpy as np
 import pandas as pd
 import base64
-import yfinance as yf
 from scipy.stats import norm
 
 def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDINGS=None):
