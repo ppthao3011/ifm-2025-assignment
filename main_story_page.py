@@ -28,9 +28,11 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
             ("Stock Prices", "#price-trends-analysis"),
             ("Price Correlation", "#price-correlation"),
             ("Valuation Multiples", "#valuation-multiples-and-profitability"),
-            ("VaR & ES Analysis", "#value-at-risk-va-r-3-phuong-phap-tinh-toan"),
-            ("CAPM Analysis", "#capm-analysis"),
-            ("GBM Forecast", "#gbm-forecast"),
+            ("Beta", "#vii-beta"),
+            ("VaR & ES Analysis", "#viii-evaluate-risk"),
+            ("CAPM Analysis", "#ix-capm-model"),
+            ("Intrinsic value", "#x-intrinsic-value-analysis"),
+            ("GBM Forecast", "#xi-gbm-to-forecast-future-price"),
         ]
         
         for label, anchor in sections:

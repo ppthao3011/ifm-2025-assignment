@@ -15,7 +15,7 @@ def show_theory_page():
             ("M-score", "#iv-m-score-beneish-m-score"),
             ("CAPM", "#v-capm-capital-asset-pricing-model"),
             ("GBM", "#vi-gbm-geometric-brownian-motion"),
-            ("ARCH/GARCH & DCC", "#vii-archgarch-dcc-dynamic-conditional-correlation"),
+            ("ARCH/GARCH & DCC", "#vii-arch-garch-and-dcc-dynamic-conditional-correlation"),
             ("Holt-Winters", "#viii-holt-winters-exponential-smoothing"),
             ("FCFE", "#ix-fcfe-free-cash-flow-to-equity"),
         ]
