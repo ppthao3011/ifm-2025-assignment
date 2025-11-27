@@ -25,7 +25,7 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
             ("Time selection", "#ii-time-range-selection"),
             ("Efficient Frontier", "#iii-portfolio-optimization"),
             ("Stock Details", "#selected-stocks-details"),
-            ("Stock Prices", "#price-trends-analysis"),
+            ("Stock Prices", "#v-historical-price-and-return"),
             ("Price Correlation", "#price-correlation"),
             ("Valuation Multiples", "#valuation-multiples-and-profitability"),
             ("Beta", "#vii-beta"),
