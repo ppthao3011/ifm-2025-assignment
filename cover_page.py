@@ -266,6 +266,9 @@ def show_cover_page():
     # Big CTA Button
     st.markdown("""
     <style>
+    button[data-testid="stButton"][key="hero_cta_btn"] {
+        display: none !important;
+    }
     .cta-button-container {
         display: flex;
         justify-content: center;
@@ -300,7 +303,7 @@ def show_cover_page():
     """, unsafe_allow_html=True)
     
     # Hidden button to handle navigation
-    if st.button("Navigate to Main Story", key="hero_cta_btn", label_visibility="collapsed"):
+    if st.button("Navigate to Main Story", key="hero_cta_btn"):
         st.session_state.page = "📖 Main Story"
         st.rerun()
 
