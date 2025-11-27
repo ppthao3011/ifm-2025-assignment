@@ -269,42 +269,30 @@ def show_cover_page():
     with col1:
         st.markdown("""
         <style>
-        .portfolio-button {
-            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
-            padding: 35px;
-            border-radius: 15px;
-            color: white;
-            box-shadow: 0 10px 35px rgba(102, 126, 234, 0.25);
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
+        .stButton > button {
+            background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%) !important;
+            border: none !important;
+            color: white !important;
+            width: 100% !important;
+            padding: 35px 20px !important;
+            font-size: 22px !important;
+            font-weight: 800 !important;
+            border-radius: 15px !important;
+            box-shadow: 0 10px 35px rgba(102, 126, 234, 0.25) !important;
+            transition: all 0.3s ease !important;
+            height: auto !important;
+            min-height: auto !important;
+            line-height: 1.8 !important;
         }
-        .portfolio-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.35);
-        }
-        .portfolio-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            opacity: 0.9;
-            margin-bottom: 12px;
-            font-weight: 700;
-            display: block;
-        }
-        .portfolio-content {
-            font-size: 22px;
-            font-weight: 800;
+        
+        .stButton > button:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.35) !important;
         }
         </style>
-        <div class="portfolio-button" onclick="document.querySelector('[data-testid=stButton]').click()">
-            <span class="portfolio-label">Nhấn vào để xem</span>
-            <span class="portfolio-content">Phân tích danh mục đầu tư</span>
-        </div>
         """, unsafe_allow_html=True)
         
-        if st.button("Navigate to Main Story", key="portfolio_btn"):
+        if st.button("Nhấn vào để xem\n\nPhân tích danh mục đầu tư", key="portfolio_btn", use_container_width=True):
             st.session_state.page = "📖 Main Story"
             st.rerun()
     
