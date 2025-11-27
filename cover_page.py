@@ -264,29 +264,20 @@ def show_cover_page():
     """, unsafe_allow_html=True)
 
     # Info Cards (Teacher & University)
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        <a href="#team-section" style="text-decoration: none; display: block;">
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4066115" target="_blank" style="text-decoration: none; display: block;">
             <div class="info-card" style="cursor: pointer;">
                 <div class="info-label">Nhấn vào để xem</div>
-                <div class="info-content">Danh sách thành viên nhóm</div>
+                <div class="info-content">Phân tích danh mục đầu tư</div>
             </div>
         </a>
         """, unsafe_allow_html=True)
     
+    
     with col2:
-        if st.button("Nhấn vào để xem\n\nChính bài phân tích", key="main_story_btn", use_container_width=True):
-            st.session_state.page = "📖 Main Story"
-            st.rerun()
-    
-    with col3:
-        if st.button("Nhấn vào để xem\n\nChính bài phân tích", key="main_story_btn_2", use_container_width=True):
-            st.session_state.page = "📖 Main Story"
-            st.rerun()
-    
-    with col4:
         st.markdown("""
         <a href="#team-section" style="text-decoration: none; display: block;">
             <div class="info-card" style="cursor: pointer;">
