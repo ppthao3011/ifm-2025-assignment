@@ -269,23 +269,19 @@ def show_cover_page():
     with col1:
         st.markdown("""
         <style>
-        #portfolio_btn_button {
+        button[data-testid="stButton"][data-baseweb="button"]:has(span:contains("Phân")){
             background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%) !important;
             border: none !important;
-            color: white !important;
-            width: 100% !important;
-            padding: 35px 20px !important;
-            font-size: 22px !important;
-            font-weight: 800 !important;
+            padding: 35px !important;
             border-radius: 15px !important;
             box-shadow: 0 10px 35px rgba(102, 126, 234, 0.25) !important;
             transition: all 0.3s ease !important;
-            height: auto !important;
-            min-height: auto !important;
-            line-height: 1.8 !important;
+            color: white !important;
+            font-size: 22px !important;
+            font-weight: 800 !important;
         }
         
-        #portfolio_btn_button:hover {
+        button[data-testid="stButton"][data-baseweb="button"]:has(span:contains("Phân")):hover {
             transform: translateY(-5px) !important;
             box-shadow: 0 15px 50px rgba(102, 126, 234, 0.35) !important;
         }
