@@ -1151,9 +1151,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
         st.plotly_chart(fig_allocation, use_container_width=True)
         
         st.markdown("")
-        st.markdown('<h3 id="stock-prices-individual">V. HISTORICAL PRICE AND RETURN</h3>',
-             unsafe_allow_html=True
-        )
+        
         
         # Calculate portfolio metrics from daily returns
         try:
@@ -1293,8 +1291,10 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
     st.info("""Portfolio này được thiết kế để mang lại lợi nhuận ổn định, với lợi suất hàng năm khoảng 13,3% trong khi kiểm soát rủi ro ở mức hợp lý. Nhờ Beta khoảng 0,57, portfolio dao động ít hơn thị trường, giúp bảo vệ vốn trong các giai đoạn biến động mạnh. Đồng thời, Sharpe Ratio 0,55 cho thấy portfolio tối ưu hóa hiệu quả giữa lợi nhuận và rủi ro, mang lại lợi nhuận hợp lý so với mức rủi ro đã chịu. Nhìn chung, đây là một lựa chọn phù hợp cho nhà đầu tư muốn sự ổn định, nhưng vẫn giữ tiềm năng tăng trưởng dài hạn.
     """)
 
-
-
+    st.markdown("___")
+    st.markdown('<h3 id="stock-prices-individual">V. HISTORICAL PRICE AND RETURN</h3>',
+         unsafe_allow_html=True
+    )
     # Price and Cumulative Return Graphs
     
     # Define colors for all stocks

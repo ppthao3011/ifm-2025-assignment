@@ -25,7 +25,7 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
             ("Stock Filtering", "#stock-filtering-funnel"),
             ("Efficient Frontier", "#efficient-frontier-analysis"),
             ("Stock Details", "#selected-stocks-details"),
-            ("Stock Prices", "#stock-prices-individual"),
+            ("Stock Prices", "#v-historical-price-and-return"),
             ("Price Correlation", "#price-correlation"),
             ("Sector Allocation", "#sector-allocation-comparison"),
             ("Risk-Return Scatter", "#risk-return-scatter-plot"),
