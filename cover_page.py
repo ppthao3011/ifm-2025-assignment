@@ -277,16 +277,7 @@ def show_cover_page():
         """, unsafe_allow_html=True)
     
     with col2:
-        st.markdown("""
-        <a href="javascript:void(0);" onclick="document.querySelector('[data-testid=\"stButton\"][key=\"main_story_nav\"]')?.click();" style="text-decoration: none; display: block;">
-            <div class="info-card" style="cursor: pointer;">
-                <div class="info-label">Nhấn vào để xem</div>
-                <div class="info-content">Chính bài phân tích</div>
-            </div>
-        </a>
-        """, unsafe_allow_html=True)
-        
-        if st.button("Go to Main Story", key="main_story_nav"):
+        if st.button("Nhấn vào để xem\n\nChính bài phân tích", key="main_story_btn", use_container_width=True):
             st.session_state.page = "📖 Main Story"
             st.rerun()
 
