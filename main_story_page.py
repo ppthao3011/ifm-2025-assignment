@@ -2758,19 +2758,6 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
                             with sup_col5:
                                 st.metric("Terminal Value", "288.738 Tr đ")
                         
-                        upside_pct = dcf_result['upside_downside_pct']
-                        if upside_pct > 20:
-                            interpretation = "🚀 **Highly Undervalued** - Strong buy signal"
-                        elif upside_pct > 10:
-                            interpretation = "📈 **Undervalued** - Potential value opportunity"
-                        elif upside_pct > -10:
-                            interpretation = "➡️ **Fairly Valued** - Market price reflects fundamentals"
-                        elif upside_pct > -20:
-                            interpretation = "📉 **Slightly Overvalued** - Limited upside"
-                        else:
-                            interpretation = "⚠️ **Significantly Overvalued** - Consider reducing"
-                        
-                        st.markdown(f"**Valuation Interpretation:**\n\n{interpretation}")
         
         except Exception as e:
             st.warning(f"Unable to complete CAPM and DCF analysis: {str(e)}")
