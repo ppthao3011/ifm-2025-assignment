@@ -8,7 +8,7 @@ def create_pill_navigation():
     pages = [
         {"id": "📋 Cover Page", "label": "📋 Cover Page"},
         {"id": "📚 Theory Framework", "label": "📚 Theory Framework"},
-        {"id": "📖 Draft Story", "label": "📖 Draft Story"},
+        {"id": "📖 Main Story", "label": "📖 Main Story"},
         {"id": "💹 LIVE Portfolio Dashboard (beta)", "label": "💹 LIVE Portfolio Dashboard (beta)"},
         {"id": "📚 References", "label": "📚 References"},
     ]

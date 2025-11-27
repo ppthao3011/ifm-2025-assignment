@@ -166,7 +166,7 @@ extended_hist = generate_historical_data(days=365, start_date=None, end_date=Non
 if page == "📋 Cover Page":
     show_cover_page()
 
-if page == "📖 Draft Story":
+if page == "📖 Main Story":
     show_draft_story_page(portfolio_df, extended_hist, PORTFOLIO_HOLDINGS)
 
 if page == "💹 LIVE Portfolio Dashboard (beta)":

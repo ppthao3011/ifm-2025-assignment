@@ -6,4 +6,4 @@ def show_live_dashboard():
     st.title("💹 LIVE Portfolio Dashboard (beta)")
     st.markdown("---")
     
-    st.info("🔄 This page is currently under development. Please check back soon!")
+    st.info("Dự kiến sẽ hoàn thiện khi tìm được máy chủ 24/24!")
