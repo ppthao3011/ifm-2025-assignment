@@ -2,3 +2,44 @@
 headless = true
 address = "0.0.0.0"
 port = 5000
+
+# ============================================================================
+# THEME CONFIGURATION - Choose one theme below by uncommenting it
+# ============================================================================
+# THEME 1: Light Pink (Default)
+[theme]
+base="light"
+primaryColor="#ffb6c1"           # Hồng đào nhạt cho button, highlight
+backgroundColor="#ffeef0"        # Nền app hồng đào rất nhạt
+secondaryBackgroundColor="#ffdce0" # Sidebar hồng nhạt hơn một chút
+textColor="#222222"
+
+# ============================================================================
+# THEME 2: Light Blue (Uncomment to use)
+# ============================================================================
+# [theme]
+# base="light"
+# primaryColor="#4A90E2"           # Xanh dương nhạt cho button, highlight
+# backgroundColor="#E8F4F8"        # Nền app xanh dương rất nhạt
+# secondaryBackgroundColor="#D4E8F0" # Sidebar xanh dương nhạt
+# textColor="#222222"
+
+# ============================================================================
+# THEME 3: Light (Clean Neutral)
+# ============================================================================
+# [theme]
+# base="light"
+# primaryColor="#1E88E5"           # Xanh dương đậm cho button
+# backgroundColor="#F5F5F5"        # Nền app xám rất nhạt
+# secondaryBackgroundColor="#EEEEEE" # Sidebar xám nhạt
+# textColor="#212121"
+
+# ============================================================================
+# THEME 4: Light Pink Alternative (Soft)
+# ============================================================================
+# [theme]
+# base="light"
+# primaryColor="#E91E63"           # Hồng đậm cho button, highlight
+# backgroundColor="#FCE4EC"        # Nền app hồng rất nhạt
+# secondaryBackgroundColor="#F8BBD0" # Sidebar hồng nhạt
+# textColor="#880E4F"

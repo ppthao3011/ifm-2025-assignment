@@ -8,5 +8,5 @@ base="light"
 primaryColor="#ffb6c1"           # Hồng đào nhạt cho button, highlight
 backgroundColor="#ffeef0"        # Nền app hồng đào rất nhạt
 secondaryBackgroundColor="#ffdce0" # Sidebar hồng nhạt hơn một chút
-textColor="#222222"               # Chữ màu tối để nổi bật
+textColor="#222222"                           # Chữ màu tối để nổi bật
 
