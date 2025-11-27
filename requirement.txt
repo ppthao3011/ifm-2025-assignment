@@ -1,8 +1,0 @@
-streamlit 
-pandas
-numpy
-plotly.graph_object
-plotly.express 
-base64	
-scipy.stats
-datetime
