@@ -2849,7 +2849,6 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
             <li><strong>GBM</strong>: Mười tưởng tượng cổ phiếu như một con thuyền trên sóng – mỗi ngày giá đi lên đi xuống theo một “ngẫu nhiên có trật tự”. GBM giúp mô phỏng nhiều kịch bản giá trong tương lai.</li>
             <li><strong>Cholesky decomposition</strong>: Vì portfolio có nhiều cổ phiếu và chúng không đi một mình, Cholesky giúp Mười tạo các biến ngẫu nhiên có tương quan, mô phỏng giá các cổ phiếu đồng thời, vẫn giữ đúng mối quan hệ giữa chúng như thật.</li>
         </ul>
-
         <p>Nhìn vào kết quả forecast, Mười thấy được <strong>các kịch bản giá trong tương lai</strong> cho từng cổ phiếu và toàn bộ danh mục. Giờ cậu đã có “bản đồ sóng ngầm” của thị trường trong tay – chuẩn bị cho mọi quyết định đầu tư một cách thông minh, nhưng vẫn cực kỳ newbie!
         </p>
     </div>
