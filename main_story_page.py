@@ -81,7 +81,7 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
     st.markdown("""
     <div style="background-color: #E8F4F8; padding: 20px; border-radius: 10px; border-left: 5px solid #1f77b4; display: flex; align-items: center; gap: 30px;">
         <div style="flex: 1;">
-            <h3 style="color: #1f77b4; margin-top: 0;">📌 Begin of the story...</h3>
+            <h3 style="color: #1f77b4; margin-top: 0;">📌 Begining of the story...</h3>
             <p>
             Đây là Nguyễn Văn Mười — cậu bé vừa bước sang tuổi 20 và bắt đầu cảm thấy <span title="Fear of Missing Out — cảm giác lo sợ bị bỏ lỡ cơ hội khi thấy người khác đang làm điều gì đó mà mình chưa làm." style="border-bottom: 1px dotted #1f77b4; cursor: help;">FOMO</span> khi bạn bè quanh mình ai cũng có kế hoạch quản lý tiền bạc và đầu tư rõ ràng. Muốn bắt kịp nhịp chung, Mười tìm hiểu các kênh đầu tư phổ biến của small investors ở Việt Nam và quyết định thử sức với thị trường chứng khoán như bước khởi đầu cho hành trình tài chính của mình.
             </p>
@@ -125,7 +125,7 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
     with col1:
         st.markdown("""
         <div style="background: #E8D5F2; padding: 20px; border-radius: 12px; color: #333; min-height: 250px;">
-            <h4 style="margin: 0 0 10px 0; color: #333; font-size: 22px;">Faster Money Growth</h4>
+            <h4 style="margin: 0 0 10px 0; color: #333; font-size: 22px;">Sinh lời nhanh hơn</h4>
             <p style="margin: 0; font-size: 16px; line-height: 1.6;">
             So với gửi tiết kiệm hay trái phiếu, cổ phiếu có tiềm năng giúp tiền của bạn sinh lời nhanh hơn theo thời gian. Dữ liệu lịch sử cho thấy cổ phiếu mang lại lợi suất trung bình hàng năm khoảng 10% hoặc hơn trong dài hạn.
             </p>
@@ -136,7 +136,7 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
     with col2:
         st.markdown("""
         <div style="background: #FCE4EC; padding: 20px; border-radius: 12px; color: #333; min-height: 250px;">
-            <h4 style="margin: 0 0 10px 0; color: #333; font-size: 22px;">Time on Your Side</h4>
+            <h4 style="margin: 0 0 10px 0; color: #333; font-size: 22px;">Có nhiều thời gian</h4>
             <p style="margin: 0; font-size: 16px; line-height: 1.6;">
             Là một nhà đầu tư trẻ, Mười có thể chịu được những biến động của giá cổ phiếu vì cậu có nhiều năm để phục hồi sau các đợt suy giảm của thị trường. Thời gian là tài sản quý giá nhất để xây dựng sự giàu có.
             </p>
@@ -149,7 +149,7 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
     with col3:
         st.markdown("""
         <div style="background: #B3E5FC; padding: 20px; border-radius: 12px; color: #333; min-height: 250px;">
-            <h4 style="margin: 0 0 10px 0; color: #333; font-size: 22px;">Easy to Access</h4>
+            <h4 style="margin: 0 0 10px 0; color: #333; font-size: 22px;">Dễ tiếp cận</h4>
             <p style="margin: 0; font-size: 16px; line-height: 1.6;">
             Cổ phiếu rất dễ mua và bán, thông tin và nghiên cứu về cổ phiếu có sẵn miễn phí, giúp việc học và đầu tư trở nên đơn giản. Các nền tảng kỹ thuật số như ứng dụng của các công ty chứng khoán, ngân hàng, hoặc thậm chí Zalo đều giúp việc đầu tư trở nên dễ tiếp cận với mọi người.
             </p>
@@ -160,7 +160,7 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
     with col4:
         st.markdown("""
         <div style="background: #C8E6C9; padding: 20px; border-radius: 12px; color: #333; min-height: 250px;">
-            <h4 style="margin: 0 0 10px 0; color: #333; font-size: 22px;">Low Starting Capital</h4>
+            <h4 style="margin: 0 0 10px 0; color: #333; font-size: 22px;">Yêu cầu vốn thấp</h4>
             <p style="margin: 0; font-size: 16px; line-height: 1.6;">
             Bạn không cần số tiền lớn để bắt đầu đầu tư cổ phiếu tại Việt Nam. Nhiều công ty chứng khoán cho phép mở tài khoản chỉ từ vài trăm nghìn đồng, giúp mọi người đều có thể tham gia thị trường.
             </p>
@@ -187,18 +187,18 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
     st.markdown("")
 
     st.markdown("""
-    <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 17px;">
     <thead>
         <tr style="background-color: #263238; color: white;">
-            <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Parameter</th>
-            <th style="padding: 12px; text-align: left; border: 1px solid #ddd;"> Value</th>
-            <th style="padding: 12px; text-align: left; border: 1px solid #ddd;"> Description</th>
+            <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">Chỉ số</th>
+            <th style="padding: 12px; text-align: center; border: 1px solid #ddd;"> Mục tiêu</th>
+            <th style="padding: 12px; text-align: center; border: 1px solid #ddd;"> Miêu tả</th>
         </tr>
     </thead>
     <tbody>
         <tr style="background-color: #E3F2FD;">
-            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #1E88E5;"> Horizon</td>
-            <td style="padding: 12px; border: 1px solid #ddd; color: #1E88E5; font-weight: bold;">Long-term</td>
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #1E88E5;"> Khoảng thời gian</td>
+            <td style="padding: 12px; border: 1px solid #ddd; color: #1E88E5; font-weight: bold;">Dài hạn</td>
             <td style="padding: 12px; border: 1px solid #ddd; color: #555;">
                 <ul style="margin:0; padding-left:18px;">
                     <li>Nhận được sự tăng trưởng theo <strong>lãi kép</strong></li>
@@ -208,8 +208,8 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
             </td>
         </tr>
         <tr style="background-color: #E8F5E9;">
-            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #43A047;"> Risk tolerance</td>
-            <td style="padding: 12px; border: 1px solid #ddd; color: #43A047; font-weight: bold;">Safe</td>
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #43A047;"> Khẩu vị rủi ro</td>
+            <td style="padding: 12px; border: 1px solid #ddd; color: #43A047; font-weight: bold;">An toàn, rủi ro thấp</td>
             <td style="padding: 12px; border: 1px solid #ddd; color: #555;">
                 <ul style="margin:0; padding-left:18px;">
                     <li>Ưu tiên <strong>bảo vệ vốn gốc</strong> và hạn chế thua lỗ</li>
@@ -218,8 +218,8 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
             </td>
         </tr>
         <tr style="background-color: #FFF3E0;">
-            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #F57C00;"> Required Return</td>
-            <td style="padding: 12px; border: 1px solid #ddd; color: #F57C00; font-weight: bold;">13% / year</td>
+            <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #F57C00;"> Lợi nhuận tối thiểu</td>
+            <td style="padding: 12px; border: 1px solid #ddd; color: #F57C00; font-weight: bold;">12% / year</td>
             <td style="padding: 12px; border: 1px solid #ddd; color: #555;">
                 <ul style="margin:0; padding-left:18px;">
                     <li>Vượt qua lạm phát</li>
@@ -230,11 +230,11 @@ def show_draft_story_page(portfolio_df=None, extended_hist=None, PORTFOLIO_HOLDI
         </tr>
         <tr style="background-color: #F3E5F5;">
             <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; color: #7B1FA2;"> VNIndex</td>
-            <td style="padding: 12px; border: 1px solid #ddd; color: #7B1FA2; font-weight: bold;">Intrinsic Value</td>
+            <td style="padding: 12px; border: 1px solid #ddd; color: #7B1FA2; font-weight: bold;">Giá trị nội tại</td>
             <td style="padding: 12px; border: 1px solid #ddd; color: #555;">
                 <ul style="margin:0; padding-left:18px;">
-                    <li>Tập trung vào <strong>phân tích cơ bản</strong> và actual economic value của doanh nghiệp</li>
-                    <li>Inspired by <strong>Warren Buffett’s long-term value investing strategy</strong>, buying quality companies below intrinsic value and holding for sustainable growth</li>
+                    <li>Tập trung vào <strong>phân tích cơ bản</strong> và giá trị kinh tế thực của doanh nghiệp</li>
+                    <li>Chiến lược được truyền cảm hứng từ phương pháp <strong>đầu tư giá trị dài hạn của Warren Buffett</strong>: mua các doanh nghiệp có chất lượng khi giá thị trường thấp hơn giá trị nội tại và nắm giữ để hướng tới tăng trưởng bền vững. </li>
                 </ul>
             </td>
         </tr>
@@ -696,7 +696,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
 
     st.markdown("""
     <div style='background-color: #e3f2fd; padding: 20px; border-radius: 10px; border-left: 5px solid #1976D2;'>
-        <p style='color: #1565c0; margin: 0; font-size: 16px; line-height: 1.8;'>
+        <p style='color: #1565c0; margin: 0; font-size: 18px; line-height: 1.8;'>
         Kết hợp kết quả từ quá trình lọc chi tiết (từ 1,589 xuống 20 cổ phiếu) 
         và phân tích 15 cổ phiếu được quỹ nắm giữ nhiều nhất, Mười đã quyết định chọn 
         <strong>4 cổ phiếu</strong> để đưa vào danh mục đầu tư:
@@ -718,20 +718,20 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
 
     st.markdown("""
     <ul style='font-size:18px; line-height:1.6;'>
-        <li><strong>ACB (Banking):</strong> ACB là cổ phiếu xuất hiện trong hầu hết các quỹ đầu tư lớn, thể hiện mức độ uy tín và độ tin cậy cao trên thị trường. Việc được các quỹ nắm giữ rộng rãi giúp cổ phiếu có tính thanh khoản cao, đồng thời mang lại tiềm năng tăng trưởng ổn định trong dài hạn. Hơn nữa, như đã tìm hiểu ở trên, Mười cũng đã nhận thấy tầm quan trọng của ngân hàng trong một danh mục đầu tư. :33
+        <li><strong>ACB (Ngân hàng):</strong> ACB là cổ phiếu xuất hiện trong hầu hết các quỹ đầu tư lớn, thể hiện mức độ uy tín và độ tin cậy cao trên thị trường. Việc được các quỹ nắm giữ rộng rãi giúp cổ phiếu có tính thanh khoản cao, đồng thời mang lại tiềm năng tăng trưởng ổn định trong dài hạn. Hơn nữa, như đã tìm hiểu ở trên, Mười cũng đã nhận thấy tầm quan trọng của ngân hàng trong một danh mục đầu tư. :33
         </li>
-        <li><strong>DBD (Pharmaceuticals):</strong> Có tiềm năng tăng trưởng lớn trong lĩnh vực chăm sóc sức khỏe và dược phẩm. Triển vọng lợi nhuận tích cực cùng năng lực R&D ngày càng mở rộng giúp công ty có vị thế tốt để phát triển bền vững trong tương lai. Chuỗi giá cổ phiếu đang có xu hướng tăng trong dài hạn.
+        <li><strong>DBD (Ngành dược phẩm):</strong> Có tiềm năng tăng trưởng lớn trong lĩnh vực chăm sóc sức khỏe và dược phẩm. Triển vọng lợi nhuận tích cực cùng năng lực R&D ngày càng mở rộng giúp công ty có vị thế tốt để phát triển bền vững trong tương lai. Chuỗi giá cổ phiếu đang có xu hướng tăng trong dài hạn.
         </li>
-        <li><strong>HPG (Materials):</strong> Là một trong những doanh nghiệp thép hàng đầu với vị thế thị trường mạnh. Công ty được kỳ vọng hưởng lợi từ chi tiêu cho hạ tầng và sự phục hồi của các hoạt động xây dựng cũng như công nghiệp.
+        <li><strong>HPG (Ngành vật liệu):</strong> Là một trong những doanh nghiệp thép hàng đầu với vị thế thị trường mạnh. Công ty được kỳ vọng hưởng lợi từ chi tiêu cho hạ tầng và sự phục hồi của các hoạt động xây dựng cũng như công nghiệp.
         </li>
-        <li><strong>VNM (Consumer Staples):</strong> Việc tiếp xúc với nhóm hàng tiêu dùng thiết yếu giúp danh mục đầu tư ổn định và bền bỉ, vì nhu cầu đối với các mặt hàng thiết yếu luôn duy trì ngay cả trong bối cảnh kinh tế bất ổn. Ngành hàng tiêu dùng Việt Nam được hưởng lợi từ nền tảng vững chắc và xu hướng tăng trưởng nhu cầu dài hạn.
+        <li><strong>VNM (Ngành thực phẩm và đồ uống):</strong> Việc tiếp xúc với nhóm hàng tiêu dùng thiết yếu giúp danh mục đầu tư ổn định và bền bỉ, vì nhu cầu đối với các mặt hàng thiết yếu luôn duy trì ngay cả trong bối cảnh kinh tế bất ổn. Ngành hàng tiêu dùng Việt Nam được hưởng lợi từ nền tảng vững chắc và xu hướng tăng trưởng nhu cầu dài hạn.
         </li>
     </ul>
     """, unsafe_allow_html=True)
 
     st.markdown("""
     <div style='background-color: #f5f5f5; padding: 15px; border-radius: 10px; margin-top: 15px; border-left: 4px solid #1976D2; border: 1px solid #ddd;'>
-        <p style='color: #AB47BC; font-size: 14px; margin: 0; font-style: italic;'>
+        <p style='color: #AB47BC; font-size: 18px; margin: 0; font-style: italic;'>
         Trong 4 cổ phiếu trên, có 3 mã đáp ứng đầy đủ các điều kiện lựa chọn. Mặc dù ACB không thỏa mãn toàn bộ tiêu chí đề ra, nhưng vì đây là cổ phiếu ngân hàng được các quỹ nắm giữ nhiều nhất và có mức độ an toàn cao, Mười vẫn quyết định đưa ACB vào danh mục đầu tư của mình.
         </p>
     </div>
@@ -771,7 +771,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
         st.markdown("""
         <div style='text-align: center; padding: 20px; border-left: 5px solid #667EEA; background-color: #f8f9ff; border-radius: 5px;'>
             <div style='font-size: 24px; font-weight: 900; color: #667EEA; margin-bottom: 5px;'>📍 01/06/2022 - 01/10/2025</div>
-            <div style='font-size: 13px; color: #555;'>⏱️ Hậu cú shock COVID19 tới Hiện tại</div>
+            <div style='font-size: 14px; color: #555;'>⏱️ Hậu cú shock COVID19 tới Hiện tại</div>
         </div>
         """, unsafe_allow_html=True)
     
@@ -991,7 +991,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
     strategies_list = comparison_df.to_dict('records')
     
     # ===== PORTFOLIO SUMMARY TABLE =====
-    st.markdown("##### 📊 Portfolio Summary Table (Allocation & Performance)")
+    st.markdown("##### 📊 Portfolio Summary Table")
     
     # Create complete table with metrics and allocation
     complete_table = []
@@ -1067,10 +1067,10 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
 
     st.markdown("""
     <div style='background-color: #FFF5BA; padding: 20px; border-radius: 10px; border-left: 5px solid #1976D2;'>
-        <p style='color: #00000; margin: 0; font-size: 16px; line-height: 1.8;'>
+        <p style='color: #00000; margin: 0; font-size: 18px; line-height: 1.8;'>
         Do đó, portfolio cuối cùng sẽ bao gồm 4 cổ phiếu để đưa vào danh mục đầu tư:
         </p>
-        <p style='color: #1976D2; margin: 12px 0 0 0; font-size: 18px; font-weight: bold; text-align: center;'>
+        <p style='color: #1976D2; margin: 12px 0 0 0; font-size: 21px; font-weight: bold; text-align: center;'>
         ACB(20.5%) • HPG(3.1%) • VNM(39.5%) • DBD(36.9%)
         </p>
     </div>
@@ -1142,7 +1142,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
                    '<b>%{label}</b><br>Allocation: %{value}%<extra></extra>')
         ])
 
-        fig_allocation.update_layout(title='Recommended Portfolio Allocation',
+        fig_allocation.update_layout(title='Portfolio Allocation',
                                      height=400,
                                      template='plotly',
                                      plot_bgcolor='#f5f5f5',
@@ -1264,7 +1264,10 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
             
             # Company Description
             st.markdown("**Thông tin chung**")
-            st.markdown(company_info.get(stock_name, "Information not available"))
+            st.markdown(
+                f'<p style="font-size:18px;">{company_info.get(stock_name, "Information not available")}</p>',
+                unsafe_allow_html=True
+            )
             
             # Daily Returns Statistics
             if stock_name in iml_df.columns:
@@ -1281,7 +1284,7 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
                     st.metric("Max", f"{daily_returns.max():.4f}%")
                     st.metric("Kurtosis", f"{daily_returns.kurtosis():.4f}")
                     
-                st.markdown(f"<div style='color:purple; '>🔑{key_insights.get(stock_name, 'No insight available.')}</div>", unsafe_allow_html=True)
+                st.markdown(f"<div style='color:purple; font-size: 18px; '>🔑{key_insights.get(stock_name, 'No insight available.')}</div>", unsafe_allow_html=True)
         
         except Exception as e:
             st.warning(f"Error displaying stock details: {str(e)}")
@@ -1357,8 +1360,8 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
         # Price Trends Analysis box below the chart
         st.markdown("""
         <div style="background-color: #E8F4F8; padding: 20px; border-radius: 10px; border-left: 5px solid #1976D2;">
-            <h6 style="color: #1976D2; margin-top: 0;">📊 Price Trends Analysis</h6>
-            <ul style="color: #555; font-size: 16px; line-height: 1.6; margin: 0; padding-left: 20px; text-align: justify;">
+            <h5 style="color: #1976D2;  margin-top: 0;">📊 Price Trends Analysis</h5>
+            <ul style="color: #555; font-size: 18px; line-height: 1.6; margin: 0; padding-left: 20px; text-align: justify;">
                 <li><strong>ACB và HPG:</strong> Hai mã này có sự đồng pha rõ rệt, dao động sát nhau trong biên độ 10.000 - 28.000 VND. <strong>Duy trì xu hướng tăng trưởng bền vững và ổn định</strong>, ít bị ảnh hưởng bởi các tin đồn nhỏ lẻ nhưng phản ứng mạnh trước các cú sốc vĩ mô lớn. Cuối năm 2022, cổ phiếu HPG và ACB giảm mạnh do nhiều yếu tố tiêu cực. Với HPG, chiến sự Nga – Ukraina gây khủng hoảng năng lượng làm giá than luyện cốc tăng cao, kết hợp với bất động sản đóng băng, giá thép giảm và chi phí vay ngoại tệ tăng, khiến lợi nhuận sụt giảm. ACB chịu tác động từ tâm lý thị trường yếu, dòng tiền thận trọng và lãi suất tăng. Sự kết hợp các yếu tố vĩ mô, đặc biệt là khủng hoảng năng lượng từ chiến sự Ukraina, đã khiến nhà đầu tư bán mạnh, kéo giá cả hai cổ phiếu giảm sâu quý 4/2022.  </li>
                 <li><strong>VNM:</strong> Xu hướng dài hạn là <strong>đi xuống</strong>. Cổ phiếu từng xuất hiện "bong bóng" giá vào cuối năm 2022 (đạt đỉnh gần 70.000 VND) do tâm lý dòng tiền tìm về nhóm cổ phiếu phòng thủ, sau đó giảm dần vì áp lực cạnh tranh và tăng trưởng chậm.</li>
                 <li><strong>DBD:</strong> Ngược lại với VNM, giá <strong>tăng dần</strong> (từ 30.000 lên 60.000 VND). "Bong bóng" giá cuối năm 2024 được thúc đẩy bởi kỳ vọng thoái vốn Nhà nước và làn sóng M&A, đẩy định giá lên cao trước khi điều chỉnh.</li>
@@ -1484,14 +1487,17 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
         
         # Cumulative Returns box below the chart
         st.markdown("""
-        <div style="background-color: #F0F8FF; padding: 20px; border-radius: 10px; border-left: 5px solid #1976D2;">
-            <div style="color: #555; font-size: 16px; line-height: 1.8; text-align: justify;">
+        <div style="background-color: #A8M4D8; padding: 20px; border-radius: 10px; border-left: 5px solid #1976D2;">
+            <div style="color: #555; font-size: 18px; line-height: 1.8; text-align: justify;">
             <li><strong>ACB:</strong> Đây là "ngôi sao sáng nhất" trong danh mục. Sau giai đoạn đi ngang năm 2022, ACB <strong>bứt phá mạnh mẽ và duy trì đà tăng trưởng bền vững</strong>. Đến giữa năm 2025, lợi nhuận tích lũy của ACB đạt gần <strong>100%</strong>, tức là nhân đôi tài khoản.<br></li>
             <li><strong>DBD:</strong> Thể hiện đúng tính chất "đầu cơ" cao. DBD từng vượt ACB để dẫn đầu vào cuối năm 2024, trùng khớp với giai đoạn "bong bóng". Tuy nhiên, biên độ dao động lớn, sau cú sụt giảm mạnh đầu 2025, DBD kết thúc với lợi nhuận khoảng <strong>60%</strong>, đứng thứ 2.<br></li>
              <li><strong>HPG:</strong> Mã này từng gây thất vọng lớn vào cuối 2022 với mức lỗ <strong>~50%</strong>. Tuy nhiên, HPG đã có cú lội ngược dòng ấn tượng từ 2023-2025, xóa bỏ toàn bộ khoản lỗ và kết thúc với mức lãi dương khoảng <strong>40–50%</strong>.<br></li>
              <li><strong>VNM:</strong> Là nỗi thất vọng lớn nhất. Trong khi các mã khác tăng trưởng, VNM liên tục đi ngang và suy yếu. Kết thúc chu kỳ, VNM lợi nhuận âm khoảng <strong>-5% đến -10%</strong>, thua cả <strong>Risk-Free Rate</strong>, đồng nghĩa nhà đầu tư chịu <strong>chi phí cơ hội rất lớn</strong>.<br></li><br>
+            <p style='font-size: 18px; line-height: 1.6;'>
             Đường <strong>Portfolio</strong> cho thấy hiệu quả giảm biến động của return. Mặc dù lợi nhuận cuối cùng khoảng <strong>45%</strong> thấp hơn ACB và DBD, danh mục này giúp nhà đầu tư <strong>tránh được cú sốc lớn</strong>. Ví dụ, khi HPG giảm 50% năm 2022, danh mục chung chỉ giảm nhẹ quanh mức <strong>0–10%</strong>.<br>
+             <p style='font-size: 18px; line-height: 1.6;'>
             Danh mục cũng <strong>chiến thắng thị trường</strong>, và tránh được rủi ro thua lỗ của VNM, giúp cân bằng lợi nhuận và rủi ro.
+            <br>
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -1503,8 +1509,9 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
 
     
     # Price correlation
-    st.markdown('<h5 id="price-correlation">Price Correlation</h5>', unsafe_allow_html=True)
-    st.markdown("*Mười muốn đánh giá tương quan trong chuỗi giá để diversify giữa các mã chứng khoán trong danh mục. Nếu các mã có tương quan ngược nhau, nếu mã này có dấu hiệu xuống, mã khác sẽ bù lại phần rủi ro đó.*")
+    st.markdown('<h4 id="price-correlation">Price Correlation</h4>', unsafe_allow_html=True)
+    st.markdown('<p style="font-size:18px;"><i>Mười muốn đánh giá tương quan trong chuỗi giá để diversify giữa các mã chứng khoán trong danh mục. Nếu các mã có tương quan ngược nhau, nếu mã này có dấu hiệu xuống, mã khác sẽ bù lại phần rủi ro đó</i>.</p>', unsafe_allow_html=True)
+
     
     try:
         # Load price data
@@ -1559,8 +1566,12 @@ Hóa ra, ngân hàng trong thế giới quỹ đầu tư không chỉ là nơi g
          unsafe_allow_html=True
     )
     st.markdown("""
-    Đến lúc Mười tự hỏi: “Liệu mình có nên đầu tư vào danh mục này hay không?” – cậu quyết định phải có một tiêu chuẩn so sánh. Với một newbie, nhìn vào từng cổ phiếu riêng lẻ thì… mờ mịt quá. Thế là Mười chọn benchmark của thị trường – VNINDEX, đại diện cho toàn bộ chứng khoán trên sàn HSX.\\
-Cậu so sánh lợi suất kỳ vọng của portfolio với lợi suất của VNINDEX: nếu portfolio vượt trội hơn benchmark, nghĩa là danh mục này có khả năng sinh lời tốt hơn mức trung bình của thị trường – “đầu tư thôi, không cần ngại ngần!”; còn nếu thấp hơn, Mười biết mình nên cân nhắc lại phân bổ hoặc chờ thời điểm khác.""")
+    <p style="font-size:18px;">
+    Đến lúc Mười tự hỏi: “Liệu mình có nên đầu tư vào danh mục này hay không?” – cậu quyết định phải có một tiêu chuẩn so sánh. Với một newbie, nhìn vào từng cổ phiếu riêng lẻ thì… mờ mịt quá. Thế là Mười chọn benchmark của thị trường – VNINDEX, đại diện cho toàn bộ chứng khoán trên sàn HSX.</b>
+    <p style="font-size:18px;">
+    Cậu so sánh lợi suất kỳ vọng của portfolio với lợi suất của VNINDEX: nếu portfolio vượt trội hơn benchmark, nghĩa là danh mục này có khả năng sinh lời tốt hơn mức trung bình của thị trường – “đầu tư thôi, không cần ngại ngần!”; còn nếu thấp hơn, Mười biết mình nên cân nhắc lại phân bổ hoặc chờ thời điểm khác.
+    </p>
+    """, unsafe_allow_html=True)
 
     
 
@@ -1648,10 +1659,10 @@ Cậu so sánh lợi suất kỳ vọng của portfolio với lợi suất của
             st.markdown("""
             <div style="background-color: #F3E5F5; padding: 15px; border-radius: 10px; 
                         border-left: 5px solid #9C27B0; margin-bottom: 20px;">
-                <p style="color: #555; font-size: 18px; line-height: 1.6; margin: 0;">
-                <li>Hiệu quả danh mục nhìn chung tăng trưởng tích cực trong trung và dài hạn, dù biến động trong ngắn hạn. Ở giai đoạn những tháng đầu tiên, mức tăng trưởng của return danh mục và thị trường gần sát nhau. Tuy nhiên, về dài hạn, danh mục có return vượt lên so với thị trường, đồng thời giảm thiểu rủi ro so với thị trường trong giai đoạn thị trường đi xuống từ tháng 8 đến tháng 11 2022.</li><br>
-                <li>Ngoài ra, danh mục ghi nhận hai ngày tăng giảm mạnh đột biến và gần nhau là 08/04 và 10/04. Cả hai ngày này đều do tin tức từ chính phủ Mỹ về thuế đối ứng 46% với hàng hóa Việt Nam, khiến thị trường chứng khoán Việt Nam sụt giảm sâu.</li>
-                </p>
+                <ul style="color: #555; font-size: 18px; line-height: 1.6; margin: 0; padding-left: 20px;">
+                    <li>Hiệu quả danh mục nhìn chung tăng trưởng tích cực trong trung và dài hạn, dù biến động trong ngắn hạn. Ở giai đoạn những tháng đầu tiên, mức tăng trưởng của return danh mục và thị trường gần sát nhau. Tuy nhiên, về dài hạn, danh mục có return vượt lên so với thị trường, đồng thời giảm thiểu rủi ro so với thị trường trong giai đoạn thị trường đi xuống từ tháng 8 đến tháng 11 2022.</li>
+                    <li>Ngoài ra, danh mục ghi nhận hai ngày tăng giảm mạnh đột biến và gần nhau là 08/04 và 10/04. Cả hai ngày này đều do tin tức từ chính phủ Mỹ về thuế đối ứng 46% với hàng hóa Việt Nam, khiến thị trường chứng khoán Việt Nam sụt giảm sâu.</li>
+                </ul>
             </div>
             """, unsafe_allow_html=True)
         
@@ -1705,10 +1716,12 @@ Cậu so sánh lợi suất kỳ vọng của portfolio với lợi suất của
     # SECTOR ALLOCATION COMPARISON (FIRST SECTION)
     # ============================================================================
     st.markdown("""
-        Sau khi so sánh hiệu suất tổng thể với VNINDEX, Mười lại tò mò: “Liệu portfolio của mình có tập trung quá nhiều vào một ngành không nhỉ?” Với newbie như Mười, nhìn vào từng cổ phiếu thì rối mắt quá, nên cậu quyết định so sánh phân bổ theo ngành.
-        
-Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng từng ngành trong portfolio, rồi đối chiếu với cơ cấu ngành của VNINDEX. Nếu portfolio nghiêng hẳn về một ngành – ví dụ công nghệ hoặc ngân hàng – thì rủi ro cao hơn; còn nếu phân bổ gần với benchmark, danh mục sẽ cân bằng hơn, “vừa sinh lời vừa… an toàn”.
-""")
+    <p style="font-size:18px; line-height:1.6;">
+    Sau khi so sánh hiệu suất tổng thể với VNINDEX, Mười lại tò mò: “Liệu portfolio của mình có tập trung quá nhiều vào một ngành không nhỉ?” Với newbie như Mười, nhìn vào từng cổ phiếu thì rối mắt quá, nên cậu quyết định so sánh phân bổ theo ngành.</b>
+    <p style="font-size:18px; line-height:1.6;">
+    Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng từng ngành trong portfolio, rồi đối chiếu với cơ cấu ngành của VNINDEX. Nếu portfolio nghiêng hẳn về một ngành – ví dụ công nghệ hoặc ngân hàng – thì rủi ro cao hơn; còn nếu phân bổ gần với benchmark, danh mục sẽ cân bằng hơn, “vừa sinh lời vừa… an toàn”.
+    </p>
+    """, unsafe_allow_html=True)
     
     col_table, col_graph = st.columns([1.2, 1])
     
@@ -1727,9 +1740,12 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
         st.dataframe(sector_df, use_container_width=True, hide_index=True)
         st.markdown("""
     <div style="background-color: #F3E5F5; padding: 15px; border-radius: 10px; border-left: 5px solid #00897B;">
-        <p style="color: #555; font-size: 17px; line-height: 1.6; margin: 0;">
-        Danh mục đầu tư của Mười đang tập trung rất cao vào ngành Sản xuất (79.5%), tạo ra sự khác biệt lớn so với chỉ số VNINDEX, vốn bị chi phối bởi ngành Dịch vụ (75.14%).<br>
+        <p style="font-size:18px; line-height:1.6;">
+        Danh mục đầu tư của Mười đang tập trung rất cao vào ngành Sản xuất (79.5%), tạo ra sự khác biệt lớn so với chỉ số VNINDEX, vốn bị chi phối bởi ngành Dịch vụ (75.14%).</p>
+        
+       <p style="font-size:18px; line-height:1.6;">
         Sự phân bổ lệch lạc này (thiếu trọng số lớn ở Dịch vụ và không có Thông tin) cho thấy danh mục có <b>rủi ro tập trung cao</b> và sẽ có mức độ lệch pha lớn so với hiệu suất chung của thị trường.
+        </p>
         </div>
     """, unsafe_allow_html=True)
     
@@ -1813,9 +1829,13 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
     # Valuation Multiples and Profitability Analysis
     st.markdown('<h5 id="valuation-multiples-and-profitability">Valuation Multiples & Profitability</h5>', unsafe_allow_html=True)
     st.markdown("""
-             Cuối cùng, Mười quyết định nhìn portfolio bằng “kính hiển vi” của các nhà đầu tư chuyên nghiệp: valuation multiples và profitability. Cậu tò mò: “Giá cổ phiếu đang rẻ hay đắt so với lợi nhuận mà công ty tạo ra?”
-
-    Mười liệt kê các chỉ số quen thuộc như P/E, P/B, ROE, ROA, so sánh với trung bình ngành và với VNINDEX. Nhìn vào các con số, Mười nhanh chóng nhận ra: cổ phiếu nào đang bị định giá thấp so với lợi nhuận, cổ phiếu nào hấp dẫn nhưng rủi ro cao. """)
+    <p style="font-size:18px; line-height:1.6;">
+    Cuối cùng, Mười quyết định nhìn portfolio bằng “kính hiển vi” của các nhà đầu tư chuyên nghiệp: valuation multiples và profitability. Cậu tò mò: “Giá cổ phiếu đang rẻ hay đắt so với lợi nhuận mà công ty tạo ra?”
+    </p>
+    <p style="font-size:18px; line-height:1.6;">
+    Mười liệt kê các chỉ số quen thuộc như P/E, P/B, ROE, ROA, so sánh với trung bình ngành và với VNINDEX. Nhìn vào các con số, Mười nhanh chóng nhận ra: cổ phiếu nào đang bị định giá thấp so với lợi nhuận, cổ phiếu nào hấp dẫn nhưng rủi ro cao.
+    </p>
+    """, unsafe_allow_html=True)
     col_valuation, col_profitability = st.columns(2)
 
     with col_valuation:
@@ -1874,7 +1894,7 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
     
     st.markdown("""
         <div padding: 15px;">
-            <ul style="color: #555; font-size: 17px; line-height: 1.6; margin: 0; padding-left: 20px;">
+            <ul style="color: #555; font-size: 18px; line-height: 1.6; margin: 0; padding-left: 20px;">
                 <li>So với VNIndex, danh mục này đang được định giá cao hơn trên hầu hết các chỉ số P/E, P/B và P/S. Đặc biệt, hệ số P/B của danh mục gần gấp đôi thị trường, cho thấy các doanh nghiệp trong danh mục được thị trường đánh giá cao hơn về giá trị sổ sách.</li>
                 <li>Khả năng sinh lời của danh mục vượt trội so với VNIndex, khi ROE và ROA đều cao hơn đáng kể. Điều này cho thấy các doanh nghiệp trong danh mục hoạt động hiệu quả hơn, sử dụng vốn và tài sản tốt hơn, qua đó tạo ra mức lợi nhuận vượt xa mặt bằng chung của thị trường.</li>
             </ul>
@@ -1892,21 +1912,26 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
          unsafe_allow_html=True
     )
 
-    st.markdown("""
-    Để trả lời cho câu hỏi:
-    *"Danh mục của mình nhạy cảm với thị trường tới mức nào nhỉ?"*  
+    st.markdown('<p style="font-size:18px;">Để trả lời cho câu hỏi:</p>', unsafe_allow_html=True)
+    st.markdown('<p style="font-size:18px; text-align:center;"><em>"Danh mục của mình nhạy cảm với thị trường tới mức nào nhỉ?"</em></p>', unsafe_allow_html=True)
 
-    Đây là lúc cậu gặp chỉ số **beta** – công cụ đo lường mức độ biến động của cổ phiếu so với toàn bộ thị trường:  
+    st.markdown('<p style="font-size:18px;">Đây là lúc cậu gặp chỉ số <strong>beta</strong> – công cụ đo lường mức độ biến động của cổ phiếu so với toàn bộ thị trường:</p>', unsafe_allow_html=True)
 
-    - **Beta > 1** → cổ phiếu “nổi loạn”, biến động mạnh hơn thị trường.  
-    - **Beta < 1** → cổ phiếu “hiền lành”, ổn định hơn thị trường.  
+    st.markdown('''
+    <ul style="font-size:18px;">
+        <li><strong>Beta &gt; 1</strong> → cổ phiếu “nổi loạn”, biến động mạnh hơn thị trường.</li>
+        <li><strong>Beta &lt; 1</strong> → cổ phiếu “hiền lành”, ổn định hơn thị trường.</li>
+    </ul>
+    ''', unsafe_allow_html=True)
 
-     Mười đơn giản **so sánh lịch sử biến động của cổ phiếu với VNINDEX**, tính beta, và dùng kết quả để đánh giá rủi ro danh mục:  
+    st.markdown('<p style="font-size:18px;">Mười đơn giản <strong>so sánh lịch sử biến động của cổ phiếu với VNINDEX</strong>, tính beta, và dùng kết quả để đánh giá rủi ro danh mục:</p>', unsafe_allow_html=True)
 
-    - Nếu beta quá cao → Mười chuẩn bị tinh thần cho những “cơn sóng lớn”.  
-    - Nếu beta thấp → portfolio yên tâm hơn, thích hợp cho chiến lược dài hạn.  
-
-    """)
+    st.markdown('''
+    <ul style="font-size:18px;">
+        <li>Nếu beta quá cao → Mười chuẩn bị tinh thần cho những “cơn sóng lớn”.</li>
+        <li>Nếu beta thấp → portfolio yên tâm hơn, thích hợp cho chiến lược dài hạn.</li>
+    </ul>
+    ''', unsafe_allow_html=True)
 
     st.subheader("📊 So sánh: Daily Beta vs Rolling 60-Day Beta")
     
@@ -2060,17 +2085,25 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
         avg_daily = beta_daily_df['Daily_Beta'].mean()
         avg_rolling = rolling_beta_series.mean()
 
-        st.markdown("""
-        **📌 Giải thích:**
-        - **Daily Beta (Màu hồng)**: Beta ước lượng bằng mô hình **DCC ARCH/GARCH**, biến động nhiều, phản ánh rủi ro tức thời
-        - **Rolling 60-Day Beta (Màu xanh dương)**: beta ước lượng bằng mô hình **OLS** dùng dữ liệu của 60 ngày trước, mượt hơn, phản ánh xu hướng rủi ro dài hạn
+        st.markdown('<p style="font-size:18px;"><strong>📌 Giải thích:</strong></p>', unsafe_allow_html=True)
 
-        **🔍 Key insight:**
-        - Daily Beta được ước lượng bằng DCC-GARCH nên phản ứng rất nhạy với biến động thị trường theo từng ngày và dao động mạnh quanh ~0.57.
-        - Trong khi đó, Rolling 60-Day Beta được tính bằng OLS trên cửa sổ trượt nên mượt và ổn định hơn quanh 0.56, giảm khoảng 9% nhiễu ngắn hạn (Smoothing Effect ~0.91x)
-        - Cả hai đều thấp hơn β = 1, cho thấy cổ phiếu/quỹ có mức độ nhạy cảm thị trường thấp và khá ổn định, với chênh lệch trung bình nhỏ, không xuất hiện biến động cực đoan kéo dài.
-        - Quý 3/2025, VN‑Index bật tăng mạnh do dòng vốn dồi dào từ tín dụng và nhà đầu tư cá nhân, kỳ vọng kinh tế vĩ mô tích cực và khả năng nâng hạng thị trường, cùng với nhóm cổ phiếu vốn hóa lớn dẫn dắt thị trường. Các blue‑chip như VNM, DBD, HPG và ACB trong portfolio tăng nhưng không tương xứng với mức tăng của VN‑Index, vì vậy beta của từng cổ phiếu giảm mạnh kéo theo beta của portfolio giảm do thị trường biến động quá mạnh.
-        """)
+        st.markdown('''
+        <ul style="font-size:18px;">
+            <li><strong>Daily Beta (Màu hồng)</strong>: Beta ước lượng bằng mô hình <strong>DCC ARCH/GARCH</strong>, biến động nhiều, phản ánh rủi ro tức thời</li>
+            <li><strong>Rolling 60-Day Beta (Màu xanh dương)</strong>: beta ước lượng bằng mô hình <strong>OLS</strong> dùng dữ liệu của 60 ngày trước, mượt hơn, phản ánh xu hướng rủi ro dài hạn</li>
+        </ul>
+        ''', unsafe_allow_html=True)
+
+        st.markdown('<p style="font-size:18px;"><strong>🔍 Key insight:</strong></p>', unsafe_allow_html=True)
+
+        st.markdown('''
+        <ul style="font-size:18px;">
+            <li>Daily Beta được ước lượng bằng DCC-GARCH nên phản ứng rất nhạy với biến động thị trường theo từng ngày và dao động mạnh quanh ~0.57.</li>
+            <li>Trong khi đó, Rolling 60-Day Beta được tính bằng OLS trên cửa sổ trượt nên mượt và ổn định hơn quanh 0.56, giảm khoảng 9% nhiễu ngắn hạn (Smoothing Effect ~0.91x)</li>
+            <li>Cả hai đều thấp hơn β = 1, cho thấy cổ phiếu/quỹ có mức độ nhạy cảm thị trường thấp và khá ổn định, với chênh lệch trung bình nhỏ, không xuất hiện biến động cực đoan kéo dài.</li>
+            <li>Quý 3/2025, VN‑Index bật tăng mạnh do dòng vốn dồi dào từ tín dụng và nhà đầu tư cá nhân, kỳ vọng kinh tế vĩ mô tích cực và khả năng nâng hạng thị trường, cùng với nhóm cổ phiếu vốn hóa lớn dẫn dắt thị trường. Các blue‑chip như VNM, DBD, HPG và ACB trong portfolio tăng nhưng không tương xứng với mức tăng của VN‑Index, vì vậy beta của từng cổ phiếu giảm mạnh kéo theo beta của portfolio giảm do thị trường biến động quá mạnh.</li>
+        </ul>
+        ''', unsafe_allow_html=True)
         
 
 
@@ -2084,18 +2117,20 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
     st.markdown('<h3 id="value-at-risk-va-r-3-phuong-phap-tinh-toan">VIII. EVALUATE RISK</h3>',
          unsafe_allow_html=True
     )
-    st.markdown("""
-    Vì Mười là một sinh viên nghèo, mỗi đồng đầu tư đều quý như “vàng trong túi”. Vậy nên cậu cần lường trước mình sẽ lỗ bao nhiêu tiền.
+    st.markdown('<p style="font-size:18px;">Vì Mười là một sinh viên nghèo, mỗi đồng đầu tư đều quý như “vàng trong túi”. Vậy nên cậu cần lường trước mình sẽ lỗ bao nhiêu tiền.</p>', unsafe_allow_html=True)
 
-    Đây là lúc **VaR (Value at Risk)** và **ES (Expected Shortfall)** xuất hiện:  
+    st.markdown('<p style="font-size:18px;">Đây là lúc <strong>VaR (Value at Risk)</strong> và <strong>ES (Expected Shortfall)</strong> xuất hiện:</p>', unsafe_allow_html=True)
 
-    - **VaR**: cho Mười biết mức **tổn thất tối đa có thể xảy ra trong một khoảng thời gian nhất định**, với xác suất cao.  
-      Ví dụ, VaR 1 ngày 5% nghĩa là: *“Trong 95% thời gian, mình sẽ không mất quá số tiền này.”*  
+    st.markdown('''
+    <ul style="font-size:18px;">
+        <li><strong>VaR</strong>: cho Mười biết mức <strong>tổn thất tối đa có thể xảy ra trong một khoảng thời gian nhất định</strong>, với xác suất cao.  
+            Ví dụ, VaR 1 ngày 5% nghĩa là: <em>“Trong 95% thời gian, mình sẽ không mất quá số tiền này.”</em>
+        </li>
+        <li><strong>ES</strong>: cho biết <strong>mức mất mát trung bình nếu vượt qua VaR</strong>, giúp Mười chuẩn bị tinh thần cho những cú sốc lớn hơn bình thường.</li>
+    </ul>
+    ''', unsafe_allow_html=True)
 
-    - **ES**: cho biết **mức mất mát trung bình nếu vượt qua VaR**, giúp Mười chuẩn bị tinh thần cho những cú sốc lớn hơn bình thường.  
-
-    Với sinh viên nghèo như Mười, VaR và ES là “lá chắn” để **bảo vệ túi tiền**, ước lượng rủi ro cực đoan của danh mục và đảm bảo rằng ngay cả trong những ngày thị trường xấu nhất, cậu cũng không bị “cháy ví”.
-    """)
+    st.markdown('<p style="font-size:18px;">Với sinh viên nghèo như Mười, VaR và ES là “lá chắn” để <strong>bảo vệ túi tiền</strong>, ước lượng rủi ro cực đoan của danh mục và đảm bảo rằng ngay cả trong những ngày thị trường xấu nhất, cậu cũng không bị “cháy ví”.</p>', unsafe_allow_html=True)
     try:
         # Load portfolio returns
         returns_df = pd.read_csv('port.csv', usecols=['Portfolio'])
@@ -2103,16 +2138,30 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
         portfolio_returns = pd.to_numeric(returns_df['Portfolio'], errors='coerce').dropna()
 
         # Confidence level selection
+        st.markdown('<p style="font-size:18px; font-weight:bold;">Chọn mức độ tin cậy:</p>', unsafe_allow_html=True)
+
         confidence_level = st.radio(
-            "Chọn mức độ tin cậy:", 
+            label="",  # để trống vì label đã in ở trên
             options=[85, 90, 95, 99],
             format_func=lambda x: f"{x}%",
             horizontal=True,
             key="var_confidence"
         )
+
+        st.markdown("""
+        <style>
+        div.row-widget.stRadio > div {
+            flex-direction: row;
+        }
+        div.row-widget.stRadio label {
+            font-size: 23px;
+            padding: 10px 20px;
+        }
+        </style>
+        """, unsafe_allow_html=True)
         alpha = 1 - (confidence_level / 100)
 
-        st.markdown(f"**Phân tích với mức tin cậy {confidence_level}% (α = {alpha:.3f})**")
+        st.markdown(f'<p style="font-size:18px;"><strong>Phân tích với mức tin cậy {confidence_level}% (α = {alpha:.3f})</strong></p>', unsafe_allow_html=True)
 
         # ====================================================================
         # METHOD 1: HISTORICAL
@@ -2273,10 +2322,12 @@ Cậu liệt kê các cổ phiếu theo từng nhóm ngành, tính tỷ trọng 
         st.markdown("""
         <div style="background-color: #FFF3CD; padding: 15px; border-radius: 8px; border-left: 4px solid #FFC107;">
             <h5 style="color: #FF6B00; margin-top: 0;">🔍 Nhận xét:</h5>
-            <b> Tổng quan phân tích rủi ro cho thấy danh mục có mức rủi ro tương đối trung bình trong điều kiện thị trường bình thường, nhưng tồn tại rủi ro tail đáng chú ý. Khi so sánh ba phương pháp Historical, Parametric và Monte Carlo, kết quả Historical cho thấy biến động gần đây không quá lớn, tuy nhiên Expected Shortfall (ES) lại sâu hơn đáng kể, phản ánh sự hiện diện của các cú sốc cực đoan và độ dày tail trong phân phối lợi suất. Biểu đồ phân phối lợi suất cũng cho thấy skew âm rõ rệt và đuôi trái dài, củng cố nhận định rằng danh mục chịu ảnh hưởng mạnh bởi các sự kiện hiếm nhưng tổn thất lớn.
-
+            <p style="font-size:18px;"> 
+            Tổng quan phân tích rủi ro cho thấy danh mục có mức rủi ro tương đối trung bình trong điều kiện thị trường bình thường, nhưng tồn tại rủi ro tail đáng chú ý. Khi so sánh ba phương pháp Historical, Parametric và Monte Carlo, kết quả Historical cho thấy biến động gần đây không quá lớn, tuy nhiên Expected Shortfall (ES) lại sâu hơn đáng kể, phản ánh sự hiện diện của các cú sốc cực đoan và độ dày tail trong phân phối lợi suất. Biểu đồ phân phối lợi suất cũng cho thấy skew âm rõ rệt và đuôi trái dài, củng cố nhận định rằng danh mục chịu ảnh hưởng mạnh bởi các sự kiện hiếm nhưng tổn thất lớn.
+            </p>
+            <p style="font-size:18px;">
 Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng, hàm ý rằng rủi ro danh mục chủ yếu được giải thích bởi hiệp phương sai giữa các tài sản, thay vì các cấu trúc phi tuyến hay tail phức tạp. Tuy nhiên, sự chênh lệch đáng kể giữa ES và VaR ở nhiều mức độ tin cậy cho thấy trong điều kiện bất lợi, mức lỗ thực tế có thể vượt xa VaR, khiến ES trở thành thước đo phản ánh rủi ro đầy đủ hơn. Điều này cũng gợi ý rằng các mô hình nâng cao như phân phối t, Cornish–Fisher hay GARCH có thể phù hợp hơn trong việc mô phỏng tail risk và hành vi biến động thực tế của danh mục.
-            </b>
+            </p>
         </div>
         """,unsafe_allow_html=True)
 
@@ -2317,12 +2368,14 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
         st.latex(r"E(R_p) = R_f + \beta \times (R_m - R_f)")
 
         st.markdown("**Trong đó:**")
-        st.markdown(f"""
-        - **Rf** (Risk-free rate) = lãi suất không rủi ro (Ở đây Mười dùng giá trị trung bình 3 năm của lãi suất trái phiếu chính phủ 10 năm)
-        - **Rm** (Market return) = lợi suất thị trường (Mười dùng giá trị trung bình 3 năm của lợi nhuận hàng ngày của VNINDEX)
-        - **β** (Beta) = Rủi ro hệ thống của portfolio so với thị trường (giá trị cố định từ dữ liệu lịch sử)
-        - **(Rm - Rf)** = mức bù lợi nhuận của thị trường so với lãi suất phi rủi ro
-        """)
+        st.markdown('''
+<ul style="font-size:18px;">
+    <li><strong>Rf</strong> (Risk-free rate) = lãi suất không rủi ro (Ở đây Mười dùng giá trị trung bình 3 năm của lãi suất trái phiếu chính phủ 10 năm)</li>
+    <li><strong>Rm</strong> (Market return) = lợi suất thị trường (Mười dùng giá trị trung bình 3 năm của lợi nhuận hàng ngày của VNINDEX)</li>
+    <li><strong>β</strong> (Beta) = Rủi ro hệ thống của portfolio so với thị trường (giá trị cố định từ dữ liệu lịch sử)</li>
+    <li><strong>(Rm - Rf)</strong> = mức bù lợi nhuận của thị trường so với lãi suất phi rủi ro</li>
+</ul>
+''', unsafe_allow_html=True)
 
         # ====================================================================
         # 2. TÍNH TOÁN CỤ THỂ
@@ -2437,11 +2490,11 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     
     # Narrative section about Mười's valuation journey
     html = """
-    <div style="padding:18px; border-radius:10px; background:#ffffff; border:1px solid #e6e9ef; color:#111; font-size:16px; line-height:1.6;">
+    <div style="padding:18px; border-radius:10px; background:#E6E6FA; border:1px solid #e6e9ef; color:#111; font-size:18px; line-height:1.6;">
       <p>Sau khi đánh giá danh mục của mình và thấy "hơi hớn hở" vì có vẻ sinh lời, Nguyễn Văn Mười bắt đầu băn khoăn:</p>
 
-      <p style="margin-left:10px;">
-        <span style="color:#1E90FF; font-weight:700;">
+      <p style="text-align:center;">
+        <span style="color:#1E90FF; font-weight:700, ;">
           "Liệu mình có nên mua luôn không? Giá nào là hợp lý đây?"
         </span>
       </p>
@@ -2450,7 +2503,7 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
 
       <p>Với FCFE, Mười có thể dự báo các dòng tiền trong tương lai bằng <strong>Holt-Winters Exponential Smoothing</strong>, rồi tính giá trị hiện tại của chúng. Cậu thích cách này: máy tính làm việc thay cậu, dữ liệu nói chuyện, còn cậu chỉ cần nhìn vào kết quả và hỏi:</p>
 
-      <p style="margin-left:10px;">
+      <p style="text-align:center;">
         <span style="color:#1E90FF; font-weight:700;">
           "Ồ, cổ phiếu này rẻ hay đắt?"
         </span>
@@ -2471,21 +2524,22 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
         )
 
 
-    st.markdown("**Bước 1:** Xác định **FCFE** bằng công thức:")
+    st.markdown("<p style='font-size:18px;'><strong>Bước 1:</strong> Xác định <strong>FCFE</strong> bằng công thức:</p>", unsafe_allow_html=True)
     st.latex(r"FCFE = Net\ Income + Depreciation - CapEx - \Delta WC + Net\ Borrowing")
 
-    st.markdown("**Bước 2:** Dự báo **3 giá trị FCFE tương lai** bằng mô hình Holt-Winters.")
+    st.markdown('<p style="font-size:18px;"><strong>Bước 2:</strong> Dự báo 3 giá trị FCFE tương lai bằng mô hình Holt-Winters.</p>', unsafe_allow_html=True)
 
-    st.markdown("**Bước 3:** Tính **chi phí vốn cổ đông** bằng CAPM:")
+
+    st.markdown('<p style="font-size:18px;"><strong>Bước 3:</strong> Tính chi phí vốn cổ đông bằng CAPM.</p>', unsafe_allow_html=True)
     st.latex(r"r_e = R_f + \beta (R_m - R_f)")
 
-    st.markdown("**Bước 4:** Chọn tốc độ tăng trưởng dài hạn \(g = 3\%\).")
+    st.markdown('<p style="font-size:18px;"><strong>Bước 4:</strong> Chọn tốc độ tăng trưởng dài hạn (g = 3%).</p>', unsafe_allow_html=True)
 
-    st.markdown("**Bước 5:** Tính **PV** bằng cách chiết khấu FCFE dự báo và terminal value.")
+    st.markdown('<p style="font-size:18px;"><strong>Bước 5:</strong> Tính PV bằng cách chiết khấu FCFE dự báo và terminal value.</p>', unsafe_allow_html=True)
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-    st.markdown("**Nhấn vào từng tab để xem từng mã chứng khoán**")
+    st.markdown('<p style="font-size:18px;"><strong>Nhấn vào từng tab để xem từng mã chứng khoán</strong></p>', unsafe_allow_html=True)
     
     # Import required calculation functions
     def calculate_capm_return(risk_free_rate, beta, market_risk_premium):
@@ -2726,14 +2780,15 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
                             st.markdown("### 💰 Valuation Summary")
                             
                             # Key metrics prominent + supporting
-                            st.markdown("**Primary Metrics**")
+                            st.markdown('<p style="font-size:20px;"><strong>Primary Metrics</strong></p>', unsafe_allow_html=True)
                             key_col1, key_col2 = st.columns(2)
                             with key_col1:
                                 st.metric("💰 Current Price", f"{dcf_result['current_price']:.2f}kVNĐ")
                             with key_col2:
                                 st.metric("🎯 Intrinsic Value/Share", f"{dcf_result['intrinsic_value']:,.2f}kVNĐ")
-                            
-                            st.markdown("**Supporting Metrics**")
+
+                            st.markdown('<p style="font-size:18px;"><strong>Supporting Metrics</strong></p>', unsafe_allow_html=True)
+
                             st.markdown("""
                             <style>
                                 [data-testid="stMetric"] {
@@ -2767,10 +2822,11 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     # Narrative about Mười's golden rule
     st.markdown("""
     <div style="background-color: #E8F5E9; padding: 20px; border-radius: 10px; border-left: 5px solid #4CAF50; margin-top: 20px; margin-bottom: 20px;">
-        <p style="font-size: 16px; line-height: 1.8; color: #333;">
-        Sau khi tính xong một cách… ngây thơ nhưng nghiêm túc, Nguyễn Văn Mười đã xác định quy tắc "vàng" cho riêng mình: nếu giá thị trường <strong>dưới intrinsic value</strong> – mua liền, còn nếu <strong>vượt qua intrinsic value</strong> – bán gọn.
-        <br><br>
-        Với cách này, Mười cảm thấy yên tâm: không cần bơi giữa rừng báo cáo tài chính hay lạc vào mớ công thức phức tạp, chỉ cần nhìn vào con số cuối cùng – intrinsic value – là biết mình nên hành động ra sao. <strong>Một chiến lược đơn giản, dễ hiểu, và đặc biệt… cực kỳ hợp với một newbie như Mười!</strong>
+        <p style="font-size: 18px; line-height: 1.8; color: #333;">
+        Sau khi tính xong một cách… ngây thơ nhưng nghiêm túc, Nguyễn Văn Mười đã xác định quy tắc "vàng" cho riêng mình: nếu giá thị trường <strong>dưới intrinsic value – mua liền</strong>, còn nếu <strong>vượt qua intrinsic value – bán gọn</strong>.
+        </p>
+        <p style="font-size: 18px; line-height: 1.8; color: #333;">
+        Với cách này, Mười cảm thấy yên tâm: không cần bơi giữa rừng báo cáo tài chính hay lạc vào mớ công thức phức tạp, chỉ cần nhìn vào con số cuối cùng – intrinsic value – là biết mình nên hành động ra sao. Một chiến lược đơn giản, dễ hiểu, và đặc biệt… cực kỳ hợp với một newbie như Mười!
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -2783,17 +2839,22 @@ Trong khi đó, Parametric và Monte Carlo cho kết quả khá tương đồng,
     st.markdown('<h3 id="gbm-forecast">XI. GBM TO FORECAST FUTURE PRICE</h3>',
          unsafe_allow_html=True
     )
-    st.markdown("""
-    Sau khi đánh giá portfolio bằng DCF, benchmark, phân bổ ngành, scatter plot và valuation multiples, Nguyênc Văn Mười bắt đầu tò mò:  
-    "Liệu giá cổ phiếu tương lai sẽ đi về đâu?"
-    Đây là lúc hai công cụ “toàn năng” xuất hiện: **GBM (Geometric Brownian Motion)** và **Cholesky decomposition**.  
+    st.markdown('''
+    <div style="background-color:#E6E6FA; padding:15px; border-radius:10px; font-size:18px;">
+        <p>Sau khi đánh giá portfolio bằng DCF, benchmark, phân bổ ngành, scatter plot và valuation multiples, Nguyên Văn Mười bắt đầu tò mò:<br>
+        "Liệu giá cổ phiếu tương lai sẽ đi về đâu?"<br>
+        Đây là lúc hai công cụ “toàn năng” xuất hiện: <strong>GBM (Geometric Brownian Motion)</strong> và <strong>Cholesky decomposition</strong>.
+        </p>
+        <ul>
+            <li><strong>GBM</strong>: Mười tưởng tượng cổ phiếu như một con thuyền trên sóng – mỗi ngày giá đi lên đi xuống theo một “ngẫu nhiên có trật tự”. GBM giúp mô phỏng nhiều kịch bản giá trong tương lai.</li>
+            <li><strong>Cholesky decomposition</strong>: Vì portfolio có nhiều cổ phiếu và chúng không đi một mình, Cholesky giúp Mười tạo các biến ngẫu nhiên có tương quan, mô phỏng giá các cổ phiếu đồng thời, vẫn giữ đúng mối quan hệ giữa chúng như thật.</li>
+        </ul>
 
-    - **GBM**: Mười tưởng tượng cổ phiếu như một con thuyền trên sóng – mỗi ngày giá đi lên đi xuống theo một “ngẫu nhiên có trật tự”. GBM giúp mô phỏng nhiều kịch bản giá trong tương lai.  
+        <p>Nhìn vào kết quả forecast, Mười thấy được <strong>các kịch bản giá trong tương lai</strong> cho từng cổ phiếu và toàn bộ danh mục. Giờ cậu đã có “bản đồ sóng ngầm” của thị trường trong tay – chuẩn bị cho mọi quyết định đầu tư một cách thông minh, nhưng vẫn cực kỳ newbie!
+        </p>
+    </div>
+    ''', unsafe_allow_html=True)
 
-    - **Cholesky decomposition**: Vì portfolio có nhiều cổ phiếu và chúng không đi một mình, Cholesky giúp Mười **tạo các biến ngẫu nhiên có tương quan**, mô phỏng giá các cổ phiếu đồng thời, vẫn giữ đúng mối quan hệ giữa chúng như thật.  
-
-    Nhìn vào kết quả forecast, Mười thấy được **các kịch bản giá trong tương lai** cho từng cổ phiếu và toàn bộ danh mục. Giờ cậu đã có “bản đồ sóng ngầm” của thị trường trong tay – chuẩn bị cho mọi quyết định đầu tư một cách thông minh, nhưng vẫn cực kỳ newbie!  
-    """)
     try:
         # Load price data silently
         price_df = pd.read_csv('attached_assets/price.csv')
